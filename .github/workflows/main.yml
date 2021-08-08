@@ -1,0 +1,90 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        name: Login to GitHub Container Registry
+
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-buildx-action@v1
+
+      - uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile.prod
+          push: true
+          tags: ghcr.io/helxdev/conforpra-srl-frontend:${{ github.sha }}
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Save DigitalOcean kubeconfig
+        run: doctl kubernetes cluster kubeconfig save ${{ secrets.DIGITALOCEAN_K8S_CLUSTER }}
+
+      - name: Install kubectl
+        run: |
+          curl -L https://storage.googleapis.com/kubernetes-release/release/v1.21.2/bin/linux/amd64/kubectl -o /tmp/kubectl
+          chmod +x /tmp/kubectl
+          export PATH=/tmp/kubectl:$PATH
+
+      - name: Update config file
+        run: |
+          HELX_PROJECT_NAME=${{ secrets.HELX_PROJECT_NAME }}
+
+          BRANCH_NAME=${GITHUB_REF//refs\/heads\//}
+          HELX_ENVIRONMENT=$(echo ${BRANCH_NAME/\//-} | cut -d/ -f1)
+
+          if [ "$HELX_ENVIRONMENT" = "main" ]; then
+            HELX_ENVIRONMENT=prod
+          elif [ "$HELX_ENVIRONMENT" = "develop" ]; then
+            HELX_ENVIRONMENT=stage
+          fi
+
+          sed -i "s/\${GITHUB_SHA}/$GITHUB_SHA/" k8s/web.yaml
+          sed -i "s/\${HELX_PROJECT_NAME}/$HELX_PROJECT_NAME/" k8s/web.yaml
+
+          # if pushing to main deploy to production
+          if [ "$BRANCH_NAME" = "main" ]; then
+            sed -i 's/${HELX_ENVIRONMENT}//' k8s/web.yaml
+          else
+            # otherwhise deploy to branch-specific environment
+            sed -i "s/\${HELX_ENVIRONMENT}/$HELX_ENVIRONMENT./" k8s/web.yaml
+          fi
+
+          kubectl apply -f k8s -n "${HELX_PROJECT_NAME}--${HELX_ENVIRONMENT}"
+
+      #
+      # - name: deploy to cluster
+      #   uses: steebchen/kubectl@v2.0.0
+      #   with: # defaults to latest kubectl binary version
+      #     config: ${{ secrets.KUBE_CONFIG_DATA }}
+      #     command: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
