@@ -11,10 +11,47 @@
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 64px;
+  height: 100px;
   transform: rotateY(180deg);
 }
 
 .custom-shape-divider-bottom-1628384777 .shape-fill {
   fill: #ffffff;
+}
+
+.custom-shape-divider-bottom-1628384777 .shape-fill-gray {
+  fill: rgba(229, 231, 235, 1);
+}
+
+.shape-fill-reverse {
+  fill: transparent;
+}
+
+.bg-custom {
+  background-color: #60dbe4;
+}
+
+.bg-custom:hover {
+  background-color: #59b4bb;
+}
+
+.bg-custom-suscribete {
+  background-color: #009aa6;
+}
+
+.bg-custom-suscribete:hover {
+  background-color: #018791;
+}
+
+.img-background {
+  max-width: 100%;
+  height: auto;
+}
+
+.font-custom-color {
+  color: #009aa6;
+}
+
+.icon-custom-color {
+  background-color: #009aa6;
 }

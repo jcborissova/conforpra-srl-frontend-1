@@ -11,8 +11,9 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/react": "^17.0.15",
+    "@types/react-slick": "^0.23.5",
     "autoprefixer": "^9.8.6",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.1.0",
     "i": "^0.3.6",
     "postcss": "^7.0.36",
     "react": "^17.0.1",
@@ -22,6 +23,8 @@
     "react-responsive-carousel": "^3.2.20",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7",
     "twin.macro": "^2.6.2",
@@ -53,8 +56,10 @@
     ]
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.6",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.8",
+    "@types/slick-carousel": "^1.6.37",
     "@types/styled-components": "^5.1.11"
   }
 }

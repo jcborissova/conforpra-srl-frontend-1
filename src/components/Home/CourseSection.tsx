@@ -1,4 +1,6 @@
-const CourseSetion = () => {
+import CardCarousel from "../CardCarousel";
+
+const CourseSection = () => {
   return (
     <div className="flex flex-col items-center mt-12 text-center mb-12">
       <div className="items-center lg:w-3/4 w-full flex flex-col">
@@ -12,14 +14,16 @@ const CourseSetion = () => {
             desempeño en tu trabajo, cada uno de nuestros cursos de manera
             particular te garantiza la base para que puedas solicitar la
             Licencia Personal de Operación emitida por la autoridad competente
-            en RD.{" "}
+            en RD.
           </p>
         </div>
       </div>
-      <div className="pt-10"></div>
+      <div className="pt-12 pb-9">
+        <CardCarousel />
+      </div>
       <div className="items-center w-1/2 pt-10">
         <button
-          className="rounded-full bg-purple-500 text-white hover:bg-purple-700 hover:text-white active:bg-purple-700 font-bold uppercase text-normal px-6 py-3 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+          className="rounded-full bg-custom text-white font-semibold uppercase text-normal px-6 py-3 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
           type="button"
         >
           VER MÁS CAPACITACIONES
@@ -29,4 +33,4 @@ const CourseSetion = () => {
   );
 };
 
-export default CourseSetion;
+export default CourseSection;

@@ -35,7 +35,6 @@ const PrincipiosCardInformation = [
 const About = () => {
   const AboutSection = styled.div`
     background-image: url(${AboutImg});
-    height: 100%;
     width: 100%;
     margin-left: 0px;
     background-position: center;
@@ -71,13 +70,17 @@ const About = () => {
           </svg>
         </div>
       </AboutSection>
-      <div className="flex lg:flex-row flex-col lg:items-start items-center pb-9">
+      <div className="flex lg:flex-row flex-col lg:items-start items-center pb-9 custom-position">
         <div className="h-full w-full content-center lg:pt-32 pt-16 ">
-          <img src={GroupImg} alt="GroupImg" className="mx-auto h-auto sm:px-0 px-4" />
+          <img
+            src={GroupImg}
+            alt="GroupImg"
+            className="mx-auto h-auto sm:px-0 px-4"
+          />
         </div>
         <div className="flex flex-col lg:pt-20 pt-10 lg:pl-0 pl-8 pr-20 w-11/12 mx-auto">
           <div className="text-2xl">
-            <p>Conforpra</p>
+            <p className="font-semibold">Conforpra</p>
           </div>
           <div className="pt-8">
             <p>Consultoría y Formación Técnica en Protección Radiológica.</p>
@@ -95,15 +98,15 @@ const About = () => {
             </p>
           </div>
           <div className="text-2xl mt-10">
-            <p>Logo</p>
+            <p className="font-semibold">Logo</p>
           </div>
           <div className="pt-2">
-            <img src={ConforpraLogo} className="w-52" alt="ConforpraLogo"/>
+            <img src={ConforpraLogo} className="w-52" alt="ConforpraLogo" />
           </div>
         </div>
       </div>
 
-      <div className="custom-shape-divider-bottom-1628384777">
+      <div className="custom-shape-divider-bottom-1628384777 z-0">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -112,16 +115,16 @@ const About = () => {
         >
           <path
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            className="shape-fill"
+            className="shape-fill-gray"
           ></path>
         </svg>
       </div>
-      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-gray-100 pb-28 w-full">
-        <div className="flex flex-col pt-10 lg:pl-16 pl-14 lg:pr-16 pr-14 w-auto">
+      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-gray-200 pb-28 w-full">
+        <div className="flex flex-col pt-16 lg:pl-16 pl-14 lg:pr-16 pr-14 w-auto">
           <div className="text-2xl">
             <p>Principios de la empresa</p>
           </div>
-          <div className="pt-8 flex lg:flex-row flex-col gap-20 self-center">
+          <div className="pt-8 flex md:flex-row flex-col gap-5 lg:gap-20 self-center">
             {PrincipiosCardInformation.map((item) => (
               <PrincipioCard
                 bgColor={item.color}

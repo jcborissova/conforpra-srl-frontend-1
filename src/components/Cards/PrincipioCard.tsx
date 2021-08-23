@@ -1,11 +1,9 @@
-import img from "../../img/Services/1.png";
-
 const PrincipioCard = (props: any) => {
   return (
     <div
-      className={`group flex rounded-lg shadow-lg w-60 items-end h-72 ${props.bgColor}`}
+      className={`group flex rounded-3xl rounded-t-3xl shadow-lg w-60 items-end h-72 ${props.bgColor}`}
     >
-      <div className="bg-white group flex flex-col items-center content-end  h-64 rounded-b-lg">
+      <div className="bg-white group flex flex-col items-center content-end h-64 rounded-b-3xl">
         <div className="pt-4 px-5 ">
           <img className="" src={props.img} alt="#" />
         </div>

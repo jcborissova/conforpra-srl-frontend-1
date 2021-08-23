@@ -5,7 +5,7 @@ import logo from "../img/ConforpraLogo.svg";
 const Navbar = ({ toggle }: { toggle: any }) => {
   return (
     <nav
-      className="fixed flex justify-between items-center h-16 bg-white text-black w-full font-mono lg:px-20 px-0"
+      className="fixed flex justify-between items-center h-16 bg-white text-black w-full font-mono lg:px-20 px-0 z-40"
       role="navigation"
     >
       <Link to="/" className="pl-8">
@@ -27,7 +27,7 @@ const Navbar = ({ toggle }: { toggle: any }) => {
           />
         </svg>
       </div>
-      <div className="md:pr-8 md:block hidden text-black font-sans font-normal text-xs xl:text-sm ">
+      <div className="md:pr-8 md:block hidden text-black font-sans font-normal text-xs xl:text-sm">
         <Link to="/" className="p-4">
           Inicio
         </Link>
