@@ -1,88 +1,69 @@
-import styled from "styled-components";
-import AboutImg from "../img/About/About.png";
-import ConforpraLogo from "../img/ConforpraLogo.svg";
-import GroupImg from "../img/About/GroupImg.png";
-import ".././styles.css";
-import PrincipioCard from "../components/Cards/PrincipioCard";
-import img1 from "../img/About/Mision.png";
-import img2 from "../img/About/Vision.png";
-import img3 from "../img/About/Valores.png";
+import AboutImg from '../img/About/About.png';
+import ConforpraLogo from '../img/ConforpraLogo.svg';
+import GroupImg from '../img/About/GroupImg.png';
+import '.././styles.css';
+import PrincipioCard from '../components/Cards/PrincipioCard';
+import img1 from '../img/About/Mision.png';
+import img2 from '../img/About/Vision.png';
+import img3 from '../img/About/Valores.png';
+import LineDivider from '../components/LineDivider';
+import HeaderPage from '../components/HeaderPage';
 
-const PrincipiosCardInformation = [
+const principiosCardInformation = [
   {
     id: 1,
-    title: "Misión",
-    text: "Poner a tu disposición la más alta calidad y profesionalidad al mejor precio del mercado",
+    title: 'Misión',
+    text: 'Poner a tu disposición la más alta calidad y profesionalidad al mejor precio del mercado',
     img: img1,
-    color: "bg-green-800",
+    color: 'bg-green-800',
   },
   {
     id: 2,
-    title: "Visión",
-    text: "Ser líderes en materia de radioprotección y seguridad radiológica, mediante una actualización constante de nuestros servicios a los avances tecnológicos del presente",
+    title: 'Visión',
+    text: 'Ser líderes en materia de radioprotección y seguridad radiológica, mediante una actualización constante de nuestros servicios a los avances tecnológicos del presente',
     img: img2,
-    color: "bg-yellow-400",
+    color: 'bg-yellow-400',
   },
   {
     id: 3,
-    title: "Valores",
-    text: "Organización, Excelencia, Honestidad, Innovación, Calidad, Servicio al clienten",
+    title: 'Valores',
+    text: 'Organización, Excelencia, Honestidad, Innovación, Calidad, Servicio al clienten',
     img: img3,
-    color: "bg-black",
+    color: 'bg-black',
   },
 ];
 
-const About = () => {
-  const AboutSection = styled.div`
-    background-image: url(${AboutImg});
-    width: 100%;
-    margin-left: 0px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  `;
+const pageInformation = {
+  id: 1,
+  title: 'Conforpra',
+  description:
+    'Asesoría para proyectos específicos en el campo de la protección y seguridad radiológica de las organizaciones',
+  img: AboutImg,
+  dividerColor: '',
+};
 
+const About = () => {
   return (
     <div className="flex flex-col items-center w-full">
-      <AboutSection className="mt-12 ">
-        <div className="flex flex-col lg:pt-32 pt-44 lg:pl-40 pl-10  text-left text-white h-screen">
-          <div className="text-3xl">
-            <p>Conforpra</p>
-          </div>
-          <div className="pt-8 lg:w-2/6 w-5/6">
-            <p>
-              Asesoría para proyectos específicos en el campo de la protección y
-              seguridad radiológica de las organizaciones
-            </p>
-          </div>
-        </div>
-        <div className="custom-shape-divider-bottom-1628384777">
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-              className="shape-fill"
-            ></path>
-          </svg>
-        </div>
-      </AboutSection>
+      <HeaderPage
+        title={pageInformation.title}
+        description={pageInformation.description}
+        img={pageInformation.img}
+        dividerColor={pageInformation.dividerColor}
+      />
       <div className="flex lg:flex-row flex-col lg:items-start items-center pb-9 custom-position">
-        <div className="h-full w-full content-center lg:pt-32 pt-16 ">
+        <div className="h-full lg:w-full w-10/12 content-center lg:pt-32 pt-16 lg:pl-14">
           <img
             src={GroupImg}
             alt="GroupImg"
             className="mx-auto h-auto sm:px-0 px-4"
           />
         </div>
-        <div className="flex flex-col lg:pt-20 pt-10 lg:pl-0 pl-8 pr-20 w-11/12 mx-auto">
-          <div className="text-2xl">
+        <div className="flex flex-col lg:pt-20 pt-10 lg:pl-0 pl-8 lg:pr-20 px-3 w-11/12 mx-auto">
+          <div className="text-xl">
             <p className="font-semibold">Conforpra</p>
           </div>
-          <div className="pt-8">
+          <div className="pt-5">
             <p>Consultoría y Formación Técnica en Protección Radiológica.</p>
           </div>
           <div className="pt-4">
@@ -106,26 +87,14 @@ const About = () => {
         </div>
       </div>
 
-      <div className="custom-shape-divider-bottom-1628384777 z-0">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            className="shape-fill-gray"
-          ></path>
-        </svg>
-      </div>
+      <LineDivider dividerColor="-gray" dividerbgColor="" />
       <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-gray-200 pb-28 w-full">
         <div className="flex flex-col pt-16 lg:pl-16 pl-14 lg:pr-16 pr-14 w-auto">
           <div className="text-2xl">
             <p>Principios de la empresa</p>
           </div>
-          <div className="pt-8 flex md:flex-row flex-col gap-5 lg:gap-20 self-center">
-            {PrincipiosCardInformation.map((item) => (
+          <div className="pt-8 flex md:flex-row flex-col lg:gap-20 gap-10 self-center">
+            {principiosCardInformation.map((item) => (
               <PrincipioCard
                 bgColor={item.color}
                 key={item.id}

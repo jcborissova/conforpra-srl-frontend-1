@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../img/ConforpraLogo.svg";
+import { Link } from 'react-router-dom';
+import logo from '../img/ConforpraLogo.svg';
 
 const Navbar = ({ toggle }: { toggle: any }) => {
   return (
@@ -9,7 +8,11 @@ const Navbar = ({ toggle }: { toggle: any }) => {
       role="navigation"
     >
       <Link to="/" className="pl-8">
-        <img src={logo} alt="conforpralogo" />
+        <img
+          src={logo}
+          alt="conforpralogo"
+          className="lg:w-auto md:w-20 w-36"
+        />
       </Link>
       <div className="px-4 cursor-pointer md:hidden" onClick={toggle}>
         <svg
@@ -27,15 +30,18 @@ const Navbar = ({ toggle }: { toggle: any }) => {
           />
         </svg>
       </div>
-      <div className="md:pr-8 md:block hidden text-black font-sans font-normal text-xs xl:text-sm">
+      <div className="md:pr-8 md:block hidden text-black font-sans font-semibold text-xs xl:text-sm">
         <Link to="/" className="p-4">
           Inicio
         </Link>
-        <Link to="/about" className="p-4">
+        <Link to="/sobrenosotros" className="p-4">
           Sobre nosotros
         </Link>
         <Link to="/productos" className="p-4">
-          Productos y servicios
+          Productos
+        </Link>
+        <Link to="/servicios" className="p-4">
+          Servicios
         </Link>
         <Link to="/capacitaciones" className="p-4">
           Capacitaciones

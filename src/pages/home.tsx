@@ -1,5 +1,4 @@
-import React from "react";
-import HomeContent from "../components/Home/HomeContent";
+import HomeContent from '../components/Home/HomeContent';
 
 const Home = () => {
   return (

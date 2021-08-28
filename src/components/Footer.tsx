@@ -1,10 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import WhatsappIcon from "@material-ui/icons/WhatsApp";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import "../styles.css";
+import { Link } from 'react-router-dom';
+import WhatsappIcon from '@material-ui/icons/WhatsApp';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import '../styles.css';
 
 const Footer = () => {
   return (
@@ -43,7 +42,10 @@ const Footer = () => {
                   </Link>
                 </span>
                 <span className="my-1">
-                  <Link to="/capacitaciones" className="text-md hover:text-blue-500">
+                  <Link
+                    to="/capacitaciones"
+                    className="text-md hover:text-blue-500"
+                  >
                     Capacitaciones
                   </Link>
                 </span>
@@ -58,7 +60,10 @@ const Footer = () => {
                   </Link>
                 </span>
                 <span className="my-1">
-                  <Link to="/contactanos" className="text-md hover:text-blue-500">
+                  <Link
+                    to="/contactanos"
+                    className="text-md hover:text-blue-500"
+                  >
                     Contactanos
                   </Link>
                 </span>
@@ -82,16 +87,16 @@ const Footer = () => {
               <p className="text-sm text-white font-normal pr-14 ">Follow us</p>
               <div className="flex gap-4 ">
                 <a href="/">
-                  <WhatsappIcon style={{ color: "white" }} fontSize="large" />
+                  <WhatsappIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
                 <a href="/">
-                  <FacebookIcon style={{ color: "white" }} fontSize="large" />
+                  <FacebookIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
                 <a href="/">
-                  <InstagramIcon style={{ color: "white" }} fontSize="large" />
+                  <InstagramIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
                 <a href="/">
-                  <TwitterIcon style={{ color: "white" }} fontSize="large" />
+                  <TwitterIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
               </div>
             </div>

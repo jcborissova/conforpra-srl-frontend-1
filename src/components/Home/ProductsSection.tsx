@@ -1,41 +1,41 @@
-import ProductCard from "../Cards/ProductCard";
-import img1 from "../../img/Products/1.png";
-import img2 from "../../img/Products/2.png";
-import img3 from "../../img/Products/3.png";
-import "../../styles.css";
+import ProductCard from '../Cards/ProductCard';
+import img1 from '../../img/Products/1.png';
+import img2 from '../../img/Products/2.png';
+import img3 from '../../img/Products/3.png';
+import '../../styles.css';
 
 const productsCardInformation = [
   {
     id: 1,
-    subtitle: "SEGURIDAD",
-    title: "Láminas de plomo",
-    description: "1mm, 2mm, 3mm",
+    subtitle: 'SEGURIDAD',
+    title: 'Láminas de plomo',
+    description: '1mm, 2mm, 3mm',
     img: img1,
-    color: "bg-purple-600",
+    color: 'bg-purple-600',
   },
   {
     id: 2,
-    subtitle: "SEGURIDAD",
-    title: "Guantes plomados",
-    description: "Medianos y grandes modelo. 156 con 0.5mm pb",
+    subtitle: 'SEGURIDAD',
+    title: 'Guantes plomados',
+    description: 'Medianos y grandes modelo. 156 con 0.5mm pb',
     img: img2,
-    color: "bg-green-700",
+    color: 'bg-green-700',
   },
   {
     id: 3,
-    subtitle: "HERRAMIENTAS",
-    title: "Collarines plomados",
-    description: "0.50mm de pb",
+    subtitle: 'HERRAMIENTAS',
+    title: 'Collarines plomados',
+    description: '0.50mm de pb',
     img: img3,
-    color: "bg-yellow-400",
+    color: 'bg-yellow-400',
   },
   {
     id: 4,
-    subtitle: "PRODUCTOS",
-    title: "Gorros emplomados",
-    description: "Eligible for Shipping To Mars",
+    subtitle: 'PRODUCTOS',
+    title: 'Gorros emplomados',
+    description: 'Eligible for Shipping To Mars',
     img: img1,
-    color: "bg-purple-600",
+    color: 'bg-purple-600',
   },
 ];
 

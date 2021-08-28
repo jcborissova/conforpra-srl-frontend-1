@@ -1,28 +1,28 @@
-import ServiceCard from "../Cards/ServiceCard";
-import img1 from "../../img/Services/1.png";
-import img2 from "../../img/Services/2.png";
-import img3 from "../../img/Services/3.png";
-import img4 from "../../img/Services/4.png";
+import ServiceCard from '../Cards/ServiceCard';
+import img1 from '../../img/Services/1.png';
+import img2 from '../../img/Services/2.png';
+import img3 from '../../img/Services/3.png';
+import img4 from '../../img/Services/4.png';
 
 const ServiceCardInformation = [
   {
     id: 1,
-    text: "Tramitación de licencia para operar fuentes radioactivas y/o equipos generadores de rayos x",
+    text: 'Tramitación de licencia para operar fuentes radioactivas y/o equipos generadores de rayos x',
     img: img1,
   },
   {
     id: 2,
-    text: "Diseño e implementación de proyectos en materia nuclear y centros de radiodiagnóstico ",
+    text: 'Diseño e implementación de proyectos en materia nuclear y centros de radiodiagnóstico ',
     img: img2,
   },
   {
     id: 3,
-    text: "Emplomado de la instalación",
+    text: 'Emplomado de la instalación',
     img: img3,
   },
   {
     id: 4,
-    text: "Prestación de la dosimetría externa",
+    text: 'Prestación de la dosimetría externa',
     img: img4,
   },
 ];

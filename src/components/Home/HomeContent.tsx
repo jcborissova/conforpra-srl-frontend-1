@@ -1,8 +1,8 @@
-import PresentationSection from "./PresentationSection";
-import ServiceSection from "./ServiceSection";
-import CourseSection from "./CourseSection";
-import ProductSection from "./ProductsSection";
-import InformationSection from "./InformationSection";
+import PresentationSection from './PresentationSection';
+import ServiceSection from './ServiceSection';
+import CourseSection from './CourseSection';
+import ProductSection from './ProductsSection';
+import InformationSection from './InformationSection';
 
 const HomeContent = () => {
   return (
