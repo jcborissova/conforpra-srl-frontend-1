@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ServiceCard from '../Cards/ServiceCard';
 import img1 from '../../img/Services/1.png';
 import img2 from '../../img/Services/2.png';
@@ -61,10 +62,10 @@ const ServiceSection = () => {
         </div>
         <div className="pt-12">
           <button
-            className="rounded-full bg-custom w-56 text-white font-semibold uppercase text-normal px-6 py-3 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom w-56 text-white uppercase text-normal px-6  outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
-            Ver mas servicios
+            <Link to="/servicios">Ver mas servicios</Link>
           </button>
         </div>
       </div>

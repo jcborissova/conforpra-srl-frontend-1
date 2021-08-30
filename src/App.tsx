@@ -21,10 +21,9 @@ function App() {
   useEffect(() => {
     const mediaQuery = '(max-width: 768px)';
     const mediaQueryList = window.matchMedia(mediaQuery);
-    
+
     const hideMenu = () => {
       mediaQueryList.addEventListener('change', (event) => {
-        console.log(window.innerWidth);
         if (!event.matches && isOpen) {
           setIsOpen(false);
         }
@@ -34,7 +33,7 @@ function App() {
     return () => {
       mediaQueryList.removeEventListener('resize', hideMenu);
     };
-  },[]);
+  }, []);
 
   return (
     <div className="w-screen">

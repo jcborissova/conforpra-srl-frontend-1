@@ -5,9 +5,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import CursosTalleresCard from '../components/Cards/CursosTalleresCard';
 import img1 from '../img/Cursos y talleres/1.png';
 import img2 from '../img/Cursos y talleres/2.png';
-import img3 from '../img/Cursos y talleres/2.png';
+import img3 from '../img/Cursos y talleres/3.png';
 
-const CardCarousel = () => {
+const CardCarousel = (props: any) => {
   const settings = {
     dots: true,
     speed: 500,
@@ -61,14 +61,19 @@ const CardCarousel = () => {
       img: img3,
     },
     {
+      id: 1,
+      text: 'Curso Básico de Protección Radiológica',
+      img: img1,
+    },
+    {
       id: 2,
       text: 'Curso Taller en Dosimetría de las Radiaciones Ionizantes',
       img: img2,
     },
     {
-      id: 1,
-      text: 'Curso Básico de Protección Radiológica',
-      img: img1,
+      id: 3,
+      text: 'Diplomado en Protección y Seguridad Radiológica',
+      img: img3,
     },
   ];
 

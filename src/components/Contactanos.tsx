@@ -47,10 +47,12 @@ const socialNetworkCardInformation = [
   },
 ];
 
-const Contactanos = () => {
+const Contactanos = (props: any) => {
   return (
     <div className="flex flex-col justify-center items-start pb-7">
-      <LineDivider dividerColor="" dividerbgColor="bg-gray-200" />
+      {props.visibility ? (
+        <LineDivider dividerColor="" dividerbgColor={`${props.color}`} />
+      ) : null}
       <div className="flex lg:flex-row flex-col w-full justify-center gap-x-16 items-center">
         <div className="flex lg:w-1/5 w-11/12 lg:pt-0 pt-10">
           <p className="font-semibold">
@@ -104,7 +106,7 @@ const Contactanos = () => {
             O escribenos por cualquiera de estas redes sociales
           </p>
         </div>
-        <div className="grid lg:grid-cols-3 grid-cols-2 py-14 md:gap-x-30 md:gap-y-28 gap-x-10 gap-y-8  ">
+        <div className="grid lg:grid-cols-3 grid-cols-2 py-14 md:gap-x-30 gap-x-14 md:gap-y-28 gap-y-12  ">
           {socialNetworkCardInformation.map((item) => (
             <SocialNetworkCard
               key={item.id}

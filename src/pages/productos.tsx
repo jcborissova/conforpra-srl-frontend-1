@@ -108,7 +108,7 @@ const Productos = () => {
         </div>
       </div>
       <div className="w-screen bg-white">
-        <Contactanos />
+        <Contactanos color="bg-gray-200" visibility={true} />
       </div>
     </div>
   );

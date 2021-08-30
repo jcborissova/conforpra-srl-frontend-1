@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CardCarousel from '../CardCarousel';
 
 const CourseSection = () => {
@@ -26,7 +27,7 @@ const CourseSection = () => {
           className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
           type="button"
         >
-          VER MÁS CAPACITACIONES
+          <Link to="/capacitaciones">VER MÁS CAPACITACIONES</Link>
         </button>
       </div>
     </div>

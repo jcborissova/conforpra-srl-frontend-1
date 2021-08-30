@@ -51,8 +51,8 @@ const About = () => {
         img={pageInformation.img}
         dividerColor={pageInformation.dividerColor}
       />
-      <div className="flex lg:flex-row flex-col lg:items-start items-center pb-9 custom-position">
-        <div className="h-full lg:w-full w-10/12 content-center lg:pt-32 pt-16 lg:pl-14">
+      <div className="flex lg:flex-row flex-col lg:items-start items-center pb-9 custom-position ">
+        <div className="h-full lg:w-full w-10/12 content-center lg:pt-32 pt-16 lg:pl-14 ">
           <img
             src={GroupImg}
             alt="GroupImg"
@@ -88,12 +88,12 @@ const About = () => {
       </div>
 
       <LineDivider dividerColor="-gray" dividerbgColor="" />
-      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-gray-200 pb-28 w-full">
-        <div className="flex flex-col pt-16 lg:pl-16 pl-14 lg:pr-16 pr-14 w-auto">
+      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-gray-200 pb-28 w-full ">
+        <div className="flex flex-col pt-16 w-auto">
           <div className="text-2xl">
             <p>Principios de la empresa</p>
           </div>
-          <div className="pt-8 flex md:flex-row flex-col lg:gap-20 gap-10 self-center">
+          <div className="pt-8 flex md:flex-row flex-col lg:gap-20 gap-5 self-center">
             {principiosCardInformation.map((item) => (
               <PrincipioCard
                 bgColor={item.color}

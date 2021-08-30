@@ -81,7 +81,7 @@ const Servicios = () => {
         <div className="text-xl">
           <p>Nuestros servicios</p>
         </div>
-        <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 sm:gap-x-72">
+        <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72">
           {upCards.map((item) => (
             <ServiciosCard
               key={item.id}
@@ -94,7 +94,7 @@ const Servicios = () => {
       </div>
       <LineDivider dividerColor="-gray" dividerbgColor="bg-white" />
       <div className="flex flex-col items-center justify-center bg-gray-200 w-screen">
-        <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 sm:gap-x-72 ">
+        <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72 ">
           {downCards.map((item) => (
             <ServiciosCard
               key={item.id}
@@ -106,7 +106,7 @@ const Servicios = () => {
         </div>
       </div>
       <div className="w-screen bg-white">
-        <Contactanos />
+        <Contactanos color="bg-gray-200" visibility={true} />
       </div>
     </div>
   );

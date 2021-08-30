@@ -7,7 +7,7 @@ import '../styles.css';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-black relative pt-1 ">
+    <footer className="footer bg-black relative pt-1">
       <div className="container mx-auto px-6">
         <div className="sm:flex sm:mt-8">
           <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row sm:justify-between justify-start ">
@@ -77,14 +77,18 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-6 flex ">
-        <div className="mt-16 border-t-2 border-gray-300 w-11/12 flex flex-col items-center">
-          <div className="flex lg:flex-row flex-col justify-between sm:w-2/3 lg:text-center text-left lg:items-center items-start py-6">
-            <p className="text-sm text-white font-normal mb-2">
-              © Conforpra - HELX
-            </p>
-            <div className="flex flex-row items-center lg:pt-0 pt-10">
-              <p className="text-sm text-white font-normal pr-14 ">Follow us</p>
+      <div className="flex lg:px-20 md:px-14 px-5 ">
+        <div className="mt-16 border-t-2 border-gray-300 w-full flex flex-col items-center">
+          <div className="flex lg:flex-row flex-col justify-between w-11/12 lg:text-center text-left lg:items-center items-start py-6 ">
+            <div className="flex h-full items-center">
+              <p className="text-sm text-white font-normal ">
+                Conforpra © 2021, All rights reserved. <a href="https://helx.dev/">Website designed by Helx</a>
+              </p>
+            </div>
+            <div className="flex flex-row justify-between items-center lg:w-96 w-full lg:pt-0 pt-10 ">
+              <div>
+                <p className="text-sm text-white font-normal">Follow us</p>
+              </div>
               <div className="flex gap-4 ">
                 <a href="/">
                   <WhatsappIcon style={{ color: 'white' }} fontSize="large" />
