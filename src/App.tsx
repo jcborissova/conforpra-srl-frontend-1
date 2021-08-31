@@ -5,40 +5,42 @@ import Home from './pages/home';
 import About from './pages/about';
 import Capacitaciones from './pages/capacitaciones';
 import Contactanos from './pages/contactanos';
-import Suscribete from './pages/suscribete';
 import Productos from './pages/productos';
 import Servicios from './pages/servicios';
 import Footer from './components/Footer';
 import Dropdown from './components/Dropdown';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
-    const mediaQuery = '(max-width: 768px)';
+    const mediaQuery = '(min-width: 768px)';
     const mediaQueryList = window.matchMedia(mediaQuery);
 
     const hideMenu = () => {
-      mediaQueryList.addEventListener('change', (event) => {
-        if (!event.matches && isOpen) {
+        if (mediaQueryList.matches && isOpen) {
           setIsOpen(false);
         }
-      });
     };
 
+    mediaQueryList.addEventListener('change', hideMenu);
+
     return () => {
-      mediaQueryList.removeEventListener('resize', hideMenu);
+      mediaQueryList.removeEventListener('change', hideMenu);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <div className="w-screen">
       <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
+      <ScrollToTop />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/productos" component={Productos} />
@@ -46,7 +48,6 @@ function App() {
         <Route path="/sobrenosotros" component={About} />
         <Route path="/capacitaciones" component={Capacitaciones} />
         <Route path="/contactanos" component={Contactanos} />
-        <Route path="/suscribete" component={Suscribete} />
       </Switch>
       <Footer />
     </div>

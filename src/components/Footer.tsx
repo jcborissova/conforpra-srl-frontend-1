@@ -4,6 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import '../styles.css';
+import Suscribete from '../components/Suscribete';
 
 const Footer = () => {
   return (
@@ -18,12 +19,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className="pt-4">
-                <button
-                  className="bg-custom-suscribete text-white h-9 hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
-                  type="button"
-                >
-                  Suscribete
-                </button>
+                <Suscribete className="bg-custom-suscribete text-white h-9 hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150" />
               </div>
             </div>
             <div className="flex flex-col text-white w-full sm:py-0 py-8">

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../img/ConforpraLogo.svg';
+import Suscribete from '../components/Suscribete';
 
 const Navbar = ({ toggle }: { toggle: any }) => {
   return (
@@ -49,9 +50,7 @@ const Navbar = ({ toggle }: { toggle: any }) => {
         <Link to="/contactanos" className="p-4">
           Contactanos
         </Link>
-        <Link to="/suscribete" className="p-4 font-semibold">
-          Suscribete
-        </Link>
+        <Suscribete className="p-4 font-semibold" />
       </div>
     </nav>
   );

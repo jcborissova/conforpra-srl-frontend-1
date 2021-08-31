@@ -10,6 +10,8 @@ import img5 from '../img/Products/DetailProducts/5.png';
 import img6 from '../img/Products/DetailProducts/6.png';
 import img7 from '../img/Products/DetailProducts/7.png';
 import img8 from '../img/Products/DetailProducts/8.png';
+import img9 from '../img/Products/DetailProducts/9.png';
+import img10 from '../img/Products/DetailProducts/10.png';
 
 const pageInformation = {
   id: 1,
@@ -74,13 +76,13 @@ const Productos = () => {
       id: 9,
       text: 'Lentes plomados',
       subText: '0.5mm de Pb',
-      img: img2,
+      img: img9,
     },
     {
       id: 10,
       text: 'Mamparas',
       subText: '1258 bids, 359 watchers',
-      img: img3,
+      img: img10,
     },
   ];
 

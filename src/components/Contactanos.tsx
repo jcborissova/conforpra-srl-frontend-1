@@ -91,7 +91,7 @@ const Contactanos = (props: any) => {
                 className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
               />
               <button
-                className="w-5/12 h-9 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 font-semibold uppercase text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+                className="w-4/12 h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
                 type="button"
               >
                 Enviar

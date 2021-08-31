@@ -33,8 +33,8 @@ const rightCads = ServiceCardInformation.filter((val, idx) => idx % 2 === 0);
 
 const ServiceSection = () => {
   return (
-    <div className="flex lg:flex-row flex-col lg:items-start items-center">
-      <div className="grid sm:grid-cols-2 grid-cols-1 pt-16 sm:gap-10 gap-8 pl-0">
+    <div className="flex lg:flex-row flex-col lg:items-start items-center justify-end z-30 bg-gray-200">
+      <div className="grid sm:grid-cols-2 grid-cols-1 pt-16 sm:gap-10 gap-8 pl-0 z-40">
         <div className=" flex flex-col gap-8">
           {leftCads.map((item) => (
             <ServiceCard key={item.id} img={item.img} text={item.text} />
@@ -46,27 +46,34 @@ const ServiceSection = () => {
           ))}
         </div>
       </div>
-      <div className="lg:row-span-3 lg:col-span-2 lg:pt-32 p-10 text-center lg:text-left">
-        <div className="text-3xl">
-          <p>Servicios</p>
-        </div>
-        <div className="pt-8">
-          <p>Acompañamos y asesoramos a las organizaciones</p>
-          <p>con el manejo de fuentes radioactivas y equipos</p>
-          <p>generadores de radiación ionizante en la práctica</p>
-          <p>médica, industrial y de investigación.</p>
-        </div>
-        <div className="pt-4">
-          <p>La empresa emplea la normativa vigente y se</p>
-          <p>enfoca en las buenas prácticas especializadas.</p>
+      <div className="flex flex-col lg:items-start items-center lg:pt-48 p-10 text-left lg:w-6/12 w-full ">
+        <div className="xl:w-8/12 lg:w-8/12 md:w-11/12 w-full ">
+          <div className="text-3xl">
+            <p>Servicios</p>
+          </div>
+          <div className="pt-8">
+            <p>
+              Acompañamos y asesoramos a las organizaciones con el manejo de
+              fuentes radioactivas y equipos generadores de radiación ionizante
+              en la práctica médica, industrial y de investigación.
+            </p>
+          </div>
+          <div className="pt-4">
+            <p>
+              La empresa emplea la normativa vigente y se enfoca en las buenas
+              prácticas especializadas.
+            </p>
+          </div>
         </div>
         <div className="pt-12">
+        <Link to="/servicios" >
           <button
-            className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom w-56 text-white uppercase text-normal px-6  outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="rounded-full bg-custom w-56 text-white uppercase text-normal px-3 py-2 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/servicios">Ver mas servicios</Link>
           </button>
+          </Link>
         </div>
       </div>
     </div>

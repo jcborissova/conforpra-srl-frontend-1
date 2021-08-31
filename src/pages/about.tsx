@@ -15,7 +15,7 @@ const principiosCardInformation = [
     title: 'Misión',
     text: 'Poner a tu disposición la más alta calidad y profesionalidad al mejor precio del mercado',
     img: img1,
-    color: 'bg-green-800',
+    color: 'valores-color-1',
   },
   {
     id: 2,

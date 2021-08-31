@@ -1,5 +1,27 @@
 import img from '../../img/Iconbackground.png';
 import conforpraLogo from '../../img/ConforpraLogo.svg';
+import PhoneIcon from '@material-ui/icons/Phone';
+import MailIcon from '@material-ui/icons/Mail';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import '../../styles.css';
+
+const networksInformation = [
+  {
+    id: 1,
+    text: '+1 (809)-908-4443',
+    img: PhoneIcon,
+  },
+  {
+    id: 2,
+    text: 'conforpra@gmail.com',
+    img: MailIcon,
+  },
+  {
+    id: 3,
+    text: 'Lorem ipsum dolor sit amet',
+    img: LocationOnIcon,
+  },
+];
 
 const InformationCard = () => {
   return (
@@ -14,10 +36,17 @@ const InformationCard = () => {
             className="w-28 lg:h-auto md:h-9 lg:pt-2"
             alt="ConforpraLogo"
           />
-          <div className="flex flex-col pt-1 text-sm lg:gap-3 gap-2 lg:mt-3">
-            <p>+1 (809)-908-4443</p>
-            <p>conforpra@gmail.com</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+          <div className="flex flex-col md:pt-5 pt-3 text-xs lg:gap-3 gap-2 ">
+            {networksInformation.map((item) => (
+              <div className="flex flex-row gap-x-3" key={item.id}>
+                <div>
+                  <item.img fontSize="small" className="font-custom-color" />
+                </div>
+                <div>
+                  <p>{item.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

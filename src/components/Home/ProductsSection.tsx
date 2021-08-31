@@ -14,31 +14,31 @@ const productsCardInformation = [
     title: 'Láminas de plomo',
     description: '1mm, 2mm, 3mm',
     img: img1,
-    color: 'bg-purple-600',
-  },
-  {
-    id: 2,
-    subtitle: 'SEGURIDAD',
-    title: 'Guantes plomados',
-    description: 'Medianos y grandes modelo. 156 con 0.5mm pb',
-    img: img2,
-    color: 'bg-green-700',
+    color: 'custom-color-4',
   },
   {
     id: 3,
     subtitle: 'HERRAMIENTAS',
     title: 'Collarines plomados',
     description: '0.50mm de pb',
-    img: img3,
-    color: 'bg-yellow-400',
+    img: img2,
+    color: 'custom-color-2',
+  },
+  {
+    id: 2,
+    subtitle: 'SEGURIDAD',
+    title: 'Guantes plomados',
+    description: 'Medianos y grandes modelo. 156 con 0.5mm pb',
+    img: img4,
+    color: 'custom-color-1 ',
   },
   {
     id: 4,
     subtitle: 'PRODUCTOS',
     title: 'Gorros emplomados',
     description: 'Eligible for Shipping To Mars',
-    img: img4,
-    color: 'bg-purple-600',
+    img: img3,
+    color: 'custom-color-3',
   },
 ];
 
@@ -49,7 +49,7 @@ const ProductSection = () => {
         <LineDivider />
       </div>
       <div className="w-full flex flex-col items-center pt-10 text-center bg-white pb-12">
-        <div className="text-left w-3/4">
+        <div className="text-left w-3/4 font-semibold">
           <div className="text-2xl">
             <p>Nuestros productos</p>
           </div>
@@ -71,15 +71,18 @@ const ProductSection = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-center lg:w-1/2 lg:pt-16 pt-10 ">
+        <div className="w-1/2 pt-16">
+        <Link to="/productos">
+        
           <button
-            className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="rounded-full h-auto bg-custom text-white text-normal px-4 py-2 uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/productos" className="">
               VER MÁS PRODUCTOS
             </Link>
           </button>
+          </Link>
         </div>
       </div>
     </div>

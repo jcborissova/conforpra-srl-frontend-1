@@ -56,6 +56,10 @@
   background-color: #009aa6;
 }
 
+.custom-color-1 {
+  background-color: #009aa6;
+}
+
 .custom-color-2 {
   background-color: #fed182;
 }
@@ -64,6 +68,10 @@
   background-color: #e6cf10;
 }
 
-.custom-margin-top {
-  margin-top: 588px;
+.custom-color-4 {
+  background: linear-gradient(45deg, #009aa6, #9cbbff);
+}
+
+.valores-color-1 {
+  background-color: #009aa6;
 }
