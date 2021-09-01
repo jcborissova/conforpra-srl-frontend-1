@@ -42,10 +42,21 @@ metadata:
 spec:
   tls:
     - hosts:
+        - ${HELX_ENVIRONMENT}conforpra.com.do
         - ${HELX_ENVIRONMENT}${HELX_PROJECT_NAME}.projects.helx.dev
       secretName: web-tls
   rules:
     - host: ${HELX_ENVIRONMENT}${HELX_PROJECT_NAME}.projects.helx.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 80
+    - host: ${HELX_ENVIRONMENT}conforpra.com.do
       http:
         paths:
           - path: /
