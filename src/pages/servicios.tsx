@@ -87,13 +87,13 @@ const Servicios = () => {
               key={item.id}
               img={item.img}
               text={item.text}
-              bgColor="bg-gray-200"
+              bgColor="bg-custom-color"
             />
           ))}
         </div>
       </div>
       <LineDivider dividerColor="-gray" dividerbgColor="bg-white" />
-      <div className="flex flex-col items-center justify-center bg-gray-200 w-screen">
+      <div className="flex flex-col items-center justify-center bg-custom-color w-screen">
         <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72 ">
           {downCards.map((item) => (
             <ServiciosCard
@@ -106,7 +106,7 @@ const Servicios = () => {
         </div>
       </div>
       <div className="w-screen bg-white">
-        <Contactanos color="bg-gray-200" visibility={true} />
+        <Contactanos color="bg-custom-color" visibility={true} />
       </div>
     </div>
   );

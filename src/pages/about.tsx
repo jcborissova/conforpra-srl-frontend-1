@@ -88,7 +88,7 @@ const About = () => {
       </div>
 
       <LineDivider dividerColor="-gray" dividerbgColor="" />
-      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-gray-200 pb-28 w-full ">
+      <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-custom-color pb-28 w-full ">
         <div className="flex flex-col pt-16 w-auto">
           <div className="text-2xl">
             <p>Principios de la empresa</p>

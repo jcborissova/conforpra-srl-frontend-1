@@ -51,7 +51,7 @@ const Footer = () => {
               <span className="font-semibold mt-4 md:mt-0 mb-2">Compañia</span>
               <div className="flex flex-col pt-2 font-light">
                 <span className="my-1">
-                  <Link to="/about" className="text-md hover:text-blue-500">
+                  <Link to="/sobrenosotros" className="text-md hover:text-blue-500">
                     Sobre nosotros
                   </Link>
                 </span>

@@ -36,7 +36,7 @@ const InformationCard = () => {
             className="w-28 lg:h-auto md:h-9 lg:pt-2"
             alt="ConforpraLogo"
           />
-          <div className="flex flex-col md:pt-5 pt-3 text-xs lg:gap-3 gap-2 ">
+          <div className="flex flex-col lg:pt-5 text-xs lg:gap-3 gap-2 ">
             {networksInformation.map((item) => (
               <div className="flex flex-row gap-x-3" key={item.id}>
                 <div>

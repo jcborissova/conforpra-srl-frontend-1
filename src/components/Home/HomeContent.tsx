@@ -6,7 +6,7 @@ import InformationSection from './InformationSection';
 
 const HomeContent = () => {
   return (
-    <div className="bg-gray-200 flex flex-col items-center">
+    <div className="bg-custom-color flex flex-col items-center">
       <PresentationSection />
       <ServiceSection />
       <CourseSection />

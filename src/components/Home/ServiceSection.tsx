@@ -28,52 +28,56 @@ const ServiceCardInformation = [
   },
 ];
 
-const leftCads = ServiceCardInformation.filter((val, idx) => idx % 2 !== 0);
-const rightCads = ServiceCardInformation.filter((val, idx) => idx % 2 === 0);
+const leftCards = ServiceCardInformation.filter((val, idx) => idx % 2 !== 0);
+const rightCards = ServiceCardInformation.filter((val, idx) => idx % 2 === 0);
 
 const ServiceSection = () => {
   return (
-    <div className="flex lg:flex-row flex-col lg:items-start items-center justify-end z-30 bg-gray-200">
-      <div className="grid sm:grid-cols-2 grid-cols-1 pt-16 sm:gap-10 gap-8 pl-0 z-40">
+    <div className="flex lg:flex-row flex-col-reverse lg:items-start items-center lg:justify-center lg:px-0 lg:pb-0 pb-10 z-30  bg-custom-color">
+      <div className="grid sm:grid-cols-2 grid-cols-1 lg:pt-16 sm:gap-10 gap-8 pl-0 z-40 ">
         <div className=" flex flex-col gap-8">
-          {leftCads.map((item) => (
+          {leftCards.map((item) => (
             <ServiceCard key={item.id} img={item.img} text={item.text} />
           ))}
         </div>
         <div className=" sm:pt-20 flex flex-col gap-8">
-          {rightCads.map((item) => (
+          {rightCards.map((item) => (
             <ServiceCard key={item.id} img={item.img} text={item.text} />
           ))}
         </div>
-      </div>
-      <div className="flex flex-col lg:items-start items-center lg:pt-48 p-10 text-left lg:w-6/12 w-full ">
-        <div className="xl:w-8/12 lg:w-8/12 md:w-11/12 w-full ">
-          <div className="text-3xl">
-            <p>Servicios</p>
-          </div>
-          <div className="pt-8">
-            <p>
-              Acompañamos y asesoramos a las organizaciones con el manejo de
-              fuentes radioactivas y equipos generadores de radiación ionizante
-              en la práctica médica, industrial y de investigación.
-            </p>
-          </div>
-          <div className="pt-4">
-            <p>
-              La empresa emplea la normativa vigente y se enfoca en las buenas
-              prácticas especializadas.
-            </p>
-          </div>
-        </div>
-        <div className="pt-12">
-        <Link to="/servicios" >
+        <div className="flex pt-8 lg:hidden justify-center sm:col-span-2 ">
           <button
-            className="rounded-full bg-custom w-56 text-white uppercase text-normal px-3 py-2 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="rounded-full bg-custom lg:w-56 h-10 text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/servicios">Ver mas servicios</Link>
           </button>
-          </Link>
+        </div>
+      </div>
+      <div className="lg:pt-32 p-10 text-left lg:w-5/12">
+        <div className="text-xl font-semibold">
+          <p>Servicios</p>
+        </div>
+        <div className="pt-5">
+          <p>
+            Acompañamos y asesoramos a las organizaciones con el manejo de
+            fuentes radioactivas y equipos generadores de radiación ionizante en
+            la práctica médica, industrial y de investigación.
+          </p>
+        </div>
+        <div className="pt-4">
+          <p>
+            La empresa emplea la normativa vigente y se enfoca en las buenas
+            prácticas especializadas.
+          </p>
+        </div>
+        <div className="pt-12 lg:block hidden w-full">
+          <button
+            className="rounded-full bg-custom w-56 h-10 text-white uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            type="button"
+          >
+            <Link to="/servicios">Ver mas servicios</Link>
+          </button>
         </div>
       </div>
     </div>

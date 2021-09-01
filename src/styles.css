@@ -20,11 +20,15 @@
 }
 
 .custom-shape-divider-bottom-1628384777 .shape-fill-gray {
-  fill: rgba(229, 231, 235, 1);
+  fill: #eaeef3;
 }
 
 .shape-fill-reverse {
   fill: transparent;
+}
+
+.bg-custom-color {
+  background-color: #eaeef3;
 }
 
 .bg-custom {

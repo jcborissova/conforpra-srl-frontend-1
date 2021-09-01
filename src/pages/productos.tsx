@@ -50,44 +50,44 @@ const Productos = () => {
     },
     {
       id: 5,
-      text: 'Mandil plomado',
-      subText: '0.5mm de Pb',
+      text: 'Láminas de plomo',
+      subText: '1mm, 2mm, 3mm',
       img: img5,
     },
     {
       id: 6,
-      text: 'Lentes plomados',
-      subText: '0.5mm de Pb',
+      text: 'Vidrios plomados',
+      subText: 'Showcasing onHovered state',
       img: img6,
     },
     {
       id: 7,
-      text: 'Mamparas',
+      text: 'Ventanas Especiales con Blindaje',
       subText: '1258 bids, 359 watchers',
       img: img7,
     },
     {
       id: 8,
-      text: 'Collarines plomados',
-      subText: '0.5mm de Pb',
+      text: 'Gorros Emplomados',
+      subText: 'Eligible for Shipping To Mars',
       img: img8,
     },
     {
       id: 9,
-      text: 'Lentes plomados',
-      subText: '0.5mm de Pb',
+      text: 'Conchas plomadas',
+      subText: 'Juego de tres piezas con 0.5mm de pb. Peq/mediano',
       img: img9,
     },
     {
       id: 10,
-      text: 'Mamparas',
-      subText: '1258 bids, 359 watchers',
+      text: 'Guantes plomados',
+      subText: 'Medianos y grandes modelo. 156 con 0.5mm pb',
       img: img10,
     },
   ];
 
   return (
-    <div className="flex flex-col items-center w-full bg-gray-200">
+    <div className="flex flex-col items-center w-full bg-custom-color">
       <HeaderPage
         title={pageInformation.title}
         description={pageInformation.description}
@@ -110,7 +110,7 @@ const Productos = () => {
         </div>
       </div>
       <div className="w-screen bg-white">
-        <Contactanos color="bg-gray-200" visibility={true} />
+        <Contactanos color="bg-custom-color" visibility={true} />
       </div>
     </div>
   );
