@@ -14,24 +14,28 @@ const socialNetworkCardInformation = [
     text: 'WhatsApp',
     subText: '(849)-707-4443',
     img: WhatsappIcon,
+    link: "https://wa.me/+18497074443",
   },
   {
     id: 2,
     text: 'Facebook',
     subText: 'conforpra empresa',
     img: FacebookIcon,
+    link: "https://www.facebook.com/conforpra.empresa.1",
   },
   {
     id: 3,
     text: 'Instagram',
     subText: 'conforpra',
     img: InstagramIcon,
+    link: "https://www.instagram.com/conforpraempresa/",
   },
   {
     id: 4,
     text: 'Twitter',
     subText: 'conforpra',
     img: TwitterIcon,
+    link: "https://twitter.com/conforpra",
   },
   {
     id: 5,
@@ -42,7 +46,7 @@ const socialNetworkCardInformation = [
   {
     id: 6,
     text: 'Email',
-    subText: 'conforpra.servicios @gmail.com',
+    subText: 'conforpra.servicios@ gmail.com',
     img: MailOutlineIcon,
   },
 ];
@@ -91,7 +95,7 @@ const Contactanos = (props: any) => {
                 className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
               />
               <button
-                className="w-4/12 h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
+                className="lg:w-4/12 w-6/12 h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
                 type="button"
               >
                 Enviar
@@ -106,13 +110,14 @@ const Contactanos = (props: any) => {
             O escribenos por cualquiera de estas redes sociales
           </p>
         </div>
-        <div className="grid lg:grid-cols-3 grid-cols-2 py-14 md:gap-x-30 gap-x-14 md:gap-y-28 gap-y-12  ">
+        <div className="grid lg:grid-cols-3 grid-cols-2 py-14 lg:gap-x-30 md:gap-x-10 gap-x-3 md:gap-y-28 gap-y-12  ">
           {socialNetworkCardInformation.map((item) => (
             <SocialNetworkCard
               key={item.id}
               img={item.img}
               text={item.text}
               subtext={item.subText}
+              link={item.link}
             />
           ))}
         </div>

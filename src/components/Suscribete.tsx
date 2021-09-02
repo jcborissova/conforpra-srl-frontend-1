@@ -12,7 +12,7 @@ export default function Modal(props: any) {
         type="button"
         onClick={() => setShowModal(true)}
       >
-        Suscribete
+        Suscríbete
       </button>
       {showModal && (
         <>

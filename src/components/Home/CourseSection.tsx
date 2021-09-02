@@ -10,12 +10,10 @@ const CourseSection = () => {
         </div>
         <div className="pt-5 lg:w-full w-10/12">
           <p>
-            Nuestros cursos y talleres buscan fortalecer tus conocimientos en el
-            campo de la física radiológica y ser de soporte para el buen
-            desempeño en tu trabajo, cada uno de nuestros cursos de manera
-            particular te garantiza la base para que puedas solicitar la
-            Licencia Personal de Operación emitida por la autoridad competente
-            en RD.
+          Nuestros cursos y talleres buscan fortalecer tus conocimientos en el campo de 
+          la protección radiológica y ser de soporte para el buen desempeño en tu trabajo, 
+          cada uno de nuestros cursos de manera particular te garantiza la base para que 
+          puedas solicitar la Licencia Personal de Operación emitida por la Comisión Nacional de Energía. 
           </p>
         </div>
       </div>

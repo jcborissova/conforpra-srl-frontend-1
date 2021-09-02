@@ -98,7 +98,7 @@ const Productos = () => {
         <div className="text-2xl">
           <p>Nuestros productos</p>
         </div>
-        <div className="grid justify-items-center 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-10 sm:gap-5 gap-4">
+        <div className="grid justify-items-center 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-10 lg:gap-5 gap-4">
           {productosCardInformation.map((item) => (
             <ProductosCard
               key={item.id}

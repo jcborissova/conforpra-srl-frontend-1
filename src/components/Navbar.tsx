@@ -8,11 +8,11 @@ const Navbar = ({ toggle }: { toggle: any }) => {
       className="fixed flex justify-between items-center h-16 bg-white text-black w-full font-mono lg:px-20 px-0 z-50"
       role="navigation"
     >
-      <Link to="/" className="pl-8">
+      <Link to="/" className="lg:pl-8 pl-2">
         <img
           src={logo}
           alt="conforpralogo"
-          className="lg:w-auto md:w-20 w-36"
+          className="lg:w-auto md:w-28 w-36"
         />
       </Link>
       <div className="px-4 cursor-pointer md:hidden" onClick={toggle}>
@@ -48,7 +48,7 @@ const Navbar = ({ toggle }: { toggle: any }) => {
           Capacitaciones
         </Link>
         <Link to="/contactanos" className="p-4">
-          Contactanos
+          Contáctanos
         </Link>
         <Suscribete className="p-4 font-semibold" />
       </div>

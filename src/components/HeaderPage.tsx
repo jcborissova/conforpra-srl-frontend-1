@@ -21,7 +21,7 @@ const HeaderPage = (props: any) => {
           <div className="text-3xl">
             <p>{title}</p>
           </div>
-          <div className="pt-8 lg:w-3/6 w-5/6">
+          <div className="pt-8 lg:w-4/12 w-5/6">
             <p>{description}</p>
           </div>
         </div>

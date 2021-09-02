@@ -46,7 +46,7 @@ const PresentationSection = () => {
                 </li>
                 <li className="flex flex-row gap-4">
                   <CheckCircle/>
-                  Ventas de insumos para la seguridad radiológica
+                  Venta de insumos para la seguridad radiológica
                 </li>
               </ul>
             </div>
@@ -56,7 +56,7 @@ const PresentationSection = () => {
           </div>
         </div>
       </div>
-      <div className=" relative pt-2">
+      <div className="relative pt-2">
         <LineDivider dividerColor="-gray"/>
       </div>
     </InicioContent>

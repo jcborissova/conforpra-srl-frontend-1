@@ -17,7 +17,7 @@ const pageInformation = {
   id: 1,
   title: 'Servicios',
   description:
-    'Que las organizaciones puedan cumplir con los requisitos de la normativa vigente en relación a las prácticas asociadas al uso de las radiaciones ionizantes y asi tener las licencias y/o permisos otorgado por la autoridad competente en RD',
+    'Que las organizaciones puedan cumplir con los requisitos de la normativa vigente en relación a las prácticas asociadas al uso de las radiaciones ionizantes y asi tener las licencias y/o permisos otorgados por la Comisión Nacional de Energía.',
   img: ServicesHeaderImg,
   dividerColor: '',
 };
@@ -26,7 +26,7 @@ const Servicios = () => {
   const serviciosCardInformation = [
     {
       id: 1,
-      text: 'Tramitación de licencia emitida por la Comisión Nacional de Energía para operar fuentes radioactivas y/o generadores de rayos x',
+      text: 'Gestión de licencia emitida por la Comisión Nacional de Energía para operar fuentes radioactivas y/o generadores de rayos x',
       img: img1,
     },
     {
@@ -46,12 +46,12 @@ const Servicios = () => {
     },
     {
       id: 5,
-      text: 'Tramitación del permiso de inscripción de registro',
+      text: 'Monitoreo radiológico del puesto de trabajo',
       img: img5,
     },
     {
       id: 6,
-      text: 'Tramitación del permiso de exportación e importación de fuentes radioactivas emitido por la CNE',
+      text: 'Gestión del permiso de exportación e importación de fuentes radioactivas emitido por la CNE',
       img: img6,
     },
     {

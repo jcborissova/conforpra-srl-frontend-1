@@ -19,28 +19,40 @@ const networkInformation = [
   {
     id: 1,
     title: 'Dirección',
-    text: 'Calle Los Tanques Esq. Avenida España. Santo Domingo Este. (Sujeta a cambio).',
+    text: 'Calle Los Tanques Esq. Avenida España. Santo Domingo Este.',
     img: LocationOnOutlinedIcon,
   },
   {
     id: 2,
     title: 'Correo empresarial',
     text: 'conforpra.servicios@gmail.com',
+    type: "text",
     img: MailOutlineOutlinedIcon,
   },
   {
     id: 3,
     title: 'Número de teléfono',
     text: '(809)-908-4443',
+    type: "text",
     img: PhoneOutlinedIcon,
   },
   {
     id: 4,
     title: 'Redes sociales',
-    text: 'WhatsApp. (849)-707-4443 Facebook: conforpra empresa. Instagram: conforpra. Twitter: conforpra.',
+    text: 'WhatsApp: (849)-707-4443, Facebook: conforpra empresa, Instagram: conforpraempresa, Twitter: conforpra',
+    type: "list",
     img: ForumOutlinedIcon,
   },
 ];
+
+function convertToList(type:any) {
+  const lista = type.split(',');
+  return(
+    lista.map((item:any) => (
+      <li>{item}</li>
+    )
+  ));
+}
 
 const Contactanos = () => {
 
@@ -93,13 +105,17 @@ const Contactanos = () => {
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-x-40 gap-y-10">
             {networkInformation.map((item) => (
-              <div className="flex flex-col w-48 lg:items-start items-center md:text-sm text-xs ">
+              <div className="flex flex-col w-52 lg:items-start items-center md:text-sm text-xs" id={`${item.id}`}>
                 <div className="md:pb-3 pb-6">
                   <item.img style={{ color: '009AA6' }} fontSize="large" />
                 </div>
-                <div className="flex lg:items-start items-center lg:text-left text-center flex-col gap-2 ">
+                <div className="flex lg:items-start items-center text-left flex-col gap-2 ">
                   <p className="md:pb-0 pb-3">{item.title}</p>
-                  <p className="">{item.text}</p>
+                  {
+                    item.type === "list"
+                    ? <p>{convertToList(item.text)}</p>
+                    : item.text
+                  }
                 </div>
               </div>
             ))}

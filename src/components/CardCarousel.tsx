@@ -3,9 +3,12 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CursosTalleresCard from '../components/Cards/CursosTalleresCard';
-import img1 from '../img/Cursos y talleres/1.png';
-import img2 from '../img/Cursos y talleres/2.png';
-import img3 from '../img/Cursos y talleres/3.png';
+import c1 from '../img/Cursos y talleres/c1.png';
+import c2 from '../img/Cursos y talleres/c2.png';
+import c3 from '../img/Cursos y talleres/c3.png';
+import c4 from '../img/Cursos y talleres/c4.png';
+import c5 from '../img/Cursos y talleres/c5.png';
+import c6 from '../img/Cursos y talleres/c6.png';
 
 const CardCarousel = (props: any) => {
   const settings = {
@@ -44,36 +47,37 @@ const CardCarousel = (props: any) => {
     ],
   };
 
+
   const CursosTalleresCardInformation = [
     {
       id: 1,
-      text: 'Curso Básico de Protección Radiológica',
-      img: img1,
+      title: 'Curso Básico de Protección Radiológica',
+      img: c1,
     },
     {
       id: 2,
-      text: 'Curso Taller en Dosimetría de las Radiaciones Ionizantes',
-      img: img2,
+      title: 'Control de calidad en mamografía',
+      img: c2,
     },
     {
       id: 3,
-      text: 'Diplomado en Protección y Seguridad Radiológica',
-      img: img3,
+      title: 'Dosimetría de las Radiaciones Ionizantes',
+      img: c6,
     },
     {
-      id: 1,
-      text: 'Curso Básico de Protección Radiológica',
-      img: img1,
+      id: 4,
+      title: 'Cálculo para el emplomado de la instalación',
+      img: c3,
     },
     {
-      id: 2,
-      text: 'Curso Taller en Dosimetría de las Radiaciones Ionizantes',
-      img: img2,
+      id: 5,
+      title: 'Detección de las radiaciones ionizantes',
+      img: c4,
     },
     {
-      id: 3,
-      text: 'Diplomado en Protección y Seguridad Radiológica',
-      img: img3,
+      id: 6,
+      title: 'Diplomado en Protección y Seguridad Radiológica',
+      img: c5,
     },
   ];
 
@@ -85,7 +89,7 @@ const CardCarousel = (props: any) => {
           className="2xl:w-6/12 xl:w-8/12 lg:w-9/12 md:w-8/12 sm:w-10/12 w-8/12"
         >
           {CursosTalleresCardInformation.map((item) => (
-            <CursosTalleresCard key={item.id} img={item.img} text={item.text} />
+            <CursosTalleresCard key={item.id} img={item.img} text={item.title} />
           ))}
         </Slider>
       </div>

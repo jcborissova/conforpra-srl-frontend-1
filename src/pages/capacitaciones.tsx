@@ -22,20 +22,20 @@ const capacitacionesCardInformation = [
   {
     id: 1,
     title: 'Curso Básico de Protección Radiológica',
-    text: 'Este curso tiene como objetivo que el participante tenga los conocimientos suficientes para el buen desempeño en su área laboral y a la vez pueda optar por la Licencia Personal de Operación como técnico de radiodiagnóstico..',
+    text: 'Este curso tiene como objetivo que el participante tenga los conocimientos suficientes para el buen desempeño en su área laboral y a la vez pueda optar por la Licencia Personal de Operación como técnico de radiodiagnóstico.',
     img: c1,
   },
   {
     id: 2,
     title: 'Control de calidad en mamografía',
     text: 'Aplicar correctamente las pruebas de control de calidad para obtener un estudio mamográfico óptimo con la menor dosis de radiación al paciente. Detectar fallas en el equipo.',
-    img: c2,
+    img: c6,
   },
   {
     id: 3,
     title: 'Dosimetría de las Radiaciones Ionizantes',
     text: 'Estimar dosis recibidas por los pacientes en los estudios de radiografia clásica, tomografía computarizada y gammagrafía. Optimizar los protocolos de tratamiento en radioterapia. Técnicas de dosimetría personal.',
-    img: c6,
+    img: c2,
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const capacitacionesCardInformation = [
   {
     id: 6,
     title: 'Diplomado en Protección y Seguridad Radiológica',
-    text: 'Optar por la licencia como encargado de Protección Radiológica emitida por la Dirección Nuclear - CNE. Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia.',
+    text: 'Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia. Solicitar por la licencia como encargado de Protección Radiológica emitida por la Comisión Nacional de Energía.',
     img: c5,
   },
 ];

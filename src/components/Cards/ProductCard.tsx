@@ -13,11 +13,13 @@ const ProductCard = (props: any) => {
           alt="#"
         />
       </div>
-      <div className="flex flex-col px-4 bg-white w-3/5 items-stretch h-full justify-between">
+      <div className="flex flex-col pl-4 bg-white w-3/5 items-stretch h-full justify-between">
         <div>
-          <p className="text-base font-medium mt-6 ">{title}</p>
+          <p className="text-base font-medium lg:mt-6 mt-4">{title}</p>
         </div>
-        <p className="text-gray-400 text-sm font-medium mb-10">{description}</p>
+        <div>
+          <p className="text-gray-400 text-sm font-medium mb-10">{description}</p>
+        </div>
       </div>
     </div>
   );

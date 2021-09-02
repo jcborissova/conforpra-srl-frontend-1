@@ -28,19 +28,19 @@ const Footer = () => {
               </span>
               <div className="flex flex-col pt-2 font-light">
                 <span className="my-1">
-                  <Link to="/productos" className="text-md hover:text-blue-500">
+                  <Link to="/productos" className="text-md text-custom-white">
                     Productos
                   </Link>
                 </span>
                 <span className="my-1">
-                  <Link to="/servicios" className="text-md hover:text-blue-500">
+                  <Link to="/servicios" className="text-md text-custom-white">
                     Servicios
                   </Link>
                 </span>
                 <span className="my-1">
                   <Link
                     to="/capacitaciones"
-                    className="text-md hover:text-blue-500"
+                    className="text-md text-custom-white"
                   >
                     Capacitaciones
                   </Link>
@@ -51,20 +51,20 @@ const Footer = () => {
               <span className="font-semibold mt-4 md:mt-0 mb-2">Compañia</span>
               <div className="flex flex-col pt-2 font-light">
                 <span className="my-1">
-                  <Link to="/sobrenosotros" className="text-md hover:text-blue-500">
+                  <Link to="/sobrenosotros" className="text-md text-custom-white">
                     Sobre nosotros
                   </Link>
                 </span>
                 <span className="my-1">
                   <Link
                     to="/contactanos"
-                    className="text-md hover:text-blue-500"
+                    className="text-md text-custom-white"
                   >
                     Contactanos
                   </Link>
                 </span>
                 <span className="my-1">
-                  <Link to="/" className="text-md hover:text-blue-500">
+                  <Link to="/" className="text-md text-custom-white">
                     Administrador
                   </Link>
                 </span>
@@ -78,7 +78,7 @@ const Footer = () => {
           <div className="flex lg:flex-row flex-col justify-between w-11/12 lg:text-center text-left lg:items-center items-start py-6 ">
             <div className="flex h-full items-center">
               <p className="text-sm text-white font-normal ">
-                Conforpra © 2021, All rights reserved. <a href="https://helx.dev/">Website designed by Helx</a>
+                Conforpra © 2021, All rights reserved. <a href="https://helx.dev/" className="text-custom-white">Website designed by Helx</a>
               </p>
             </div>
             <div className="flex flex-row justify-between items-center lg:w-96 w-full lg:pt-0 pt-10 ">
@@ -86,16 +86,16 @@ const Footer = () => {
                 <p className="text-sm text-white font-normal">Follow us</p>
               </div>
               <div className="flex gap-4 ">
-                <a href="/">
+                <a href="https://wa.me/+18497074443" target="_blank" rel="noreferrer noopener">
                   <WhatsappIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
-                <a href="/">
+                <a href="https://www.facebook.com/conforpra.empresa.1" target="_blank" rel="noreferrer noopener">
                   <FacebookIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
-                <a href="/">
+                <a href="https://www.instagram.com/conforpraempresa/" target="_blank" rel="noreferrer noopener">
                   <InstagramIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
-                <a href="/">
+                <a href="https://twitter.com/conforpra" target="_blank" rel="noreferrer noopener">
                   <TwitterIcon style={{ color: 'white' }} fontSize="large" />
                 </a>
               </div>

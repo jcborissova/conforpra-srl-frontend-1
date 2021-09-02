@@ -14,6 +14,7 @@ const principiosCardInformation = [
     id: 1,
     title: 'Misión',
     text: 'Poner a tu disposición la más alta calidad y profesionalidad al mejor precio del mercado',
+    type: "text",
     img: img1,
     color: 'valores-color-1',
   },
@@ -21,6 +22,7 @@ const principiosCardInformation = [
     id: 2,
     title: 'Visión',
     text: 'Ser líderes en materia de radioprotección y seguridad radiológica, mediante una actualización constante de nuestros servicios a los avances tecnológicos del presente',
+    type: "text",
     img: img2,
     color: 'bg-yellow-400',
   },
@@ -28,6 +30,7 @@ const principiosCardInformation = [
     id: 3,
     title: 'Valores',
     text: 'Organización, Excelencia, Honestidad, Innovación, Calidad, Servicio al clienten',
+    type: "list",
     img: img3,
     color: 'bg-black',
   },
@@ -68,7 +71,7 @@ const About = () => {
           </div>
           <div className="pt-4">
             <p>
-              CONFORPRA, SRL es una empresa de nivel técnico-profesional que
+              CONFORPRA, SRL es una empresa de nivel técnico-profesional que llega
               hasta ti, para brindarte la mejor asesoría y programa de
               capacitación en temas relacionados con la protección y seguridad
               radiológica de tu empresa. Contamos con expertos nacionales e
@@ -90,10 +93,10 @@ const About = () => {
       <LineDivider dividerColor="-gray" dividerbgColor="" />
       <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-custom-color pb-28 w-full ">
         <div className="flex flex-col pt-16 w-auto">
-          <div className="text-2xl">
+          <div className="lg:text-2xl md:text-xl sm:text-lg">
             <p>Principios de la empresa</p>
           </div>
-          <div className="pt-8 flex md:flex-row flex-col lg:gap-20 gap-5 self-center">
+          <div className="pt-8 flex md:flex-row flex-col lg:gap-20 gap-5 self-center ">
             {principiosCardInformation.map((item) => (
               <PrincipioCard
                 bgColor={item.color}
@@ -101,6 +104,7 @@ const About = () => {
                 img={item.img}
                 title={item.title}
                 text={item.text}
+                type={item.type}
               />
             ))}
           </div>
