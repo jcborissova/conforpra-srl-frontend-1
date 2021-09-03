@@ -29,7 +29,7 @@ const principiosCardInformation = [
   {
     id: 3,
     title: 'Valores',
-    text: 'Organización, Excelencia, Honestidad, Innovación, Calidad, Servicio al clienten',
+    text: 'Organización, Excelencia, Honestidad, Innovación, Calidad, Servicio al cliente',
     type: 'list',
     img: img3,
     color: 'bg-black',

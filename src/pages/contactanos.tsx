@@ -11,7 +11,7 @@ const pageInformation = {
   id: 1,
   title: 'Contacto',
   description:
-    'Estamos aquí para cualquier pregunta o sugerencia acerca de nuestros productos o servicios. Comunícate mediante las redes a continuación',
+    'Estamos aquí para cualquier pregunta o sugerencia acerca de nuestros productos, servicios o capacitaciones. Comunícate mediante las redes a continuación',
   img: contactanosBackground,
   dividerColor: '',
 };
