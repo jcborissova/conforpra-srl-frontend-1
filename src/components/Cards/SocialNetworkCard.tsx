@@ -1,4 +1,4 @@
-import "../../styles.css";
+import '../../styles.css';
 
 const SocialNetworkCard = (props: any) => {
   const { img, text, subtext, link } = props;

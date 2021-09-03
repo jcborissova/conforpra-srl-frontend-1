@@ -35,7 +35,7 @@ const ServiceSection = () => {
   return (
     <div className="flex lg:flex-row flex-col-reverse lg:items-start items-center lg:justify-center lg:px-0 lg:pb-0 pb-10 z-30 bg-custom-color">
       <div className="grid sm:grid-cols-2 grid-cols-1 lg:pt-16 sm:gap-10 gap-8 pl-0 z-40 ">
-        <div className=" flex flex-col gap-8">
+        <div className="flex flex-col gap-8">
           {leftCards.map((item) => (
             <ServiceCard key={item.id} img={item.img} text={item.text} />
           ))}

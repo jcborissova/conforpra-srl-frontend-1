@@ -24,9 +24,9 @@ function App() {
     const mediaQueryList = window.matchMedia(mediaQuery);
 
     const hideMenu = () => {
-        if (mediaQueryList.matches && isOpen) {
-          setIsOpen(false);
-        }
+      if (mediaQueryList.matches && isOpen) {
+        setIsOpen(false);
+      }
     };
 
     mediaQueryList.addEventListener('change', hideMenu);

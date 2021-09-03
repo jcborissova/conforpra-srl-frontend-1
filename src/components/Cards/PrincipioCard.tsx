@@ -1,10 +1,6 @@
-function convertToList(type:any) {
+function convertToList(type: any) {
   const lista = type.split(',');
-  return(
-    lista.map((item:any) => (
-      <li>{item}</li>
-    )
-  ));
+  return lista.map((item: any) => <li>{item}</li>);
 }
 
 const PrincipioCard = (props: any) => {
@@ -21,11 +17,11 @@ const PrincipioCard = (props: any) => {
           <p>{title}</p>
         </div>
         <div className=" pt-2 px-4 pb-8 text-xs normal-case w-full font-normal text-gray-400 ">
-          {
-            type === "list"
-            ? <p className="px-5">{convertToList(text)}</p>
-            : <p className="text-center">{text}</p>
-          }
+          {type === 'list' ? (
+            <p className="px-5">{convertToList(text)}</p>
+          ) : (
+            <p className="text-center">{text}</p>
+          )}
         </div>
       </div>
     </div>

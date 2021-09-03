@@ -20,7 +20,7 @@ const ProductosCard = ({
         <p className="text-base font-medium sm:mt-3 mt-2 text-center">{text}</p>
       </div>
       <div className="flex justify-start sm:pb-5">
-        <p className="text-gray-500 text-sm mb-3">{subtext}</p>
+        <p className="text-gray-400 font-medium text-xs mb-3">{subtext}</p>
       </div>
     </div>
   </div>

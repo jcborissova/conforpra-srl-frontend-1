@@ -10,16 +10,19 @@ const networksInformation = [
     id: 1,
     text: '+1 (809)-908-4443',
     img: PhoneIcon,
+    link: 'tel:+18099084443',
   },
   {
     id: 2,
     text: 'conforpra@gmail.com',
     img: MailIcon,
+    link: 'mailto:conforpra.servicios@gmail.com',
   },
   {
     id: 3,
     text: 'Lorem ipsum dolor sit amet',
     img: LocationOnIcon,
+    link: '/',
   },
 ];
 
@@ -36,16 +39,21 @@ const InformationCard = () => {
             className="w-28 lg:h-auto md:h-9 lg:pt-2"
             alt="ConforpraLogo"
           />
-          <div className="flex flex-col lg:pt-5 text-xs lg:gap-3 gap-2 ">
+          <div className="flex flex-col lg:pt-5 pt-3 text-xs lg:gap-3 gap-2 ">
             {networksInformation.map((item) => (
-              <div className="flex flex-row gap-x-3" key={item.id}>
-                <div>
-                  <item.img fontSize="small" className="font-custom-color" />
+              <a href={item.link} target="_blank" rel="noreferrer noopener">
+                <div
+                  className="flex flex-row gap-x-3 text-custom"
+                  key={item.id}
+                >
+                  <div>
+                    <item.img fontSize="small" className="font-custom-color" />
+                  </div>
+                  <div>
+                    <p>{item.text}</p>
+                  </div>
                 </div>
-                <div>
-                  <p>{item.text}</p>
-                </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

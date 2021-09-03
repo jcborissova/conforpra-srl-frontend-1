@@ -47,7 +47,6 @@ const CardCarousel = (props: any) => {
     ],
   };
 
-
   const CursosTalleresCardInformation = [
     {
       id: 1,
@@ -89,7 +88,11 @@ const CardCarousel = (props: any) => {
           className="2xl:w-6/12 xl:w-8/12 lg:w-9/12 md:w-8/12 sm:w-10/12 w-8/12"
         >
           {CursosTalleresCardInformation.map((item) => (
-            <CursosTalleresCard key={item.id} img={item.img} text={item.title} />
+            <CursosTalleresCard
+              key={item.id}
+              img={item.img}
+              text={item.title}
+            />
           ))}
         </Slider>
       </div>

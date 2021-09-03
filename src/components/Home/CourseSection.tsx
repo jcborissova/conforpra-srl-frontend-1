@@ -10,10 +10,12 @@ const CourseSection = () => {
         </div>
         <div className="pt-5 lg:w-full w-10/12">
           <p>
-          Nuestros cursos y talleres buscan fortalecer tus conocimientos en el campo de 
-          la protección radiológica y ser de soporte para el buen desempeño en tu trabajo, 
-          cada uno de nuestros cursos de manera particular te garantiza la base para que 
-          puedas solicitar la Licencia Personal de Operación emitida por la Comisión Nacional de Energía. 
+            Nuestros cursos y talleres buscan fortalecer tus conocimientos en el
+            campo de la protección radiológica y ser de soporte para el buen
+            desempeño en tu trabajo, cada uno de nuestros cursos de manera
+            particular te garantiza la base para que puedas solicitar la
+            Licencia Personal de Operación emitida por la Comisión Nacional de
+            Energía.
           </p>
         </div>
       </div>
@@ -21,13 +23,13 @@ const CourseSection = () => {
         <CardCarousel />
       </div>
       <div className="flex justify-center lg:w-1/2 pt-10 ">
-      <Link to="/capacitaciones">
-        <button
-          className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
-          type="button"
-        >
-          <Link to="/capacitaciones">VER MÁS CAPACITACIONES</Link>
-        </button>
+        <Link to="/capacitaciones">
+          <button
+            className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            type="button"
+          >
+            <Link to="/capacitaciones">VER MÁS CAPACITACIONES</Link>
+          </button>
         </Link>
       </div>
     </div>

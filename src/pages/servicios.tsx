@@ -56,7 +56,7 @@ const Servicios = () => {
     },
     {
       id: 7,
-      text: 'Elaborar manuales e informes de protección y seguridad radiológica para la instalación',
+      text: 'Gestión de Inscripción en registro para equipo dental periapical emitida por la Comisión Nacional de Energía',
       img: img7,
     },
     {
@@ -106,7 +106,11 @@ const Servicios = () => {
         </div>
       </div>
       <div className="w-screen bg-white">
-        <Contactanos color="bg-custom-color" visibility={true} />
+        <Contactanos
+          color="bg-custom-color"
+          visibility={true}
+          text="Si deseas alguno de nuestros servicios contáctanos"
+        />
       </div>
     </div>
   );

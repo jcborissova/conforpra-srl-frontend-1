@@ -14,7 +14,7 @@ const principiosCardInformation = [
     id: 1,
     title: 'Misión',
     text: 'Poner a tu disposición la más alta calidad y profesionalidad al mejor precio del mercado',
-    type: "text",
+    type: 'text',
     img: img1,
     color: 'valores-color-1',
   },
@@ -22,7 +22,7 @@ const principiosCardInformation = [
     id: 2,
     title: 'Visión',
     text: 'Ser líderes en materia de radioprotección y seguridad radiológica, mediante una actualización constante de nuestros servicios a los avances tecnológicos del presente',
-    type: "text",
+    type: 'text',
     img: img2,
     color: 'bg-yellow-400',
   },
@@ -30,7 +30,7 @@ const principiosCardInformation = [
     id: 3,
     title: 'Valores',
     text: 'Organización, Excelencia, Honestidad, Innovación, Calidad, Servicio al clienten',
-    type: "list",
+    type: 'list',
     img: img3,
     color: 'bg-black',
   },
@@ -71,8 +71,8 @@ const About = () => {
           </div>
           <div className="pt-4">
             <p>
-              CONFORPRA, SRL es una empresa de nivel técnico-profesional que llega
-              hasta ti, para brindarte la mejor asesoría y programa de
+              CONFORPRA, SRL es una empresa de nivel científico-técnico que
+              llega hasta ti, para brindarte la mejor asesoría y programa de
               capacitación en temas relacionados con la protección y seguridad
               radiológica de tu empresa. Contamos con expertos nacionales e
               internacionales dispuestos ayudarte con la materialización de tú

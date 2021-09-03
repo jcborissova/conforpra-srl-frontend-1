@@ -14,54 +14,55 @@ const socialNetworkCardInformation = [
     text: 'WhatsApp',
     subText: '(849)-707-4443',
     img: WhatsappIcon,
-    link: "https://wa.me/+18497074443",
+    link: 'https://wa.me/+18497074443',
   },
   {
     id: 2,
     text: 'Facebook',
     subText: 'conforpra empresa',
     img: FacebookIcon,
-    link: "https://www.facebook.com/conforpra.empresa.1",
+    link: 'https://www.facebook.com/conforpra.empresa.1',
   },
   {
     id: 3,
     text: 'Instagram',
-    subText: 'conforpra',
+    subText: 'conforpraempresa',
     img: InstagramIcon,
-    link: "https://www.instagram.com/conforpraempresa/",
+    link: 'https://www.instagram.com/conforpraempresa/',
   },
   {
     id: 4,
     text: 'Twitter',
     subText: 'conforpra',
     img: TwitterIcon,
-    link: "https://twitter.com/conforpra",
+    link: 'https://twitter.com/conforpra',
   },
   {
     id: 5,
     text: 'Teléfono',
     subText: '(809)-908-4443',
     img: PhoneIcon,
+    link: 'tel:+18099084443',
   },
   {
     id: 6,
     text: 'Email',
     subText: 'conforpra.servicios@ gmail.com',
     img: MailOutlineIcon,
+    link: 'mailto:conforpra.servicios@gmail.com',
   },
 ];
 
 const Contactanos = (props: any) => {
+  const { visibility, color, text } = props;
   return (
     <div className="flex flex-col justify-center items-start pb-7">
-      {props.visibility ? (
-        <LineDivider dividerColor="" dividerbgColor={`${props.color}`} />
+      {visibility ? (
+        <LineDivider dividerColor="" dividerbgColor={`${color}`} />
       ) : null}
       <div className="flex lg:flex-row flex-col w-full justify-center gap-x-16 items-center">
         <div className="flex lg:w-1/5 w-11/12 lg:pt-0 pt-10">
-          <p className="font-semibold">
-            Si desea alguno de nuestros productos contactanos
-          </p>
+          <p className="font-semibold">{text}</p>
         </div>
         <div className="flex flex-col border border-black my-12 justify-center md:w-auto w-11/12">
           <div className="md:px-16 px-10 py-10">

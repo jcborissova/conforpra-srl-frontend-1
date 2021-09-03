@@ -1,7 +1,7 @@
 const ServiceCard = (props: any) => {
   const { img, text } = props;
   return (
-    <div className="group flex flex-col items-center rounded-xl shadow-lg bg-white w-52 h-64  ">
+    <div className="group flex flex-col items-center rounded-xl shadow-lg bg-white w-52 h-64 md:pt-0">
       <div className="pt-6 px-5 ">
         <img className=" h-28" src={img} alt="#" />
       </div>

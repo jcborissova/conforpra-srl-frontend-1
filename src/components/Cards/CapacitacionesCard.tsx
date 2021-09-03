@@ -1,9 +1,10 @@
-function convertToParagraphs(type:any) {
+function convertToParagraphs(type: any) {
   const lista = type.split('.');
-  return(
-    lista.map((item:any) => (
-      <div><p>{item}</p><br/></div>
-    )
+  return lista.map((item: any) => (
+    <div>
+      <p>{item}</p>
+      <br />
+    </div>
   ));
 }
 
@@ -23,7 +24,9 @@ const CapacitacionesCard = (props: any) => {
           <p className="text-base font-medium text-center">{text}</p>
         </div>
         <div className="flex pt-2 ">
-          <p className="text-gray-500 text-sm ">{convertToParagraphs(subtext)}</p>
+          <p className="text-gray-500 text-sm ">
+            {convertToParagraphs(subtext)}
+          </p>
         </div>
       </div>
     </div>

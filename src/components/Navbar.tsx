@@ -12,7 +12,7 @@ const Navbar = ({ toggle }: { toggle: any }) => {
         <img
           src={logo}
           alt="conforpralogo"
-          className="lg:w-auto md:w-28 w-36"
+          className=" xl:w-44 lg:w-36 md:w-28 w-36"
         />
       </Link>
       <div className="px-4 cursor-pointer md:hidden" onClick={toggle}>

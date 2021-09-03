@@ -5,6 +5,7 @@ import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined';
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import map from '../img/maps.png';
+import '../styles.css';
 
 const pageInformation = {
   id: 1,
@@ -26,36 +27,44 @@ const networkInformation = [
     id: 2,
     title: 'Correo empresarial',
     text: 'conforpra.servicios@gmail.com',
-    type: "text",
+    type: 'text',
     img: MailOutlineOutlinedIcon,
+    link: 'mailto:conforpra.servicios@gmail.com',
   },
   {
     id: 3,
     title: 'Número de teléfono',
     text: '(809)-908-4443',
-    type: "text",
+    type: 'text',
     img: PhoneOutlinedIcon,
+    link: 'tel:+18099084443',
   },
   {
     id: 4,
     title: 'Redes sociales',
     text: 'WhatsApp: (849)-707-4443, Facebook: conforpra empresa, Instagram: conforpraempresa, Twitter: conforpra',
-    type: "list",
+    type: 'list',
     img: ForumOutlinedIcon,
+    link: 'https://wa.me/+18497074443, https://www.facebook.com/conforpra.empresa.1, https://www.instagram.com/conforpraempresa/, https://twitter.com/conforpra',
   },
 ];
 
-function convertToList(type:any) {
-  const lista = type.split(',');
-  return(
-    lista.map((item:any) => (
+function convertToList(text: string, link: string) {
+  const splitTextList = text.split(',');
+  const splitLinkList = link.split(',');
+  return splitTextList.map((item: any, index: number) => (
+    <a
+      href={splitLinkList[index]}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="text-custom"
+    >
       <li>{item}</li>
-    )
+    </a>
   ));
 }
 
 const Contactanos = () => {
-
   return (
     <div className="flex flex-col items-center w-full">
       <HeaderPage
@@ -65,7 +74,7 @@ const Contactanos = () => {
         dividerColor={pageInformation.dividerColor}
       />
       <div className="flex lg:flex-row flex-col justify-center items-center md:gap-24 gap-10 w-full md:pt-16 pt-7 pb-6">
-        <div className="flex flex-col gap-y-5 w-80">
+        <div className="flex flex-col gap-y-5 lg:w-80 w-10/12">
           <div className="pb-5">
             <p className="text-lg font-semibold">Envíanos un mensaje</p>
           </div>
@@ -87,7 +96,7 @@ const Contactanos = () => {
             />
             <textarea
               placeholder="Mensaje"
-              className="px-5 py-3 h-28 placeholder  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+              className="px-5 py-3 h-28 placeholder resize-none  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
             />
           </div>
           <div className="">
@@ -105,17 +114,27 @@ const Contactanos = () => {
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-x-40 gap-y-10">
             {networkInformation.map((item) => (
-              <div className="flex flex-col w-52 lg:items-start items-center md:text-sm text-xs" id={`${item.id}`}>
+              <div
+                className="flex flex-col w-52 lg:items-start items-center md:text-sm text-xs"
+                id={`${item.id}`}
+              >
                 <div className="md:pb-3 pb-6">
                   <item.img style={{ color: '009AA6' }} fontSize="large" />
                 </div>
                 <div className="flex lg:items-start items-center text-left flex-col gap-2 ">
                   <p className="md:pb-0 pb-3">{item.title}</p>
-                  {
-                    item.type === "list"
-                    ? <p>{convertToList(item.text)}</p>
-                    : item.text
-                  }
+                  {item.type === 'list' ? (
+                    <p>{convertToList(item.text, item.link)}</p>
+                  ) : (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-custom"
+                    >
+                      {item.text}
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

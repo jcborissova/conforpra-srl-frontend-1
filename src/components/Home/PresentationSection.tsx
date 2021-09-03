@@ -16,7 +16,7 @@ const InicioContent = styled.div`
 
 const CheckCircle = styled(CheckCircleIcon)`
   color: #009aa6;
-`
+`;
 
 const PresentationSection = () => {
   return (
@@ -36,16 +36,16 @@ const PresentationSection = () => {
             <div className="pt-8 pb-9">
               <ul className="flex flex-col gap-4 text-sm">
                 <li className="flex flex-row gap-4">
-                  <CheckCircle/>
+                  <CheckCircle />
                   Asesoría profesional en protección y seguridad radiológica
                 </li>
                 <li className="flex flex-row gap-4">
-                  <CheckCircle/>
+                  <CheckCircle />
                   Vigilancia radiológica personal y de área en el puesto de
                   trabajo
                 </li>
                 <li className="flex flex-row gap-4">
-                  <CheckCircle/>
+                  <CheckCircle />
                   Venta de insumos para la seguridad radiológica
                 </li>
               </ul>
@@ -57,7 +57,7 @@ const PresentationSection = () => {
         </div>
       </div>
       <div className="relative pt-2">
-        <LineDivider dividerColor="-gray"/>
+        <LineDivider dividerColor="-gray" />
       </div>
     </InicioContent>
   );

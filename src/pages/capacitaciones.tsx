@@ -34,7 +34,7 @@ const capacitacionesCardInformation = [
   {
     id: 3,
     title: 'Dosimetría de las Radiaciones Ionizantes',
-    text: 'Estimar dosis recibidas por los pacientes en los estudios de radiografia clásica, tomografía computarizada y gammagrafía. Optimizar los protocolos de tratamiento en radioterapia. Técnicas de dosimetría personal.',
+    text: 'Procedimiento para calibrar acelerador para haces externos de fotones para tratamiento en radioterapia. Técnicas para la dosimetría externa.',
     img: c2,
   },
   {
@@ -58,7 +58,6 @@ const capacitacionesCardInformation = [
 ];
 
 const Capacitaciones = () => {
-
   return (
     <div className="flex flex-col items-center w-full">
       <HeaderPage
@@ -71,7 +70,7 @@ const Capacitaciones = () => {
         <div className="text-xl font-semibold text-center lg:w-auto w-11/12">
           <p>Llegaste al mejor lugar para expandir tus conocimientos</p>
         </div>
-        <div className="text-base pt-6 lg:w-8/12 w-11/12 text-center">
+        <div className="text-base pt-6 lg:w-8/12 w-11/12 text-center text-gray-500">
           <p>
             En Conforpra contamos con las siguientes capacitaciones que ofrecen
             multiples beneficios, así como la oportunidad de ampliar los
@@ -90,7 +89,11 @@ const Capacitaciones = () => {
         </div>
       </div>
       <div className="w-screen bg-white lg:pt-7">
-        <Contactanos color="" visibility={false} />
+        <Contactanos
+          color=""
+          visibility={false}
+          text="Si deseas alguna de nuestras capacitaciones contáctanos"
+        />
       </div>
     </div>
   );

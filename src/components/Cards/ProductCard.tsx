@@ -18,7 +18,9 @@ const ProductCard = (props: any) => {
           <p className="text-base font-medium lg:mt-6 mt-4">{title}</p>
         </div>
         <div>
-          <p className="text-gray-400 text-sm font-medium mb-10">{description}</p>
+          <p className="text-gray-400 text-sm font-medium mb-10">
+            {description}
+          </p>
         </div>
       </div>
     </div>

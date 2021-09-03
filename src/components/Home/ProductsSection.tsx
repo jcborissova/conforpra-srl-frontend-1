@@ -72,16 +72,15 @@ const ProductSection = () => {
           </div>
         </div>
         <div className="w-1/2 pt-16">
-        <Link to="/productos">
-        
-          <button
-            className="rounded-full h-auto bg-custom text-white text-normal px-4 py-2 uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
-            type="button"
-          >
-            <Link to="/productos" className="">
-              VER MÁS PRODUCTOS
-            </Link>
-          </button>
+          <Link to="/productos">
+            <button
+              className="rounded-full h-auto bg-custom text-white text-normal px-4 py-2 uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+              type="button"
+            >
+              <Link to="/productos" className="">
+                VER MÁS PRODUCTOS
+              </Link>
+            </button>
           </Link>
         </div>
       </div>
