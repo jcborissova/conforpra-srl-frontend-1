@@ -11,7 +11,7 @@ const pageInformation = {
   id: 1,
   title: 'Contacto',
   description:
-    'Estamos aquí para cualquier pregunta o sugerencia acerca de nuestros productos, servicios o capacitaciones. Comunícate mediante las redes a continuación',
+    'Estamos aquí para cualquier pregunta o sugerencia acerca de nuestros productos, servicios o capacitaciones. Comunícate con nosotros',
   img: contactanosBackground,
   dividerColor: '',
 };
@@ -20,8 +20,9 @@ const networkInformation = [
   {
     id: 1,
     title: 'Dirección',
-    text: 'Calle Los Tanques Esq. Avenida España. Santo Domingo Este.',
+    text: 'C. Juan Sánchez Ramírez 56, Santo Domingo 10105.',
     img: LocationOnOutlinedIcon,
+    link: "https://goo.gl/maps/NegvjioXpVwNzyrt8",
   },
   {
     id: 2,
@@ -100,6 +101,11 @@ const Contactanos = () => {
             />
           </div>
           <div className="">
+            <label className="flex items-center">
+                <input type="checkbox" className="form-checkbox h-4 w-4 text-gray-600" /><span className="ml-2 text-gray-500 md:text-base text-sm">Suscribirse para recibir notificaciones</span>
+            </label>
+          </div>
+          <div className="">
             <button
               className="rounded-full bg-custom w-32 h-8 text-white  text-normal px-6 outline-none focus:outline-none ease-linear transition-all duration-150"
               type="button"
@@ -141,15 +147,11 @@ const Contactanos = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-y-5 pt-20 w-9/12 md:pb-28 pb-10">
+      <div className="flex flex-col lg:pt-20 pt-10 md:w-9/12 md:pb-28 pb-10 md:h-64h-screen w-11/12">
         <div className="md:pb-10 pb-5">
           <p className="text-lg font-semibold">Ubicación geográfica</p>
         </div>
-        <img
-          src={map}
-          className="img-background w-full rounded-t-xl border border-gray-600 border-opacity-50"
-          alt="infocardimg"
-        ></img>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.445425812496!2d-69.91405388510809!3d18.46347238744227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzQ4LjUiTiA2OcKwNTQnNDIuNyJX!5e0!3m2!1sen!2sdo!4v1630805522776!5m2!1sen!2sdo" className="md:h-screen h-64 border-gray-400 rounded-xl  border-2"/>
       </div>
     </div>
   );

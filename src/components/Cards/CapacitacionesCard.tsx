@@ -12,7 +12,7 @@ const CapacitacionesCard = (props: any) => {
   const { color, img, text, subtext } = props;
   return (
     <div className="group flex flex-col rounded items-center bg-white h-auto lg:w-72 w-60 border border-black border-opacity-100">
-      <div className={`flex ${color} h-36 justify-center w-full pt-4`}>
+      <div className={`flex ${color} h-36 justify-center w-full pt-3`}>
         <img
           className="lg:px-10 px-5 py-3 inline-block align-middle"
           src={img}

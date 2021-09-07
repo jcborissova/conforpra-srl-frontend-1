@@ -20,9 +20,9 @@ const networksInformation = [
   },
   {
     id: 3,
-    text: 'Lorem ipsum dolor sit amet',
+    text: 'C. Juan Sánchez Ramírez 56, Santo Domingo 10105.',
     img: LocationOnIcon,
-    link: '/',
+    link: 'https://goo.gl/maps/NegvjioXpVwNzyrt8',
   },
 ];
 
@@ -39,12 +39,12 @@ const InformationCard = () => {
             className="w-28 lg:h-auto md:h-9 lg:pt-2"
             alt="ConforpraLogo"
           />
-          <div className="flex flex-col lg:pt-5 pt-3 text-xs lg:gap-3 gap-2 ">
+          <div className="flex flex-col lg:pt-5 pt-2 text-xs lg:gap-3 gap-1 ">
             {networksInformation.map((item) => (
-              <a href={item.link} target="_blank" rel="noreferrer noopener">
+              <a href={item.link} target="_blank" rel="noreferrer noopener" key={item.id}>
                 <div
                   className="flex flex-row gap-x-3 text-custom"
-                  key={item.id}
+                  
                 >
                   <div>
                     <item.img fontSize="small" className="font-custom-color" />

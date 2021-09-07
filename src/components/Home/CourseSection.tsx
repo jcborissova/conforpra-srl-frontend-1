@@ -5,10 +5,10 @@ const CourseSection = () => {
   return (
     <div className="flex flex-col items-center lg:mt-16 lg:text-center mb-12">
       <div className="items-center lg:w-3/4 w-full flex flex-col">
-        <div className="text-xl font-semibold lg:w-full w-10/12">
+        <div className="md:text-xl text-lg font-semibold lg:w-full w-10/12">
           <p>Cursos y talleres</p>
         </div>
-        <div className="pt-5 lg:w-full w-10/12">
+        <div className="pt-5 lg:w-full w-10/12 md:text-base text-sm">
           <p>
             Nuestros cursos y talleres buscan fortalecer tus conocimientos en el
             campo de la protección radiológica y ser de soporte para el buen

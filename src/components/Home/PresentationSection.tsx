@@ -23,8 +23,8 @@ const PresentationSection = () => {
     <InicioContent className="lg:mt-16">
       <div>
         <div className="flex flex-row justify-center lg:pb-10 lg:pl-20 lg-0 lg:pt-10">
-          <div className="lg:pt-24 pt-24 pt sm:px-0 lg:px-3 px-9">
-            <div className="lg:text-3xl text-xl font-semibold">
+          <div className="lg:pt-24 pt-24 sm:px-0 lg:px-3 px-5">
+            <div className="md:text-3xl text-lg font-semibold">
               <p>Consultoría y Formación Técnica</p>
               <p>
                 en{' '}
@@ -34,7 +34,7 @@ const PresentationSection = () => {
               </p>
             </div>
             <div className="pt-8 pb-9">
-              <ul className="flex flex-col gap-4 text-sm">
+              <ul className="flex flex-col gap-4 md:text-base text-sm">
                 <li className="flex flex-row gap-4">
                   <CheckCircle />
                   Asesoría profesional en protección y seguridad radiológica

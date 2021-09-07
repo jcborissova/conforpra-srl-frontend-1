@@ -16,7 +16,6 @@ function App() {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-    window.scrollTo(0, 0);
   };
 
   useEffect(() => {

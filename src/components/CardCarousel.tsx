@@ -51,31 +51,37 @@ const CardCarousel = (props: any) => {
     {
       id: 1,
       title: 'Curso Básico de Protección Radiológica',
+      text: 'Este curso tiene como objetivo que el participante tenga los conocimientos suficientes para el buen desempeño en su área laboral y a la vez pueda optar por la Licencia Personal de Operación como técnico de radiodiagnóstico.',
       img: c1,
     },
     {
       id: 2,
       title: 'Control de calidad en mamografía',
-      img: c2,
+      text: 'Aplicar correctamente las pruebas de control de calidad para obtener un estudio mamográfico óptimo con la menor dosis de radiación al paciente. Detectar fallas en el equipo.',
+      img: c6,
     },
     {
       id: 3,
-      title: 'Dosimetría de las Radiaciones Ionizantes',
-      img: c6,
+      title: 'Dosimetría física',
+      text: 'Procedimiento para calibrar acelerador para haces externos de fotones para tratamiento en radioterapia. Técnicas para la dosimetría externa.',
+      img: c2,
     },
     {
       id: 4,
       title: 'Cálculo para el emplomado de la instalación',
+      text: 'Tiene como objetivo que el participante pueda diseñar una instalación en relación al tipo fuente radioactiva o equipo generador de rayos x.',
       img: c3,
     },
     {
       id: 5,
       title: 'Detección de las radiaciones ionizantes',
+      text: 'Conocer los principios básicos de detección de las radiaciones ionizantes. Identificar los elementos de importancia al momento de realizar una vigilancia radiológica de área.',
       img: c4,
     },
     {
       id: 6,
       title: 'Diplomado en Protección y Seguridad Radiológica',
+      text: 'Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia. Solicitar la licencia como encargado de Protección Radiológica emitida por la Comisión Nacional de Energía.',
       img: c5,
     },
   ];

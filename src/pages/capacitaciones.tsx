@@ -33,7 +33,7 @@ const capacitacionesCardInformation = [
   },
   {
     id: 3,
-    title: 'Dosimetría de las Radiaciones Ionizantes',
+    title: 'Dosimetría física',
     text: 'Procedimiento para calibrar acelerador para haces externos de fotones para tratamiento en radioterapia. Técnicas para la dosimetría externa.',
     img: c2,
   },
@@ -52,7 +52,7 @@ const capacitacionesCardInformation = [
   {
     id: 6,
     title: 'Diplomado en Protección y Seguridad Radiológica',
-    text: 'Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia. Solicitar por la licencia como encargado de Protección Radiológica emitida por la Comisión Nacional de Energía.',
+    text: 'Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia. Solicitar la licencia como encargado de Protección Radiológica emitida por la Comisión Nacional de Energía.',
     img: c5,
   },
 ];

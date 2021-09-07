@@ -50,10 +50,10 @@ const ProductSection = () => {
       </div>
       <div className="w-full flex flex-col items-center pt-10 text-center bg-white pb-12">
         <div className="text-left w-3/4 font-semibold">
-          <div className="text-2xl">
+          <div className="md:text-2xl text-lg">
             <p>Nuestros productos</p>
           </div>
-          <div className="pt-5">
+          <div className="pt-5 md:text-base text-sm">
             <p>
               Buscamos garantizar la seguridad radiológica del trabajador
               ocupacionalmente expuesto
@@ -71,7 +71,7 @@ const ProductSection = () => {
             ))}
           </div>
         </div>
-        <div className="w-1/2 pt-16">
+        <div className="sm:w-1/2 w-11/12 pt-16">
           <Link to="/productos">
             <button
               className="rounded-full h-auto bg-custom text-white text-normal px-4 py-2 uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"

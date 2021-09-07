@@ -6,7 +6,7 @@ const Dropdown = ({ isOpen, toggle }: { isOpen: any; toggle: any }) => {
     <div
       className={
         isOpen
-          ? 'grid grid-rows-4 pt-12 text-center items-center z-40 bg-white font-semibold'
+          ? 'grid fixed w-full grid-rows-4 pt-12 text-center items-center z-40 bg-white font-semibold'
           : 'hidden'
       }
     >
