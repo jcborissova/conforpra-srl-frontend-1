@@ -64,7 +64,7 @@ const Footer = () => {
                   </Link>
                 </span>
                 <span className="my-1">
-                  <Link to="/" className="text-md text-custom-white">
+                  <Link to="/login" className="text-md text-custom-white">
                     Administrador
                   </Link>
                 </span>
@@ -79,7 +79,12 @@ const Footer = () => {
             <div className="flex h-full items-center">
               <p className="text-sm text-white font-normal ">
                 Conforpra © 2021, All rights reserved.{' '}
-                <a href="https://helx.dev/" target="_blank" rel="noreferrer noopener" className="text-custom-white">
+                <a
+                  href="https://helx.dev/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-custom-white"
+                >
                   Website designed by Helx
                 </a>
               </p>

@@ -4,7 +4,6 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined';
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
-import map from '../img/maps.png';
 import '../styles.css';
 
 const pageInformation = {
@@ -22,7 +21,7 @@ const networkInformation = [
     title: 'Dirección',
     text: 'C. Juan Sánchez Ramírez 56, Santo Domingo 10105.',
     img: LocationOnOutlinedIcon,
-    link: "https://goo.gl/maps/NegvjioXpVwNzyrt8",
+    link: 'https://goo.gl/maps/NegvjioXpVwNzyrt8',
   },
   {
     id: 2,
@@ -102,7 +101,13 @@ const Contactanos = () => {
           </div>
           <div className="">
             <label className="flex items-center">
-                <input type="checkbox" className="form-checkbox h-4 w-4 text-gray-600" /><span className="ml-2 text-gray-500 md:text-base text-sm">Suscribirse para recibir notificaciones</span>
+              <input
+                type="checkbox"
+                className="form-checkbox h-4 w-4 text-gray-600"
+              />
+              <span className="ml-2 text-gray-500 md:text-base text-sm">
+                Suscribirse para recibir notificaciones
+              </span>
             </label>
           </div>
           <div className="">
@@ -151,7 +156,10 @@ const Contactanos = () => {
         <div className="md:pb-10 pb-5">
           <p className="text-lg font-semibold">Ubicación geográfica</p>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.445425812496!2d-69.91405388510809!3d18.46347238744227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzQ4LjUiTiA2OcKwNTQnNDIuNyJX!5e0!3m2!1sen!2sdo!4v1630805522776!5m2!1sen!2sdo" className="md:h-screen h-64 border-gray-400 rounded-xl  border-2"/>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.445425812496!2d-69.91405388510809!3d18.46347238744227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzQ4LjUiTiA2OcKwNTQnNDIuNyJX!5e0!3m2!1sen!2sdo!4v1630805522776!5m2!1sen!2sdo"
+          className="md:h-screen h-64 border-gray-400 rounded-xl  border-2"
+        />
       </div>
     </div>
   );

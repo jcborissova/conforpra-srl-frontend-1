@@ -7,6 +7,7 @@ import Capacitaciones from './pages/capacitaciones';
 import Contactanos from './pages/contactanos';
 import Productos from './pages/productos';
 import Servicios from './pages/servicios';
+import Login from './pages/login';
 import Footer from './components/Footer';
 import Dropdown from './components/Dropdown';
 import ScrollToTop from './components/ScrollToTop';
@@ -47,6 +48,7 @@ function App() {
         <Route path="/sobrenosotros" component={About} />
         <Route path="/capacitaciones" component={Capacitaciones} />
         <Route path="/contactanos" component={Contactanos} />
+        <Route path="/login" component={Login} />
       </Switch>
       <Footer />
     </div>
