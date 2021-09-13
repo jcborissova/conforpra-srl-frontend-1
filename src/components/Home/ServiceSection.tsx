@@ -60,20 +60,17 @@ const ServiceSection = () => {
         </div>
         <div className="pt-5 md:text-base text-sm">
           <p>
-            Acompañamos y asesoramos a las organizaciones con el manejo de
-            fuentes radioactivas y equipos generadores de radiación ionizante en
-            la práctica médica, industrial y de investigación.
+            Somos una empresa que emplea la normativa vigente con un amplio enfoque en las buenas prácticas especializadas.
           </p>
         </div>
         <div className="pt-4 md:text-base text-sm lg:pb-0 pb-10">
           <p>
-            La empresa emplea la normativa vigente y se enfoca en las buenas
-            prácticas especializadas.
+            Ofrecemos apoyo y asesoría en el manejo de fuentes radioactivas, equipos, generadores de radiación ionizante en la práctica médica, industrial y/o investigación.
           </p>
         </div>
         <div className="pt-12 lg:block hidden w-full">
           <button
-            className="rounded-full bg-custom w-56 h-10 text-white uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="animate-bounce rounded-full bg-custom w-56 h-10 text-white uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/servicios">Ver mas servicios</Link>

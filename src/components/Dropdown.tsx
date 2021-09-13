@@ -26,7 +26,7 @@ const Dropdown = ({ isOpen, toggle }: { isOpen: any; toggle: any }) => {
         Capacitaciones
       </Link>
       <Link to="/contactanos" className="p-4" onClick={toggle}>
-        Contactanos
+        Contáctanos
       </Link>
       <Suscribete className="p-4 font-semibold" onClick={toggle} />
     </div>

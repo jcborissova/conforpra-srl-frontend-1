@@ -50,7 +50,7 @@ const CardCarousel = (props: any) => {
   const CursosTalleresCardInformation = [
     {
       id: 1,
-      title: 'Curso Básico de Protección Radiológica',
+      title: 'Curso básico de Protección Radiológica',
       text: 'Este curso tiene como objetivo que el participante tenga los conocimientos suficientes para el buen desempeño en su área laboral y a la vez pueda optar por la Licencia Personal de Operación como técnico de radiodiagnóstico.',
       img: c1,
     },

@@ -10,7 +10,7 @@ const pageInformation = {
   id: 1,
   title: 'Contacto',
   description:
-    'Estamos aquí para cualquier pregunta o sugerencia acerca de nuestros productos, servicios o capacitaciones. Comunícate con nosotros',
+    'Estamos aquí para cualquier pregunta o sugerencia acerca de nuestros productos, servicios o capacitaciones. Comunícate con nosotros.',
   img: contactanosBackground,
   dividerColor: '',
 };

@@ -40,7 +40,7 @@ const Login = () => {
                 Contraseña<span className="text-red-600 ml-2">*</span>
               </p>
               <input
-                type="text"
+                type="password"
                 className="px-5 py-1 w-full placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
               />
             </div>
@@ -63,9 +63,6 @@ const Login = () => {
             >
               INICIAR SESIÓN
             </button>
-          </div>
-          <div className="font-custom-color hover:text-green-900">
-            <Link to="/">¿Olvidaste la contraseña?</Link>
           </div>
         </div>
         <div className="md:block hidden ">

@@ -10,12 +10,11 @@ const CourseSection = () => {
         </div>
         <div className="pt-5 lg:w-full w-10/12 md:text-base text-sm">
           <p>
-            Nuestros cursos y talleres buscan fortalecer tus conocimientos en el
-            campo de la protección radiológica y ser de soporte para el buen
-            desempeño en tu trabajo, cada uno de nuestros cursos de manera
-            particular te garantiza la base para que puedas solicitar la
-            Licencia Personal de Operación emitida por la Comisión Nacional de
-            Energía.
+            Nuestros cursos y talleres tienen como objetivo fortalecer y crear conocimientos en el campo de la protección radiológica, buscando un fundamento para el buen desempeño a la hora de ponerlo en práctica en su área laboral.
+          </p>
+          <br/>
+          <p>
+            Cabe a destacar que cada uno de nuestros cursos de manera especial le garantiza la base para la solicitud de la licencia personal de operación, emitida por la Comisión Nacional de Energía (CNE).
           </p>
         </div>
       </div>
@@ -25,7 +24,7 @@ const CourseSection = () => {
       <div className="flex justify-center lg:w-1/2 pt-10 ">
         <Link to="/capacitaciones">
           <button
-            className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="animate-bounce rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/capacitaciones">VER MÁS CAPACITACIONES</Link>

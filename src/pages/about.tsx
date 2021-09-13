@@ -38,9 +38,9 @@ const principiosCardInformation = [
 
 const pageInformation = {
   id: 1,
-  title: 'Conforpra',
+  title: 'CONFORPRA',
   description:
-    'Asesoría para proyectos específicos en el campo de la protección y seguridad radiológica de las organizaciones',
+    'Asesoría para proyectos específicos en el campo de la protección y seguridad radiológica de las organizaciones.',
   img: AboutImg,
   dividerColor: '',
 };

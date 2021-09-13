@@ -48,6 +48,10 @@ const PresentationSection = () => {
                   <CheckCircle />
                   Venta de insumos para la seguridad radiológica
                 </li>
+                <li className="flex flex-row gap-4">
+                  <CheckCircle />
+                  Cursos y Talleres
+                </li>
               </ul>
             </div>
           </div>

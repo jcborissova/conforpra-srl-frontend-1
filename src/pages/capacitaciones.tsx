@@ -13,7 +13,7 @@ const pageInformation = {
   id: 1,
   title: 'Capacitaciones',
   description:
-    'Una capacitación efectiva no sólo solucionará problemáticas presentes, sino que a largo plazo será la mejor práctica',
+    'Una capacitación efectiva no sólo solucionará problemáticas presentes, sino que a largo plazo será la mejor práctica.',
   img: capacitacionesBrackground,
   dividerColor: '',
 };
@@ -21,7 +21,7 @@ const pageInformation = {
 const capacitacionesCardInformation = [
   {
     id: 1,
-    title: 'Curso Básico de Protección Radiológica',
+    title: 'Curso básico de Protección Radiológica',
     text: 'Este curso tiene como objetivo que el participante tenga los conocimientos suficientes para el buen desempeño en su área laboral y a la vez pueda optar por la Licencia Personal de Operación como técnico de radiodiagnóstico.',
     img: c1,
   },

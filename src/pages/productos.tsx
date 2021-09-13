@@ -17,7 +17,7 @@ const pageInformation = {
   id: 1,
   title: 'Productos',
   description:
-    'Ofrecemos una variedad de productos que sirven de sustento para la realización de trabajos de seguridad radiológica',
+    'Ofrecemos una variedad de productos que sirven de sustento para la realización de trabajos de seguridad radiológica.',
   img: productHeaderImg,
   dividerColor: '-gray',
 };
