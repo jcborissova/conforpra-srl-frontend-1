@@ -1,37 +1,37 @@
-import styled from 'styled-components';
 import '../styles.css';
 import LineDivider from './LineDivider';
-
-const HeaderSection = styled.div<{ img: string }>`
-  background-image: url(${(props) => props.img});
-  width: 100%;
-  height: 100%;
-  margin-left: 0px;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const HeaderPage = (props: any) => {
   const { img, title, description, dividerColor } = props;
 
   return (
-    <HeaderSection img={img} className="pt-12">
-      <div className="flex flex-col text-left text-white h-full">
-        <div className="lg:pl-40 pl-10 pb-10 lg:pt-20 pt-12">
-          <div className="text-3xl">
-            <p>{title}</p>
+    <div className="flex w-screen pt-12 z-10 relative">
+      <div className="flex relative lg:h-96 md:h-64 h-60  w-screen items-end">
+        <Carousel className="w-screen absolute lg:h-96 md:h-64 h-60 " autoPlay={true} infiniteLoop={true} showArrows={false} showIndicators={false}>
+        {img.map((item: any) => (
+          <div className="flex items-end lg:h-96 md:h-64 h-60  w-full relative bg-no-repeat bg-cover p-0 z-0" style={{backgroundImage: `url(${item})`}}>
           </div>
-          <div className="pt-8 lg:w-4/12 w-5/6">
-            <p>{description}</p>
-          </div>
-        </div>
+        ))}
+        </Carousel>
         <LineDivider
           dividerColor={dividerColor}
           dividerbgColor=""
-          className=""
+          className=" w-screen bg"
         />
       </div>
-    </HeaderSection>
+      <div className="flex flex-col text-left text-white lg:h-96 md:h-64 h-60 z-50 w-full absolute ">
+        <div className="md:pl-40 pl-5 pb-10 lg:pt-16 pt-10">
+          <div className="text-3xl">
+            <p>{title}</p>
+          </div>
+          <div className="md:pt-8 pt-3 lg:w-4/12 md:w-7/12 w-11/12 md:text-base text-sm">
+            <p>{description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

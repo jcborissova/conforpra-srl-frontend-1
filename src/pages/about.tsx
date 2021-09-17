@@ -41,7 +41,8 @@ const pageInformation = {
   title: 'CONFORPRA',
   description:
     'Asesoría para proyectos específicos en el campo de la protección y seguridad radiológica de las organizaciones.',
-  img: AboutImg,
+  img: [AboutImg],
+  test: [AboutImg],
   dividerColor: '',
 };
 
@@ -53,6 +54,7 @@ const About = () => {
         description={pageInformation.description}
         img={pageInformation.img}
         dividerColor={pageInformation.dividerColor}
+        test={pageInformation.test}
       />
       <div className="flex lg:flex-row flex-col lg:items-start items-center pb-9 custom-position ">
         <div className="h-full lg:w-full w-10/12 content-center lg:pt-32 pt-16 lg:pl-14 ">
@@ -111,6 +113,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

@@ -7,7 +7,7 @@ const PrincipioCard = (props: any) => {
   const { bgColor, img, title, text, type } = props;
   return (
     <div
-      className={`group flex rounded-3xl rounded-t-3xl shadow-lg lg:w-60 w-56 items-end lg:h-72 h-64 ${bgColor}`}
+      className={`group flex rounded-3xl rounded-t-3xl shadow-lg lg:w-60 w-56 items-end lg:h-72 h-64 ${bgColor} md:transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-110`}
     >
       <div className="bg-white group flex flex-col items-center content-end lg:h-64 h-60 rounded-b-3xl w-full">
         <div className="lg:pt-4 pt-2 px-5 ">

@@ -3,7 +3,7 @@ import '../../styles.css';
 const ProductCard = (props: any) => {
   const { color, img, title, description } = props;
   return (
-    <div className="group flex flex-row rounded-2xl shadow-lg items-center lg:h-36 h-32 bg-white lg:w-4/5 w-full">
+    <div className="group flex flex-row rounded-2xl shadow-lg items-center lg:h-36 h-32 bg-white lg:w-4/5 w-full ">
       <div
         className={`flex ${color} lg:h-36 h-32 items-center justify-center rounded-l-2xl w-4/12`}
       >

@@ -28,7 +28,7 @@ const networksInformation = [
 
 const InformationCard = () => {
   return (
-    <div className="group flex flex-col rounded-3xl shadow-lg bg-white lg:w-56 md:w-52 w-48 lg:h-80 mg:h-72 h-64">
+    <div className="group flex flex-col rounded-3xl shadow-lg bg-white lg:w-56 md:w-52 w-48 lg:h-80 mg:h-72 h-64 md:transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-125">
       <div className="">
         <img className="lg:h-36 md:h-32 h-28 w-full " src={img} alt="#" />
       </div>

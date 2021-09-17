@@ -14,7 +14,7 @@ const pageInformation = {
   title: 'Capacitaciones',
   description:
     'Una capacitación efectiva no sólo solucionará problemáticas presentes, sino que a largo plazo será la mejor práctica.',
-  img: capacitacionesBrackground,
+  img: [capacitacionesBrackground],
   dividerColor: '',
 };
 

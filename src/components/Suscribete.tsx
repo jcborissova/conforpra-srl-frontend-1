@@ -16,7 +16,7 @@ export default function Modal(props: any) {
       </button>
       {showModal && (
         <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none md:transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-110">
             <div className="relative w-auto my-6 mx-auto max-w-3xl flex justify-center">
               {/*content*/}
               <div className="border-0 rounded-xl shadow-lg relative flex flex-col md:w-full w-11/12 bg-white outline-none focus:outline-none">

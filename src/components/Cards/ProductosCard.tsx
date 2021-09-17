@@ -7,7 +7,7 @@ const ProductosCard = ({
   text: any;
   subtext: any;
 }) => (
-  <div className="group flex flex-col rounded shadow-lg items-center  bg-white xl:h-64 xl:w-52 lg:h-60 lg:w-48 md:h-56 md:w-44 h-56 w-40 pt-5">
+  <div className="group flex flex-col rounded shadow-lg items-center  bg-white xl:h-64 xl:w-52 lg:h-60 lg:w-48 md:h-56 md:w-44 h-56 w-40 pt-5 md:transition duration-500 ease-in-out transform md:hover:-translate-y-1 md:hover:scale-110">
     <div className={`flex sm:h-1/2 h-2/5 items-center justify-center w-full`}>
       <img
         className="px-3 inline-block align-middle sm:h-5/6 h-4/6 w-4/6"

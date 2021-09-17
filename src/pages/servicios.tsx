@@ -1,5 +1,7 @@
 import React from 'react';
 import ServicesHeaderImg from '../img/Services/ServicesHeader.png';
+import ServicesHeaderImg1 from '../img/Services/ServicesHeader1.png';
+import ServicesHeaderImg2 from '../img/Services/ServicesHeader2.png';
 import HeaderPage from '../components/HeaderPage';
 import Contactanos from '../components/Contactanos';
 import LineDivider from '../components/LineDivider';
@@ -18,7 +20,7 @@ const pageInformation = {
   title: 'Servicios',
   description:
     'Que las organizaciones puedan cumplir con los requisitos de la normativa vigente en relación a las prácticas asociadas al uso de las radiaciones ionizantes y asi tener las licencias y/o permisos otorgados por la Comisión Nacional de Energía.',
-  img: ServicesHeaderImg,
+  img: [ServicesHeaderImg, ServicesHeaderImg1, ServicesHeaderImg2],
   dividerColor: '',
 };
 

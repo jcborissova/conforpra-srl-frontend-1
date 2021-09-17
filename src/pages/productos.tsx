@@ -1,4 +1,6 @@
 import productHeaderImg from '../img/Products/ProductsHeader.png';
+import productHeaderImg1 from '../img/Products/ProductsHeader1.png';
+import productHeaderImg2 from '../img/Products/ProductsHeader2.png';
 import HeaderPage from '../components/HeaderPage';
 import ProductosCard from '../components/Cards/ProductosCard';
 import Contactanos from '../components/Contactanos';
@@ -18,7 +20,7 @@ const pageInformation = {
   title: 'Productos',
   description:
     'Ofrecemos una variedad de productos que sirven de sustento para la realización de trabajos de seguridad radiológica.',
-  img: productHeaderImg,
+  img: [productHeaderImg, productHeaderImg1, productHeaderImg2],
   dividerColor: '-gray',
 };
 
@@ -87,7 +89,7 @@ const Productos = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center w-full bg-custom-color">
+    <div className="flex flex-col items-center w-screen bg-custom-color">
       <HeaderPage
         title={pageInformation.title}
         description={pageInformation.description}

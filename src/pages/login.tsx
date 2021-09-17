@@ -9,7 +9,7 @@ const pageInformation = {
   title: 'Administrador',
   description:
     'Inicie sesión a continuación para acceder a su cuenta personal.',
-  img: loginHeader,
+  img: [loginHeader],
 };
 
 const Login = () => {
