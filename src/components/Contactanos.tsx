@@ -7,6 +7,8 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import SocialNetworkCard from './Cards/SocialNetworkCard';
 import '../styles.css';
 import LineDivider from './LineDivider';
+import { useState } from 'react';
+import config from '../config';
 
 const socialNetworkCardInformation = [
   {
@@ -54,7 +56,14 @@ const socialNetworkCardInformation = [
 ];
 
 const Contactanos = (props: any) => {
-  const { visibility, color, text } = props;
+  const { visibility, color, text, placeholder } = props;
+
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [mail, setMail] = useState('');
+  const [interest, setInterest] = useState('');
+  const [enterprise, setEnterprise] = useState('');
+
   return (
     <div className="flex flex-col justify-center items-start pb-7">
       {visibility ? (
@@ -67,41 +76,64 @@ const Contactanos = (props: any) => {
         <div className="flex flex-col border border-black my-12 justify-center md:w-auto w-11/12">
           <div className="md:px-16 px-10 py-10">
             <div className="font-bold">Contáctanos</div>
-            <div className="flex flex-col pt-5 w-full">
-              <div className="flex md:flex-row flex-col">
+            <form
+              action={`mailto:${config.contactFormReceptor}`}
+              encType="text/plain"
+            >
+              <div className="flex flex-col pt-5 w-full">
+                <div className="flex md:flex-row flex-col">
+                  <input
+                    type="hidden"
+                    name="body"
+                    value={`${name} ${lastName}<${mail}> (${enterprise}): ${placeholder}: ${interest}`}
+                  />
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value={`${placeholder}`}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Nombre"
+                    onChange={(event) => setName(event.target.value)}
+                    required
+                    className="px-2 py-1 md:mr-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Apellido"
+                    onChange={(event) => setLastName(event.target.value)}
+                    required
+                    className="px-2 py-1 md:mt-0 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  />
+                </div>
                 <input
-                  type="text"
-                  placeholder="Nombre"
-                  className="px-2 py-1 md:mr-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  type="email"
+                  placeholder="Correo Electrónico"
+                  onChange={(event) => setMail(event.target.value)}
+                  required
+                  className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
                 />
                 <input
                   type="text"
-                  placeholder="Apellido"
-                  className="px-2 py-1 md:mt-0 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  placeholder={placeholder}
+                  onChange={(event) => setInterest(event.target.value)}
+                  required
+                  className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                />
+                <input
+                  type="text"
+                  placeholder="Nombre de empresa (opcional)"
+                  onChange={(event) => setEnterprise(event.target.value)}
+                  className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                />
+                <input
+                  className="lg:w-4/12 w-6/12 h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
+                  value="Enviar"
+                  type="submit"
                 />
               </div>
-              <input
-                type="text"
-                placeholder="Correo Electrónico"
-                className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-              />
-              <input
-                type="text"
-                placeholder="Productos de interés"
-                className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-              />
-              <input
-                type="text"
-                placeholder="Nombre de empresa (opcional)"
-                className="px-2 py-1 mt-5 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-              />
-              <button
-                className="lg:w-4/12 w-6/12 h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
-                type="button"
-              >
-                Enviar
-              </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

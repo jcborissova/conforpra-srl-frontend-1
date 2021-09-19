@@ -93,6 +93,7 @@ const Capacitaciones = () => {
           color=""
           visibility={false}
           text="Si deseas alguna de nuestras capacitaciones contáctanos"
+          placeholder="Capacitación de interés"
         />
       </div>
     </div>

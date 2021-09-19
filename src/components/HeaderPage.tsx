@@ -1,6 +1,6 @@
 import '../styles.css';
 import LineDivider from './LineDivider';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
 const HeaderPage = (props: any) => {
@@ -9,11 +9,19 @@ const HeaderPage = (props: any) => {
   return (
     <div className="flex w-screen pt-12 z-10 relative">
       <div className="flex relative lg:h-96 md:h-64 h-60  w-screen items-end">
-        <Carousel className="w-screen absolute lg:h-96 md:h-64 h-60 " autoPlay={true} infiniteLoop={true} showArrows={false} showIndicators={false}>
-        {img.map((item: any) => (
-          <div className="flex items-end lg:h-96 md:h-64 h-60  w-full relative bg-no-repeat bg-cover p-0 z-0" style={{backgroundImage: `url(${item})`}}>
-          </div>
-        ))}
+        <Carousel
+          className="w-screen absolute lg:h-96 md:h-64 h-60 "
+          autoPlay={true}
+          infiniteLoop={true}
+          showArrows={false}
+          showIndicators={false}
+        >
+          {img.map((item: any) => (
+            <div
+              className="flex items-end lg:h-96 md:h-64 h-60  w-full relative bg-no-repeat bg-cover p-0 z-0"
+              style={{ backgroundImage: `url(${item})` }}
+            ></div>
+          ))}
         </Carousel>
         <LineDivider
           dividerColor={dividerColor}

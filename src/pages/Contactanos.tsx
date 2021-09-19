@@ -5,6 +5,8 @@ import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined';
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import '../styles.css';
+import { useState } from 'react';
+import config from '../config';
 
 const pageInformation = {
   id: 1,
@@ -65,6 +67,9 @@ function convertToList(text: string, link: string) {
 }
 
 const Contactanos = () => {
+  const [name, setName] = useState('');
+  const [mail, setMail] = useState('');
+  const [body, setBody] = useState('');
   return (
     <div className="flex flex-col items-center w-full">
       <HeaderPage
@@ -78,46 +83,52 @@ const Contactanos = () => {
           <div className="pb-5">
             <p className="text-lg font-semibold">Envíanos un mensaje</p>
           </div>
-          <div className="flex flex-col gap-y-4">
-            <input
-              type="text"
-              placeholder="Nombre"
-              className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-            />
-            <input
-              type="text"
-              placeholder="Correo electronico"
-              className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-            />
-            <input
-              type="text"
-              placeholder="Tema"
-              className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-            />
-            <textarea
-              placeholder="Mensaje"
-              className="px-5 py-3 h-28 placeholder resize-none  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-            />
-          </div>
-          <div className="">
-            <label className="flex items-center">
+          <form
+            action={`mailto:${config.contactFormReceptor}`}
+            encType="text/plain"
+          >
+            <div className="flex flex-col gap-y-4">
               <input
-                type="checkbox"
-                className="form-checkbox h-4 w-4 text-gray-600"
+                type="hidden"
+                name="body"
+                value={`${name}<${mail}>: ${body}`}
               />
-              <span className="ml-2 text-gray-500 md:text-base text-sm">
-                Suscribirse para recibir notificaciones
-              </span>
-            </label>
-          </div>
-          <div className="">
-            <button
-              className="rounded-full bg-custom w-32 h-8 text-white  text-normal px-6 outline-none focus:outline-none ease-linear transition-all duration-150"
-              type="button"
-            >
-              Enviar
-            </button>
-          </div>
+              <input
+                type="text"
+                placeholder="Nombre"
+                onChange={(event) => setName(event.target.value)}
+                required
+                className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+              />
+              <input
+                type="email"
+                placeholder="Correo electronico"
+                onChange={(event) => setMail(event.target.value)}
+                required
+                className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+              />
+              <input
+                type="text"
+                placeholder="Subject"
+                name="subject"
+                required
+                className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+              />
+              <textarea
+                placeholder="Mensaje"
+                onChange={(event) => setBody(event.target.value)}
+                required
+                className="px-5 py-3 h-28 placeholder resize-none  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+              />
+            </div>
+            <div className="pt-5">
+              <input
+                className="rounded-full bg-custom w-32 h-8 text-white  text-normal px-6 outline-none focus:outline-none ease-linear transition-all duration-150"
+                type="submit"
+                value="Enviar"
+              />
+            </div>
+          </form>
         </div>
         <div className="flex flex-col gap-y-5 lg:w-96 w-11/12 md:pt-0 pt-10 lg:items-start items-center ">
           <div className="flex flex-col w-full lg:px-0 px-10 md:pb-5 pb-12 items-start">

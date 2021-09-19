@@ -116,6 +116,7 @@ const Productos = () => {
           color="bg-custom-color"
           visibility={true}
           text="Si deseas alguno de nuestros productos contáctanos"
+          placeholder="Productos de interés"
         />
       </div>
     </div>

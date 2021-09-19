@@ -112,6 +112,7 @@ const Servicios = () => {
           color="bg-custom-color"
           visibility={true}
           text="Si deseas alguno de nuestros servicios contáctanos"
+          placeholder="Servicios de interés"
         />
       </div>
     </div>

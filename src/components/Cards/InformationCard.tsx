@@ -41,11 +41,13 @@ const InformationCard = () => {
           />
           <div className="flex flex-col lg:pt-5 pt-2 text-xs lg:gap-3 gap-1 ">
             {networksInformation.map((item) => (
-              <a href={item.link} target="_blank" rel="noreferrer noopener" key={item.id}>
-                <div
-                  className="flex flex-row gap-x-3 text-custom"
-                  
-                >
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer noopener"
+                key={item.id}
+              >
+                <div className="flex flex-row gap-x-3 text-custom">
                   <div>
                     <item.img fontSize="small" className="font-custom-color" />
                   </div>

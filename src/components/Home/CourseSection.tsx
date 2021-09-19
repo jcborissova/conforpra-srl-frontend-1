@@ -10,11 +10,16 @@ const CourseSection = () => {
         </div>
         <div className="pt-5 lg:w-full w-10/12 md:text-base text-sm">
           <p>
-            Nuestros cursos y talleres tienen como objetivo fortalecer y crear conocimientos en el campo de la protección radiológica, buscando un fundamento para el buen desempeño a la hora de ponerlo en práctica en su área laboral.
+            Nuestros cursos y talleres tienen como objetivo fortalecer y crear
+            conocimientos en el campo de la protección radiológica, buscando un
+            fundamento para el buen desempeño a la hora de ponerlo en práctica
+            en su área laboral.
           </p>
-          <br/>
+          <br />
           <p>
-            Cabe a destacar que cada uno de nuestros cursos de manera especial le garantiza la base para la solicitud de la licencia personal de operación, emitida por la Comisión Nacional de Energía (CNE).
+            Cabe a destacar que cada uno de nuestros cursos de manera especial
+            le garantiza la base para la solicitud de la licencia personal de
+            operación, emitida por la Comisión Nacional de Energía (CNE).
           </p>
         </div>
       </div>

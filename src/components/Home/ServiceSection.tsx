@@ -60,12 +60,15 @@ const ServiceSection = () => {
         </div>
         <div className="pt-5 md:text-base text-sm">
           <p>
-            Somos una empresa que emplea la normativa vigente con un amplio enfoque en las buenas prácticas especializadas.
+            Somos una empresa que emplea la normativa vigente con un amplio
+            enfoque en las buenas prácticas especializadas.
           </p>
         </div>
         <div className="pt-4 md:text-base text-sm lg:pb-0 pb-10">
           <p>
-            Ofrecemos apoyo y asesoría en el manejo de fuentes radioactivas, equipos, generadores de radiación ionizante en la práctica médica, industrial y/o investigación.
+            Ofrecemos apoyo y asesoría en el manejo de fuentes radioactivas,
+            equipos, generadores de radiación ionizante en la práctica médica,
+            industrial y/o investigación.
           </p>
         </div>
         <div className="pt-12 lg:block hidden w-full">
