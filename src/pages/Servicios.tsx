@@ -14,6 +14,7 @@ import img6 from '../img/Services/p6.png';
 import img7 from '../img/Services/p7.png';
 import img8 from '../img/Services/p8.png';
 import ServiciosCard from '../components/Cards/ServiciosCard';
+import MainLayout from '../components/MainLayout';
 
 const pageInformation = {
   id: 1,
@@ -72,50 +73,52 @@ const Servicios = () => {
   const downCards = serviciosCardInformation.filter((val, idx) => idx > 3);
 
   return (
-    <div className="flex flex-col items-center w-full bg-white">
-      <HeaderPage
-        title={pageInformation.title}
-        description={pageInformation.description}
-        img={pageInformation.img}
-        dividerColor={pageInformation.dividerColor}
-      />
-      <div className="flex flex-col items-center font-semibold justify-center pt-8">
-        <div className="text-xl">
-          <p>Nuestros servicios</p>
-        </div>
-        <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72">
-          {upCards.map((item) => (
-            <ServiciosCard
-              key={item.id}
-              img={item.img}
-              text={item.text}
-              bgColor="bg-custom-color"
-            />
-          ))}
-        </div>
-      </div>
-      <LineDivider dividerColor="-gray" dividerbgColor="bg-white" />
-      <div className="flex flex-col items-center justify-center bg-custom-color w-screen">
-        <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72 ">
-          {downCards.map((item) => (
-            <ServiciosCard
-              key={item.id}
-              img={item.img}
-              text={item.text}
-              bgColor="bg-white"
-            />
-          ))}
-        </div>
-      </div>
-      <div className="w-screen bg-white">
-        <Contactanos
-          color="bg-custom-color"
-          visibility={true}
-          text="Si deseas alguno de nuestros servicios contáctanos"
-          placeholder="Servicios de interés"
+    <MainLayout>
+      <div className="flex flex-col items-center w-full bg-white">
+        <HeaderPage
+          title={pageInformation.title}
+          description={pageInformation.description}
+          img={pageInformation.img}
+          dividerColor={pageInformation.dividerColor}
         />
+        <div className="flex flex-col items-center font-semibold justify-center pt-8">
+          <div className="text-xl">
+            <p>Nuestros servicios</p>
+          </div>
+          <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72">
+            {upCards.map((item) => (
+              <ServiciosCard
+                key={item.id}
+                img={item.img}
+                text={item.text}
+                bgColor="bg-custom-color"
+              />
+            ))}
+          </div>
+        </div>
+        <LineDivider dividerColor="-gray" dividerbgColor="bg-white" />
+        <div className="flex flex-col items-center justify-center bg-custom-color w-screen">
+          <div className="grid justify-items-center md:grid-cols-2 grid-cols-1 py-10 lg:gap-x-72 ">
+            {downCards.map((item) => (
+              <ServiciosCard
+                key={item.id}
+                img={item.img}
+                text={item.text}
+                bgColor="bg-white"
+              />
+            ))}
+          </div>
+        </div>
+        <div className="w-screen bg-white">
+          <Contactanos
+            color="bg-custom-color"
+            visibility={true}
+            text="Si deseas alguno de nuestros servicios contáctanos"
+            placeholder="Servicios de interés"
+          />
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

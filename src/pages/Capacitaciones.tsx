@@ -8,6 +8,7 @@ import c3 from '../img/Cursos y talleres/c3.png';
 import c4 from '../img/Cursos y talleres/c4.png';
 import c5 from '../img/Cursos y talleres/c5.png';
 import c6 from '../img/Cursos y talleres/c6.png';
+import MainLayout from '../components/MainLayout';
 
 const pageInformation = {
   id: 1,
@@ -59,44 +60,46 @@ const capacitacionesCardInformation = [
 
 const Capacitaciones = () => {
   return (
-    <div className="flex flex-col items-center w-full">
-      <HeaderPage
-        title={pageInformation.title}
-        description={pageInformation.description}
-        img={pageInformation.img}
-        dividerColor={pageInformation.dividerColor}
-      />
-      <div className="flex flex-col items-center justify-center lg:pt-20 pt-10">
-        <div className="text-xl font-semibold text-center lg:w-auto w-11/12">
-          <p>Llegaste al mejor lugar para expandir tus conocimientos</p>
-        </div>
-        <div className="text-base pt-6 lg:w-8/12 w-11/12 text-center text-gray-500">
-          <p>
-            En Conforpra contamos con las siguientes capacitaciones que ofrecen
-            multiples beneficios, así como la oportunidad de ampliar los
-            conocimientos que integran la organización
-          </p>
-        </div>
-        <div className="grid justify-items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-10 sm:gap-5 gap-4">
-          {capacitacionesCardInformation.map((item) => (
-            <CapacitacionesCard
-              key={item.id}
-              img={item.img}
-              text={item.title}
-              subtext={item.text}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="w-screen bg-white lg:pt-7">
-        <Contactanos
-          color=""
-          visibility={false}
-          text="Si deseas alguna de nuestras capacitaciones contáctanos"
-          placeholder="Capacitación de interés"
+    <MainLayout>
+      <div className="flex flex-col items-center w-full">
+        <HeaderPage
+          title={pageInformation.title}
+          description={pageInformation.description}
+          img={pageInformation.img}
+          dividerColor={pageInformation.dividerColor}
         />
+        <div className="flex flex-col items-center justify-center lg:pt-20 pt-10">
+          <div className="text-xl font-semibold text-center lg:w-auto w-11/12">
+            <p>Llegaste al mejor lugar para expandir tus conocimientos</p>
+          </div>
+          <div className="text-base pt-6 lg:w-8/12 w-11/12 text-center text-gray-500">
+            <p>
+              En Conforpra contamos con las siguientes capacitaciones que
+              ofrecen multiples beneficios, así como la oportunidad de ampliar
+              los conocimientos que integran la organización
+            </p>
+          </div>
+          <div className="grid justify-items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-10 sm:gap-5 gap-4">
+            {capacitacionesCardInformation.map((item) => (
+              <CapacitacionesCard
+                key={item.id}
+                img={item.img}
+                text={item.title}
+                subtext={item.text}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="w-screen bg-white lg:pt-7">
+          <Contactanos
+            color=""
+            visibility={false}
+            text="Si deseas alguna de nuestras capacitaciones contáctanos"
+            placeholder="Capacitación de interés"
+          />
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

@@ -1,0 +1,491 @@
+body.guali {
+  font-family: 'Poppins', sans-serif;
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  transition: background ease-in-out 0.5s;
+}
+
+.navbar a {
+  transition: text-shadow ease-in-out 0.5s;
+}
+
+.navbar.navbar-dark a {
+  text-shadow: 0px 0px 4px black;
+}
+
+/*About Us*/
+
+.mision {
+  background-color: #fcd650;
+}
+
+.objetivo {
+  background-color: #000000;
+  color: #fff;
+}
+
+.country {
+  float: left;
+  margin-right: 20px;
+}
+
+.country-name {
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+/*product*/
+
+.pagination {
+  justify-content: center;
+  margin: 30px;
+}
+
+.pagination .page-item.active .page-link {
+  z-index: 2;
+  color: #fff;
+  background-color: #f9c300;
+  border-color: #f9c300;
+}
+
+.page-item .page-link {
+  color: #f9c300;
+  background-color: #fff;
+  border-color: #000000;
+}
+
+.page-item .page-link:hover {
+  color: #fff;
+  background-color: #f9c300;
+  border-color: #000000;
+}
+
+.guali .btn-warning {
+  color: #fff;
+}
+
+.guali .page-item.disabled .page-link {
+  border-color: #000000;
+}
+
+.dropdown.nav-item .dropdown-menu .dropdown-item .nav-link {
+  color: black;
+  text-shadow: none;
+}
+
+.dropdown-menu .dropdown-item:active {
+  background-color: #f9c300;
+}
+
+/*Guali Belgica*/
+
+.members {
+  margin-top: 170px;
+}
+
+.gualibelgica {
+  background-color: #ffe666;
+  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/*Objectives*/
+
+.image {
+  width: 110px;
+  height: 110px;
+  border-radius: 110px;
+}
+
+.list {
+  line-height: 2;
+}
+
+/*Admin*/
+.password.text-right a {
+  text-decoration: none;
+  color: #979797;
+}
+
+.password-icon.material-icons {
+  position: absolute;
+  top: 8px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.navbar.navbar-dark .btn-log a {
+  text-shadow: none;
+}
+
+/*JeepGuali*/
+
+.jeepguali.material-icons {
+  color: #f9c300;
+}
+
+.chart svg {
+  width: 60%;
+}
+
+/*Modal*/
+
+.close {
+  color: #fff !important;
+  position: sticky;
+}
+
+.modal-footer {
+  justify-content: initial !important;
+  display: block;
+}
+
+.oferta .card-home {
+  min-height: 340px;
+  margin-bottom: 25px;
+}
+
+.pair-images .card {
+  height: 100%;
+}
+
+body.modal-open {
+  overflow: auto !important;
+}
+
+body.modal-open[style] {
+  padding-right: 0px !important;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  /*Laptop L*/
+  .navbar a {
+    font-size: small;
+  }
+  .guali .carousel-item .carousel-image {
+    height: 90vh;
+  }
+
+  .card .card-body .content {
+    font-size: 12px;
+  }
+
+  .navbar-brand {
+    width: 200px;
+  }
+
+  .navbar-brand img {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar-collapse {
+    width: 150px;
+  }
+  .pair-images .card {
+    height: 100%;
+  }
+
+  .pair-images .card img {
+    height: 300px;
+  }
+  .oferta .card-home {
+    min-height: 340px;
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 1) {
+  /*Laptop*/
+  .navbar a {
+    font-size: x-small;
+  }
+  .img-responsive {
+    min-width: 70%;
+  }
+
+  .navbar-brand {
+    width: 140px;
+  }
+
+  .navbar-brand img {
+    width: 75%;
+    height: auto;
+  }
+
+  .navbar-collapse {
+    width: 100px;
+  }
+  .guali .carousel-item .carousel-image {
+    height: 85vh;
+  }
+
+  .cont {
+    display: table;
+  }
+
+  .card .card-body .content {
+    font-size: 12px;
+  }
+  .card .card-body .card-title {
+    font-size: 12px;
+  }
+  .card .card-body button {
+    font-size: 15px;
+  }
+  .pair-images .card {
+    height: 100%;
+  }
+
+  .pair-images .card img {
+    height: 250px;
+  }
+  .oferta .card-home {
+    min-height: 370px;
+    margin-bottom: 25px;
+  }
+  .alignTitle {
+    font-size: larger;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .guali .carousel-item .carousel-image {
+    height: 90vh;
+  }
+  .product-video {
+    width: 75%;
+  }
+}
+/*LITO*/
+@media screen and (max-width: 767px) {
+  /* start of medium tablet styles */
+  /* Adding a fixed/percentage min-width could ensure that the image doesn't get too small */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .img-responsive {
+    min-width: 30%;
+  }
+  .guali .carousel-item .carousel-image {
+    height: 70vh;
+  }
+  .oferta .card-home {
+    min-height: 340px;
+    margin-bottom: 25px;
+  }
+  .content-body p {
+    font-size: small;
+  }
+  .img-responsive {
+    width: 100px;
+    min-width: 10%;
+  }
+  .mision .column-left,
+  .vision .column-left,
+  .objetivo .column-left {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .mision .column-right h2,
+  .vision .column-right h2,
+  .objetivo .column-right h2 {
+    display: flex;
+    justify-content: center;
+  }
+  .contact-form h3 {
+    padding-top: 30px;
+  }
+  .contact-form button {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  /* start of phone styles */
+  /* It's possible to hide the image if the screen becomes too small */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .col-md-2.d-flex {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+  }
+
+  .col-md-12.heading-section h2 {
+    text-align: center !important;
+  }
+
+  .col-md-12.heading-section p {
+    text-align: left !important;
+  }
+
+  .img-responsive {
+    width: 100px;
+    min-width: 10%;
+  }
+
+  .navbar-brand {
+    width: 75%;
+    height: auto;
+  }
+
+  .navbar-brand img {
+    width: 75%;
+    height: auto;
+  }
+
+  .country {
+    margin: 0px 20px;
+  }
+
+  .guali .gualibelgica h2 {
+    text-align: center;
+  }
+
+  .guali .gualibelgica .content {
+    padding-left: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .guali .gualibelgica {
+    padding-top: 0px;
+  }
+
+  .guali .contact-form {
+    border: none !important;
+  }
+
+  .guali .carousel-item .carousel-image {
+    height: 55vh;
+  }
+
+  .pair-images .card img {
+    height: auto;
+  }
+
+  .guali .map-container {
+    padding: 15px !important;
+  }
+
+  .guali .social-media {
+    text-align: left;
+  }
+
+  .guali .alignTitle {
+    font-size: 24px;
+  }
+
+  .guali .subtitle {
+    font-size: 18px;
+  }
+
+  /*card section*/
+  .oferta .card-home {
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .card .card-body .content-body {
+    padding-top: 30px;
+  }
+  .card .card-body .content {
+    font-size: 12px;
+  }
+  .card .card-body .card-title {
+    font-size: 12px;
+  }
+  .card .card-body button {
+    font-size: 15px;
+  }
+  .guali .center-card {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .guali .center-card-title {
+    font-size: 18px;
+  }
+  .guali .center-card-body.row {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  .guali .card-body {
+    padding: 10px;
+  }
+  .guali .product-title {
+    font-size: 24px;
+  }
+  .jeepguali-list {
+    font-size: 14px;
+  }
+  .product-video {
+    width: 100%;
+  }
+}
+
+.guali .featured-quote img {
+  width: 60px;
+}
+
+.guali .contact-form {
+  border: 1px solid #dee2e6;
+}
+
+.guali .contact-info a,
+.guali .social-links a {
+  color: #f9c300;
+}
+
+.guali .contact-info__value * {
+  color: black;
+}
+
+.bg-custom-suscribete {
+  background-color: #009aa6;
+}
+
+.bg-custom-suscribete:hover {
+  background-color: #018791;
+}
+
+/*
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 400px;
+  width: 600px;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 400px;
+  width: 600px;
+} */

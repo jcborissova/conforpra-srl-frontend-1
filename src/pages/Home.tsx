@@ -1,9 +1,12 @@
 import HomeContent from '../components/Home/HomeContent';
+import MainLayout from '../components/MainLayout';
 
 const Home = () => {
   return (
     <>
-      <HomeContent />
+      <MainLayout>
+        <HomeContent />
+      </MainLayout>
     </>
   );
 };

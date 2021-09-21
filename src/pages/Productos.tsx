@@ -14,6 +14,7 @@ import img7 from '../img/Products/DetailProducts/7.png';
 import img8 from '../img/Products/DetailProducts/8.png';
 import img9 from '../img/Products/DetailProducts/9.png';
 import img10 from '../img/Products/DetailProducts/10.png';
+import MainLayout from '../components/MainLayout';
 
 const pageInformation = {
   id: 1,
@@ -89,37 +90,39 @@ const Productos = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center w-screen bg-custom-color">
-      <HeaderPage
-        title={pageInformation.title}
-        description={pageInformation.description}
-        img={pageInformation.img}
-        dividerColor={pageInformation.dividerColor}
-      />
-      <div className="flex flex-col items-center justify-center pt-8">
-        <div className="text-2xl">
-          <p>Nuestros productos</p>
-        </div>
-        <div className="grid justify-items-center 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-10 lg:gap-5 gap-4">
-          {productosCardInformation.map((item) => (
-            <ProductosCard
-              key={item.id}
-              img={item.img}
-              text={item.text}
-              subtext={item.subText}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="w-screen bg-white">
-        <Contactanos
-          color="bg-custom-color"
-          visibility={true}
-          text="Si deseas alguno de nuestros productos contáctanos"
-          placeholder="Productos de interés"
+    <MainLayout>
+      <div className="flex flex-col items-center w-screen bg-custom-color">
+        <HeaderPage
+          title={pageInformation.title}
+          description={pageInformation.description}
+          img={pageInformation.img}
+          dividerColor={pageInformation.dividerColor}
         />
+        <div className="flex flex-col items-center justify-center pt-8">
+          <div className="text-2xl">
+            <p>Nuestros productos</p>
+          </div>
+          <div className="grid justify-items-center 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-10 lg:gap-5 gap-4">
+            {productosCardInformation.map((item) => (
+              <ProductosCard
+                key={item.id}
+                img={item.img}
+                text={item.text}
+                subtext={item.subText}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="w-screen bg-white">
+          <Contactanos
+            color="bg-custom-color"
+            visibility={true}
+            text="Si deseas alguno de nuestros productos contáctanos"
+            placeholder="Productos de interés"
+          />
+        </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

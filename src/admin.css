@@ -1,0 +1,159 @@
+.guali a {
+  color: #000;
+}
+
+#sidebar {
+  background: #f9f9f9;
+  color: #000;
+  transition: all 0.3s;
+}
+
+.guali .dropdown-toggle::after {
+  display: none;
+}
+
+.App {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #f9f9f9;
+  color: #fff;
+  margin-left: -250px;
+  transition: all 0.5s;
+}
+
+.sidebar.is-open {
+  margin-left: 0;
+  transition: 0.5s;
+}
+
+.sidebar-header {
+  background: #ffe666;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #000;
+}
+
+.sidebar-header h3 {
+  color: #fff;
+  padding: 1em;
+}
+
+.sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+.menu-open {
+  background: #f9f9f9;
+}
+
+.items-menu {
+  color: #fff;
+  background: #f9f9f9;
+}
+
+li a.dropdown-toggle::after {
+  display: inline-flex;
+  position: relative;
+  left: 500%;
+  top: 10%;
+  list-style: none;
+}
+
+.sidebar-header > span {
+  position: relative;
+  float: right;
+  margin: 0.5em;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+.side-menu {
+  height: calc(100vh - 130px);
+  overflow-y: scroll;
+  -moz-user-select: none; /* Firefox 43+ */
+  -ms-user-select: none; /* No support yet */
+  user-select: none;
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-admin {
+  padding: 20px;
+  margin-left: 0;
+}
+
+.guali .nav-link {
+  cursor: pointer;
+}
+
+.dropdown-toggle.nav-link {
+  font-weight: 500;
+}
+
+.items-menu.mb-1.collapse.show.navbar-collapse .nav-item .nav-link:focus {
+  font-weight: 500;
+  color: #000;
+}
+
+.react-calendar {
+  margin-right: 0px;
+}
+
+.react-calendar__tile--active {
+  background-color: #f9c300 !important;
+  border-radius: 50%;
+  flex-basis: 12% !important;
+}
+
+button:focus {
+  outline: 0px !important;
+}
+
+.guali .admin .carousel-item .carousel-image {
+  height: 40vh;
+}
+
+@media only screen and (max-width: 500px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .content-admin.is-open {
+    margin-left: 100%;
+  }
+
+  .sidebar.is-open {
+    min-width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transition: all 0.5s, height 0s;
+  }
+
+  .sidebar.is-open > .sidebar-header span {
+    display: unset;
+  }
+
+  li a.dropdown-toggle::after {
+    display: inline-block;
+    position: relative;
+  }
+
+  .guali .navbar-brand {
+    margin: 0px;
+    width: 140px;
+  }
+
+  .guali .navbar.navbar-dark .btn-log a {
+    font-size: 10px;
+  }
+}

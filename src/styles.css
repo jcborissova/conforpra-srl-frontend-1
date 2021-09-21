@@ -64,11 +64,19 @@
   color: black;
 }
 
+.text-custom:hover {
+  color: #59b4bb;
+}
+
 .text-custom-white {
   color: white;
 }
 
 .text-custom-white:hover {
+  color: #59b4bb;
+}
+
+.active {
   color: #59b4bb;
 }
 

@@ -74,7 +74,7 @@ const ProductSection = () => {
         <div className="sm:w-1/2 w-11/12 pt-16">
           <Link to="/productos">
             <button
-              className="animate-bounce rounded-full h-auto bg-custom text-white text-normal px-4 py-2 uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+              className="rounded-full h-auto bg-custom text-white text-normal px-4 py-2 uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
               type="button"
             >
               <Link to="/productos" className="">

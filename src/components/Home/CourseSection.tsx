@@ -29,7 +29,7 @@ const CourseSection = () => {
       <div className="flex justify-center lg:w-1/2 pt-10 ">
         <Link to="/capacitaciones">
           <button
-            className="animate-bounce rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="rounded-full sm:h-10 sm:py-0 py-2 bg-custom text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/capacitaciones">VER MÁS CAPACITACIONES</Link>

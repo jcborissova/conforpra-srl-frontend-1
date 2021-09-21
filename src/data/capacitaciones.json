@@ -1,0 +1,56 @@
+[
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Curso básico de Protección Radiológica",
+    "description": "Este curso tiene como objetivo que el participante tenga los conocimientos suficientes para el buen desempeño en su área laboral y a la vez pueda optar por la Licencia Personal de Operación como técnico de radiodiagnóstico.",
+    "status": true
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Control de calidad en mamografía",
+    "description": "Aplicar correctamente las pruebas de control de calidad para obtener un estudio mamográfico óptimo con la menor dosis de radiación al paciente. Detectar fallas en el equipo.",
+    "status": true
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Dosimetría física",
+    "description": "Procedimiento para calibrar acelerador para haces externos de fotones para tratamiento en radioterapia. Técnicas para la dosimetría externa.",
+    "status": true
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Cálculo para el emplomado de la instalación",
+    "description": "Tiene como objetivo que el participante pueda diseñar una instalación en relación al tipo fuente radioactiva o equipo generador de rayos x.",
+    "status": true
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Detección de las radiaciones ionizantes",
+    "description": "Conocer los principios básicos de detección de las radiaciones ionizantes. Identificar los elementos de importancia al momento de realizar una vigilancia radiológica de área.",
+    "status": true
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Diplomado en Protección y Seguridad Radiológica",
+    "description": "Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia. Solicitar la licencia como encargado de Protección Radiológica emitida por la Comisión Nacional de Energía.",
+    "status": true
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Cálculo para el emplomado de la instalación",
+    "description": "Tiene como objetivo que el participante pueda diseñar una instalación en relación al tipo fuente radioactiva o equipo generador de rayos x.",
+    "status": false
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Detección de las radiaciones ionizantes",
+    "description": "Conocer los principios básicos de detección de las radiaciones ionizantes. Identificar los elementos de importancia al momento de realizar una vigilancia radiológica de área.",
+    "status": false
+  },
+  {
+    "image": "https://cdn.fakercloud.com/avatars/lewisainslie_128.jpg",
+    "title": "Diplomado en Protección y Seguridad Radiológica",
+    "description": "Aplicar los conocimientos en la mejora continua de las instalaciones de diagnóstico por imágen, medicina nuclear y teleterapia. Solicitar la licencia como encargado de Protección Radiológica emitida por la Comisión Nacional de Energía.",
+    "status": false
+  }
+]

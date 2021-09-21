@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../img/ConforpraLogo.svg';
 import Suscribete from '../components/Suscribete';
 
@@ -8,13 +8,13 @@ const Navbar = ({ toggle }: { toggle: any }) => {
       className="fixed flex justify-between items-center h-16 bg-white text-black w-full font-mono lg:px-20 px-0 z-50"
       role="navigation"
     >
-      <Link to="/" className="lg:pl-8 pl-2">
+      <NavLink to="/" className="lg:pl-8 pl-2">
         <img
           src={logo}
           alt="conforpralogo"
           className=" xl:w-44 lg:w-36 md:w-28 w-36"
         />
-      </Link>
+      </NavLink>
       <div className="px-4 cursor-pointer md:hidden" onClick={toggle}>
         <svg
           className="w-8 h-8"
@@ -32,25 +32,45 @@ const Navbar = ({ toggle }: { toggle: any }) => {
         </svg>
       </div>
       <div className=" md:block hidden text-black font-sans font-semibold text-xs xl:text-sm">
-        <Link to="/" className="p-4">
+        <Link to="/" className="p-4 text-custom">
           Inicio
         </Link>
-        <Link to="/sobrenosotros" className="p-4">
+        <NavLink
+          to="/sobrenosotros"
+          className="p-4 text-custom"
+          activeClassName="active"
+        >
           Sobre nosotros
-        </Link>
-        <Link to="/productos" className="p-4">
+        </NavLink>
+        <NavLink
+          to="/productos"
+          className="p-4 text-custom"
+          activeClassName="active"
+        >
           Productos
-        </Link>
-        <Link to="/servicios" className="p-4">
+        </NavLink>
+        <NavLink
+          to="/servicios"
+          className="p-4 text-custom"
+          activeClassName="active"
+        >
           Servicios
-        </Link>
-        <Link to="/capacitaciones" className="p-4">
+        </NavLink>
+        <NavLink
+          to="/capacitaciones"
+          className="p-4 text-custom"
+          activeClassName="active"
+        >
           Capacitaciones
-        </Link>
-        <Link to="/contactanos" className="p-4">
+        </NavLink>
+        <NavLink
+          to="/contactanos"
+          className="p-4 text-custom"
+          activeClassName="active"
+        >
           Contáctanos
-        </Link>
-        <Suscribete className="p-4 font-semibold" />
+        </NavLink>
+        <Suscribete className="p-4 font-semibold text-custom" />
       </div>
     </nav>
   );

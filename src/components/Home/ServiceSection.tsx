@@ -73,7 +73,7 @@ const ServiceSection = () => {
         </div>
         <div className="pt-12 lg:block hidden w-full">
           <button
-            className="animate-bounce rounded-full bg-custom w-56 h-10 text-white uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+            className="rounded-full bg-custom w-56 h-10 text-white uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
             <Link to="/servicios">Ver mas servicios</Link>

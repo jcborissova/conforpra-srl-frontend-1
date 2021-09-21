@@ -34,7 +34,7 @@ const PresentationSection = () => {
               </p>
             </div>
             <div className="pt-8 pb-9">
-              <ul className="flex flex-col gap-4 md:text-base text-sm">
+              <ul className="flex flex-col gap-4 md:text-base text-sm ">
                 <li className="flex flex-row gap-4">
                   <CheckCircle />
                   Asesoría profesional en protección y seguridad radiológica
