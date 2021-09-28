@@ -32,10 +32,10 @@ const HeaderPage = (props: any) => {
       <div className="flex flex-col text-left text-white lg:h-96 md:h-64 h-60 z-50 w-full absolute ">
         <div className="md:pl-40 pl-5 pb-10 lg:pt-16 pt-10">
           <div className="text-3xl">
-            <p>{title}</p>
+            <p className="text-shadow-xl">{title}</p>
           </div>
           <div className="md:pt-8 pt-3 lg:w-4/12 md:w-7/12 w-11/12 md:text-base text-sm">
-            <p>{description}</p>
+            <p className="text-shadow-xl">{description}</p>
           </div>
         </div>
       </div>
