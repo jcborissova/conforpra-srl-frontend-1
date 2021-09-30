@@ -17,8 +17,8 @@ const CourseSection = () => {
           </p>
           <br />
           <p>
-            Cabe a destacar que cada uno de nuestros cursos de manera especial
-            le garantiza la base para la solicitud de la licencia personal de
+            Cabe destacar que cada uno de nuestros cursos de manera especial le
+            garantiza la base para la solicitud de la licencia personal de
             operación, emitida por la Comisión Nacional de Energía (CNE).
           </p>
         </div>

@@ -21,7 +21,11 @@ const pageInformation = {
   title: 'Servicios',
   description:
     'Que las organizaciones puedan cumplir con los requisitos de la normativa vigente en relación a las prácticas asociadas al uso de las radiaciones ionizantes y asi tener las licencias y/o permisos otorgados por la Comisión Nacional de Energía.',
-  img: [ServicesHeaderImg, ServicesHeaderImg1, ServicesHeaderImg2],
+  img: [
+    { id: 1, img: ServicesHeaderImg },
+    { id: 2, img: ServicesHeaderImg1 },
+    { id: 3, img: ServicesHeaderImg2 },
+  ],
   dividerColor: '',
 };
 

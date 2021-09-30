@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import upload from '../img/icons/save_alt_black_48dp.svg';
-import axios from 'axios';
-import config from '../config';
+//import axios from 'axios';
+//import config from '../config';
 import {
   Button,
   Col,
@@ -29,13 +29,13 @@ const AddCapacitaciones = () => {
     form_data.append('description', gestorSeleccionado.Testimonio);
     form_data.append('image', gestorSeleccionado.Imagen);
 
-    const res = await axios.post(config.baseURL + '/api/products', form_data, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    //const res = await axios.post(config.baseURL + '/api/products', form_data, {
+    //  headers: {
+    //    'Content-Type': 'multipart/form-data',
+    //  },
+    //});
 
-    const data = res.data;
+    //const data = res.data;
   }
 
   const handleChange = (e) => {

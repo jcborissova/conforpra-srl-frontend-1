@@ -2,6 +2,8 @@ import HeaderPage from '../components/HeaderPage';
 import Contactanos from '../components/Contactanos';
 import CapacitacionesCard from '../components/Cards/CapacitacionesCard';
 import capacitacionesBrackground from '../img/Cursos y talleres/capacitacionesBackground.png';
+import capacitacionesBrackground1 from '../img/Cursos y talleres/capacitacionesBackground1.png';
+import capacitacionesBrackground2 from '../img/Cursos y talleres/capacitacionesBackground2.png';
 import c1 from '../img/Cursos y talleres/c1.png';
 import c2 from '../img/Cursos y talleres/c2.png';
 import c3 from '../img/Cursos y talleres/c3.png';
@@ -15,7 +17,20 @@ const pageInformation = {
   title: 'Capacitaciones',
   description:
     'Una capacitación efectiva no sólo solucionará problemáticas presentes, sino que a largo plazo será la mejor práctica.',
-  img: [capacitacionesBrackground],
+  img: [
+    {
+      id: 1,
+      img: capacitacionesBrackground,
+    },
+    {
+      id: 2,
+      img: capacitacionesBrackground1,
+    },
+    {
+      id: 2,
+      img: capacitacionesBrackground2,
+    },
+  ],
   dividerColor: '',
 };
 

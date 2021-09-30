@@ -15,11 +15,13 @@ const HeaderPage = (props: any) => {
           infiniteLoop={true}
           showArrows={false}
           showIndicators={false}
+          showThumbs={false}
         >
           {img.map((item: any) => (
             <div
+              key={item.id}
               className="flex items-end lg:h-96 md:h-64 h-60  w-full relative bg-no-repeat bg-cover p-0 z-0"
-              style={{ backgroundImage: `url(${item})` }}
+              style={{ backgroundImage: `url(${item.img})` }}
             ></div>
           ))}
         </Carousel>

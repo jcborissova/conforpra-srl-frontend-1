@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Capacitaciones from './pages/Capacitaciones';
 import Contactanos from './pages/Contactanos';
 import Productos from './pages/Productos';
 import Servicios from './pages/Servicios';
+import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Administrator from './pages/Administrator';
-import NotFound from './pages/NotFound';
+import AuthenticatedRoute from './components/AuthenticatedRoute';
+import UnauthenticatedRoute from './components/UnauthenticatedRoute';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     const mediaQuery = '(min-width: 768px)';
@@ -35,7 +33,7 @@ function App() {
   }, [isOpen]);
 
   return (
-    <div className="w-screen">
+    <Router>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/productos" component={Productos} />
@@ -43,11 +41,11 @@ function App() {
         <Route path="/sobrenosotros" component={About} />
         <Route path="/capacitaciones" component={Capacitaciones} />
         <Route path="/contactanos" component={Contactanos} />
-        <Route path="/login" component={Login} />
-        <Route path="/administrador" component={Administrator} />
+        <UnauthenticatedRoute exact path="/login" component={Login} />
+        <AuthenticatedRoute path="/administrador" component={Administrator} />
         <Route path="*" exact={true} component={NotFound} />
       </Switch>
-    </div>
+    </Router>
   );
 }
 
