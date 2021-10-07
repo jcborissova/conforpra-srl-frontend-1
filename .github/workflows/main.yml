@@ -35,6 +35,12 @@ jobs:
           echo ::set-output name=branch::$BRANCH_NAME
           echo ::set-output name=environment::$HELX_ENVIRONMENT
 
+          if [ "$BRANCH_NAME" = "main" ]; then
+            echo ::set-output name=environmentPrefix::
+          else
+            echo ::set-output name=environmentPrefix::$HELX_ENVIRONMENT.
+          fi
+
       - name: Review Details
         run: |
           echo Project: ${{ steps.details.outputs.project }}
@@ -66,7 +72,7 @@ jobs:
           echo "Finished writing variables"
           cat .env
         env:
-          REACT_APP_API_URL: https://${{ steps.details.outputs.environment }}${{ steps.details.outputs.project }}.projects.helx.dev
+          REACT_APP_API_URL: https://${{ steps.details.outputs.environmentPrefix }}api.${{ steps.details.outputs.project }}.projects.helx.dev
           __DEV__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__DEV__REACT_APP_SUSCRIBETE_URL }}
           __STAGE__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__STAGE__REACT_APP_SUSCRIBETE_URL }}
           __PROD__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__PROD__REACT_APP_SUSCRIBETE_URL }}
