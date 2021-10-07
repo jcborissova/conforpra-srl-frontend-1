@@ -8,6 +8,8 @@ import '../styles.css';
 import { useState } from 'react';
 import config from '../config';
 import MainLayout from '../components/MainLayout';
+import { useFormik } from 'formik';
+import client from '../providers/api';
 
 const pageInformation = {
   id: 1,
@@ -73,9 +75,27 @@ function convertToList(text: string, link: string) {
 }
 
 const Contactanos = () => {
-  const [name, setName] = useState('');
-  const [mail, setMail] = useState('');
-  const [body, setBody] = useState('');
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        const response = await client.post(
+          '/api/mailservice/send-contact-email',
+          values,
+        );
+        console.log(response);
+        resetForm({});
+      } catch (error) {
+        console.error('Error while sending contact form', error);
+      }
+    },
+  });
+
   return (
     <MainLayout>
       <div className="flex flex-col items-center w-full">
@@ -90,40 +110,32 @@ const Contactanos = () => {
             <div className="pb-5">
               <p className="text-lg font-semibold">Envíanos un mensaje</p>
             </div>
-            <form
-              action={`mailto:${config.contactFormReceptor}`}
-              encType="text/plain"
-            >
+            <form onSubmit={formik.handleSubmit}>
               <div className="flex flex-col gap-y-4">
-                <input
-                  type="hidden"
-                  name="body"
-                  value={`${name}<${mail}>: ${body}`}
-                />
                 <input
                   type="text"
                   placeholder="Nombre"
-                  onChange={(event) => setName(event.target.value)}
+                  {...formik.getFieldProps('name')}
                   required
                   className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
                 />
                 <input
                   type="email"
                   placeholder="Correo electronico"
-                  onChange={(event) => setMail(event.target.value)}
+                  {...formik.getFieldProps('email')}
                   required
                   className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
                 />
                 <input
                   type="text"
                   placeholder="Subject"
-                  name="subject"
+                  {...formik.getFieldProps('subject')}
                   required
                   className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
                 />
                 <textarea
                   placeholder="Mensaje"
-                  onChange={(event) => setBody(event.target.value)}
+                  {...formik.getFieldProps('message')}
                   required
                   className="px-5 py-3 h-28 placeholder resize-none  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
                 />

@@ -123,6 +123,7 @@ const Productos = () => {
             visibility={true}
             text="Si deseas alguno de nuestros productos contáctanos"
             placeholder="Productos de interés"
+            elementType="Productos"
           />
         </div>
       </div>

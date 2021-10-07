@@ -10,14 +10,6 @@ export default function Modal(props: any) {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
 
-  function handleSubmit(e: any) {
-    e.preventDefault();
-    // clearing the values
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-  }
-
   return (
     <>
       <button
@@ -66,7 +58,7 @@ export default function Modal(props: any) {
                             <p className="pb-1 font-normal text-xs">Nombre</p>
                             <input
                               type="text"
-                              name="FIRSTNAME"
+                              name="NOMBRE"
                               value={firstName}
                               onChange={(e) => setFirstName(e.target.value)}
                               required
@@ -77,7 +69,7 @@ export default function Modal(props: any) {
                             </p>
                             <input
                               type="text"
-                              name="LASTNAME"
+                              name="APELLIDOS"
                               value={lastName}
                               onChange={(e) => setLastName(e.target.value)}
                               required

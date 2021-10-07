@@ -119,6 +119,7 @@ const Servicios = () => {
             visibility={true}
             text="Si deseas alguno de nuestros servicios contáctanos"
             placeholder="Servicios de interés"
+            elementType="Servicios"
           />
         </div>
       </div>
