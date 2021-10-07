@@ -15,6 +15,33 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Get build details
+        id: details
+        run: |
+          HELX_PROJECT_NAME=${{ secrets.HELX_PROJECT_NAME }}
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          HELX_ENVIRONMENT=$(echo ${BRANCH_NAME/\//-} | cut -d/ -f1)
+          if [ "$HELX_ENVIRONMENT" = "main" ]; then
+            echo ::set-output name=envprefix::__PROD__
+            HELX_ENVIRONMENT=prod
+          elif [ "$HELX_ENVIRONMENT" = "develop" ]; then
+            echo ::set-output name=envprefix::__STAGE__
+            HELX_ENVIRONMENT=stage
+          else
+            echo ::set-output name=envprefix::__DEV__
+          fi
+
+          echo ::set-output name=project::$HELX_PROJECT_NAME
+          echo ::set-output name=branch::$BRANCH_NAME
+          echo ::set-output name=environment::$HELX_ENVIRONMENT
+
+      - name: Review Details
+        run: |
+          echo Project: ${{ steps.details.outputs.project }}
+          echo Branch: ${{ steps.details.outputs.branch }}
+          echo Environment: ${{ steps.details.outputs.environment }}
+          echo Environment Secret Matching Prefix: ${{ steps.details.outputs.envprefix }}
+
       - uses: actions/checkout@v2
         name: Login to GitHub Container Registry
 
@@ -26,15 +53,30 @@ jobs:
 
       - uses: docker/setup-buildx-action@v1
 
+      - name: Write environemnt variables
+        run: |
+          for variable in ${!REACT_@}; do
+            echo $variable=${!variable} >> .env
+          done
+
+          for variable in ${!${{ steps.details.outputs.envprefix }}REACT_@}; do
+            echo ${variable/#${{ steps.details.outputs.envprefix }}/}=${!variable} >> .env
+          done
+
+          echo "Finished writing variables"
+          cat .env
+        env:
+          REACT_APP_API_URL: https://${{ steps.details.outputs.environment }}${{ steps.details.outputs.project }}.projects.helx.dev
+          __DEV__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__DEV__REACT_APP_SUSCRIBETE_URL }}
+          __STAGE__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__STAGE__REACT_APP_SUSCRIBETE_URL }}
+          __PROD__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__PROD__REACT_APP_SUSCRIBETE_URL }}
+
       - uses: docker/build-push-action@v2
         with:
           context: ./
           file: ./Dockerfile.prod
           push: true
           tags: ghcr.io/helxdev/conforpra-srl-frontend:${{ github.sha }}
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
@@ -51,14 +93,10 @@ jobs:
           export PATH=/tmp/kubectl:$PATH
       - name: Update config file
         run: |
-          HELX_PROJECT_NAME=${{ secrets.HELX_PROJECT_NAME }}
-          BRANCH_NAME=${GITHUB_REF//refs\/heads\//}
-          HELX_ENVIRONMENT=$(echo ${BRANCH_NAME/\//-} | cut -d/ -f1)
-          if [ "$HELX_ENVIRONMENT" = "main" ]; then
-            HELX_ENVIRONMENT=prod
-          elif [ "$HELX_ENVIRONMENT" = "develop" ]; then
-            HELX_ENVIRONMENT=stage
-          fi
+          HELX_PROJECT_NAME=${{ steps.details.outputs.project }}
+          BRANCH_NAME=${{ steps.details.outputs.branch }}
+          HELX_ENVIRONMENT=${{ steps.details.outputs.environment }}
+
           sed -i "s/\${GITHUB_SHA}/$GITHUB_SHA/" k8s/web.yaml
           sed -i "s/\${HELX_PROJECT_NAME}/$HELX_PROJECT_NAME/" k8s/web.yaml
 
