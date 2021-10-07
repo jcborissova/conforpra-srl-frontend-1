@@ -22,13 +22,13 @@ jobs:
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           HELX_ENVIRONMENT=$(echo ${BRANCH_NAME/\//-} | cut -d/ -f1)
           if [ "$HELX_ENVIRONMENT" = "main" ]; then
-            echo ::set-output name=envprefix::__PROD__
+            echo ::set-output name=envvarPrefix::__PROD__
             HELX_ENVIRONMENT=prod
           elif [ "$HELX_ENVIRONMENT" = "develop" ]; then
-            echo ::set-output name=envprefix::__STAGE__
+            echo ::set-output name=envvarPrefix::__STAGE__
             HELX_ENVIRONMENT=stage
           else
-            echo ::set-output name=envprefix::__DEV__
+            echo ::set-output name=envvarPrefix::__DEV__
           fi
 
           echo ::set-output name=project::$HELX_PROJECT_NAME
@@ -46,7 +46,8 @@ jobs:
           echo Project: ${{ steps.details.outputs.project }}
           echo Branch: ${{ steps.details.outputs.branch }}
           echo Environment: ${{ steps.details.outputs.environment }}
-          echo Environment Secret Matching Prefix: ${{ steps.details.outputs.envprefix }}
+          echo API Environment Prefix: ${{ steps.details.outputs.environmentPrefix }}
+          echo Environment Secret Matching Prefix: ${{ steps.details.outputs.envvarPrefix }}
 
       - uses: actions/checkout@v2
         name: Login to GitHub Container Registry
@@ -65,8 +66,8 @@ jobs:
             echo $variable=${!variable} >> .env
           done
 
-          for variable in ${!${{ steps.details.outputs.envprefix }}REACT_@}; do
-            echo ${variable/#${{ steps.details.outputs.envprefix }}/}=${!variable} >> .env
+          for variable in ${!${{ steps.details.outputs.envvarPrefix }}REACT_@}; do
+            echo ${variable/#${{ steps.details.outputs.envvarPrefix }}/}=${!variable} >> .env
           done
 
           echo "Finished writing variables"
