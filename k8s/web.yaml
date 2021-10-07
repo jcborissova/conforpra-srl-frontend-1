@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ghcr.io/helxdev/conforpra-srl-frontend:${GITHUB_SHA}
+          image: ghcr.io/helxdev/conforpra-srl-frontend:${GITHUB_SHA}-${HELX_ENVIRONMENT_RAW}
           ports:
             - containerPort: 80
 ---
