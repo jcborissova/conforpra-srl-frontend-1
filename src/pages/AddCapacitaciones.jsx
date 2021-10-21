@@ -19,7 +19,6 @@ const AddCapacitaciones = () => {
     name: '',
     description: '',
     picture: [],
-    status: 'visible',
   });
 
   async function makePostRequest(e) {
@@ -28,7 +27,7 @@ const AddCapacitaciones = () => {
     form_data.append('name', training.name);
     form_data.append('description', training.description);
     form_data.append('picture', training.picture);
-    form_data.append('status', training.status);
+    form_data.append('status', 'visible');
 
     try {
       const response = await client.post('/api/trainings', form_data, {

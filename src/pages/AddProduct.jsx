@@ -20,7 +20,6 @@ const AddProduct = () => {
     name: '',
     description: '',
     picture: [],
-    status: 'visible',
   });
 
   async function makePostRequest(e) {
@@ -29,7 +28,7 @@ const AddProduct = () => {
     form_data.append('name', product.name);
     form_data.append('description', product.description);
     form_data.append('picture', product.picture);
-    form_data.append('status', product.status);
+    form_data.append('status', 'visible');
 
     try {
       const response = await client.post('/api/products', form_data, {
