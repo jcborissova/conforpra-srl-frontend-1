@@ -11,6 +11,8 @@ import c4 from '../img/Cursos y talleres/c4.png';
 import c5 from '../img/Cursos y talleres/c5.png';
 import c6 from '../img/Cursos y talleres/c6.png';
 import MainLayout from '../components/MainLayout';
+import { useEffect, useState } from 'react';
+import client from '../providers/api';
 
 const pageInformation = {
   id: 1,
@@ -74,6 +76,19 @@ const capacitacionesCardInformation = [
 ];
 
 const Capacitaciones = () => {
+  const [trainingsApi, setTraininsgApi] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.get(`/api/trainings`);
+        setTraininsgApi(response.data.trainings);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
+
   return (
     <MainLayout>
       <div className="flex flex-col items-center w-full">
@@ -95,12 +110,12 @@ const Capacitaciones = () => {
             </p>
           </div>
           <div className="grid justify-items-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-10 sm:gap-5 gap-4">
-            {capacitacionesCardInformation.map((item) => (
+            {trainingsApi.map((item) => (
               <CapacitacionesCard
-                key={item.id}
-                img={item.img}
-                text={item.title}
-                subtext={item.text}
+                key={item['_id']}
+                picture={item['picture']}
+                name={item['name']}
+                description={item['description']}
               />
             ))}
           </div>

@@ -4,6 +4,8 @@ import productHeaderImg2 from '../img/Products/ProductsHeader2.png';
 import HeaderPage from '../components/HeaderPage';
 import ProductosCard from '../components/Cards/ProductosCard';
 import Contactanos from '../components/Contactanos';
+
+/*
 import img1 from '../img/Products/DetailProducts/1.png';
 import img2 from '../img/Products/DetailProducts/2.png';
 import img3 from '../img/Products/DetailProducts/3.png';
@@ -14,7 +16,10 @@ import img7 from '../img/Products/DetailProducts/7.png';
 import img8 from '../img/Products/DetailProducts/8.png';
 import img9 from '../img/Products/DetailProducts/9.png';
 import img10 from '../img/Products/DetailProducts/10.png';
+*/
 import MainLayout from '../components/MainLayout';
+import { useEffect, useState } from 'react';
+import client from '../providers/api';
 
 const pageInformation = {
   id: 1,
@@ -30,68 +35,83 @@ const pageInformation = {
 };
 
 const Productos = () => {
-  const productosCardInformation = [
+  const [productsApi, setProductsApi] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.get(`/api/products`);
+        setProductsApi(response.data.products);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
+
+  /*
+  const productsApi = [
     {
       id: 1,
-      text: 'Mandil plomado',
-      subText: '0.5mm de Pb',
-      img: img1,
+      name: 'Mandil plomado',
+      description: '0.5mm de Pb',
+      picture: img1,
     },
     {
       id: 2,
-      text: 'Lentes plomados',
-      subText: '0.5mm de Pb',
-      img: img2,
+      name: 'Lentes plomados',
+      description: '0.5mm de Pb',
+      picture: img2,
     },
     {
       id: 3,
-      text: 'Mamparas',
-      subText: '1258 bids, 359 watchers',
-      img: img3,
+      name: 'Mamparas',
+      description: '1258 bids, 359 watchers',
+      picture: img3,
     },
     {
       id: 4,
-      text: 'Collarines plomados',
-      subText: '0.5mm de Pb',
-      img: img4,
+      name: 'Collarines plomados',
+      description: '0.5mm de Pb',
+      picture: img4,
     },
     {
       id: 5,
-      text: 'Láminas de plomo',
-      subText: '1mm, 2mm, 3mm',
-      img: img5,
+      name: 'Láminas de plomo',
+      description: '1mm, 2mm, 3mm',
+      picture: img5,
     },
     {
       id: 6,
-      text: 'Vidrios plomados',
-      subText: 'Showcasing onHovered state',
-      img: img6,
+      name: 'Vidrios plomados',
+      description: 'Showcasing onHovered state',
+      picture: img6,
     },
     {
       id: 7,
-      text: 'Ventanas Especiales con Blindaje',
-      subText: '1258 bids, 359 watchers',
-      img: img7,
+      name: 'Ventanas Especiales con Blindaje',
+      description: '1258 bids, 359 watchers',
+      picture: img7,
     },
     {
       id: 8,
-      text: 'Gorros Emplomados',
-      subText: 'Eligible for Shipping To Mars',
-      img: img8,
+      name: 'Gorros Emplomados',
+      description: 'Eligible for Shipping To Mars',
+      picture: img8,
     },
     {
       id: 9,
-      text: 'Conchas plomadas',
-      subText: 'Juego de tres piezas con 0.5mm de pb. Peq/mediano',
-      img: img9,
+      name: 'Conchas plomadas',
+      description: 'Juego de tres piezas con 0.5mm de pb. Peq/mediano',
+      picture: img9,
     },
     {
       id: 10,
-      text: 'Guantes plomados',
-      subText: 'Medianos y grandes modelo. 156 con 0.5mm pb',
-      img: img10,
+      name: 'Guantes plomados',
+      description: 'Medianos y grandes modelo. 156 con 0.5mm pb',
+      picture: img10,
     },
   ];
+  */
 
   return (
     <MainLayout>
@@ -107,12 +127,12 @@ const Productos = () => {
             <p>Nuestros productos</p>
           </div>
           <div className="grid justify-items-center 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-10 lg:gap-5 gap-4">
-            {productosCardInformation.map((item) => (
+            {productsApi.map((item) => (
               <ProductosCard
-                key={item.id}
-                img={item.img}
-                text={item.text}
-                subtext={item.subText}
+                key={item['_id']}
+                picture={item['picture']}
+                name={item['name']}
+                description={item['description']}
               />
             ))}
           </div>

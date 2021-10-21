@@ -4,20 +4,19 @@ import SaveIcon from '@material-ui/icons/Save';
 import CancelIcon from '@material-ui/icons/Cancel';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { IconButton } from '@material-ui/core';
-import { Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row, Form, Input } from 'reactstrap';
 import client from '../providers/api';
 import { useState } from 'react';
-import { Form, Input } from 'reactstrap';
 
-const ProductSection = ({
+const CapacitacionSection = ({
   render,
-  product: { _id, name, description, picture },
+  capacitacion: { _id, name, description, picture },
   controls,
   archived,
 }) => {
   const [edit, setEdit] = useState(false);
 
-  const [product, setProduct] = useState({
+  const [training, setTraining] = useState({
     name,
     description,
     picture,
@@ -27,13 +26,13 @@ const ProductSection = ({
   async function makePostRequest(e) {
     e.preventDefault();
     const form_data = new FormData();
-    form_data.append('name', product.name);
-    form_data.append('description', product.description);
-    form_data.append('picture', product.picture);
-    form_data.append('status', product.status);
+    form_data.append('name', training.name);
+    form_data.append('description', training.description);
+    form_data.append('picture', training.picture);
+    form_data.append('status', training.status);
 
     try {
-      const response = await client.patch(`/api/products/${_id}`, form_data, {
+      const response = await client.patch(`/api/trainings/${_id}`, form_data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -50,34 +49,34 @@ const ProductSection = ({
     if (type === 'file') {
       value = e.target.files[0];
     }
-    setProduct((product) => {
-      const gestor = { ...product, [name]: value };
+    setTraining((training) => {
+      const gestor = { ...training, [name]: value };
       return gestor;
     });
   };
 
-  function archiveProduct(status) {
+  function archiveTraining(status) {
     const values = {
       status: status,
     };
 
     (async () => {
       try {
-        const response = await client.patch(`/api/products/${_id}`, values);
+        const response = await client.patch(`/api/trainings/${_id}`, values);
         render();
       } catch (error) {
-        console.error('Error while saving product', error);
+        console.error('Error while saving training', error);
       }
     })();
   }
 
-  function deleteProduct() {
+  function deleteTraining() {
     (async () => {
       try {
-        const response = await client.delete(`/api/products/${_id}`);
+        const response = await client.delete(`/api/trainings/${_id}`);
         render();
       } catch (error) {
-        console.error('Error while deleting product', error);
+        console.error('Error while deleting training', error);
       }
     })();
   }
@@ -123,19 +122,19 @@ const ProductSection = ({
             >
               <Input
                 type="text"
-                placeholder="Título del producto"
+                placeholder="Título del trainingo"
                 name="name"
                 required
-                value={product.name}
+                value={training.name}
                 onChange={handleChange}
               />
               <Input
                 type="textarea"
-                placeholder="Escriba el detalle del producto"
+                placeholder="Escriba el detalle del trainingo"
                 rows="8"
                 cols="50"
                 name="description"
-                value={product.description}
+                value={training.description}
                 required
                 onChange={handleChange}
                 className="resize-none"
@@ -208,12 +207,12 @@ const ProductSection = ({
                   <IconButton aria-label="edit" size="medium" color="inherit">
                     {archived ? (
                       <CreateNewFolder
-                        onClick={() => archiveProduct('hidden')}
+                        onClick={() => archiveTraining('hidden')}
                         fontSize="large"
                       />
                     ) : (
                       <VerticalAlignTop
-                        onClick={() => archiveProduct('visible')}
+                        onClick={() => archiveTraining('visible')}
                         fontSize="large"
                       />
                     )}
@@ -223,7 +222,7 @@ const ProductSection = ({
               <Col xs="6" className="p-2">
                 <IconButton aria-label="delete" size="medium" color="inherit">
                   <DeleteIcon
-                    onClick={() => deleteProduct()}
+                    onClick={() => deleteTraining()}
                     fontSize="large"
                   />
                 </IconButton>
@@ -238,4 +237,4 @@ const ProductSection = ({
   );
 };
 
-export default ProductSection;
+export default CapacitacionSection;

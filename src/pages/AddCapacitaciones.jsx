@@ -12,30 +12,35 @@ import {
   Label,
   Row,
 } from 'reactstrap';
-
-const FormData = require('form-data');
+import client from '../providers/api';
 
 const AddCapacitaciones = () => {
-  const [gestorSeleccionado, setGestorSeleccionado] = useState({
-    Titulo: '',
-    Testimonio: '',
-    Imagen: '',
+  const [training, setTraining] = useState({
+    name: '',
+    description: '',
+    picture: [],
+    status: 'visible',
   });
 
   async function makePostRequest(e) {
     e.preventDefault();
     const form_data = new FormData();
-    form_data.append('title', gestorSeleccionado.Titulo);
-    form_data.append('description', gestorSeleccionado.Testimonio);
-    form_data.append('image', gestorSeleccionado.Imagen);
+    form_data.append('name', training.name);
+    form_data.append('description', training.description);
+    form_data.append('picture', training.picture);
+    form_data.append('status', training.status);
 
-    //const res = await axios.post(config.baseURL + '/api/products', form_data, {
-    //  headers: {
-    //    'Content-Type': 'multipart/form-data',
-    //  },
-    //});
+    try {
+      const response = await client.post('/api/trainings', form_data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
 
-    //const data = res.data;
+      setTraining({});
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const handleChange = (e) => {
@@ -43,8 +48,8 @@ const AddCapacitaciones = () => {
     if (type === 'file') {
       value = e.target.files[0];
     }
-    setGestorSeleccionado((gestorSeleccionado) => {
-      const gestor = { ...gestorSeleccionado, [name]: value };
+    setTraining((product) => {
+      const gestor = { ...product, [name]: value };
       return gestor;
     });
   };
@@ -62,20 +67,25 @@ const AddCapacitaciones = () => {
             <Label for="title">Título</Label>
             <Input
               type="text"
-              name="Titulo"
               placeholder="Título de la capacitación"
+              name="name"
+              required
               onChange={handleChange}
+              value={training?.name ?? ''}
             />
           </FormGroup>
           <FormGroup className="flex flex-col gap-y-2">
             <Label for="testimonio">Capacitación</Label>
             <Input
               type="textarea"
-              name="Testimonio"
               placeholder="Escriba el detalle de la capacitación"
+              className=" resize-none"
               rows="8"
               cols="50"
+              name="description"
+              required
               onChange={handleChange}
+              value={training?.description ?? ''}
             />
           </FormGroup>
           <Row>
@@ -98,8 +108,8 @@ const AddCapacitaciones = () => {
                     >
                       <Input
                         type="file"
-                        id="ControlFile"
-                        name="Imagen"
+                        name="picture"
+                        required
                         onChange={handleChange}
                         accept="image/x-png,image/gif,image/jpeg"
                       />

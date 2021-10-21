@@ -12,30 +12,35 @@ import {
   Label,
   Row,
 } from 'reactstrap';
-
-const FormData = require('form-data');
+import client from '../providers/api';
+import FormData from 'form-data';
 
 const AddProduct = () => {
-  const [gestorSeleccionado, setGestorSeleccionado] = useState({
-    Titulo: '',
-    Testimonio: '',
-    Imagen: '',
+  const [product, setProduct] = useState({
+    name: '',
+    description: '',
+    picture: [],
+    status: 'visible',
   });
 
   async function makePostRequest(e) {
     e.preventDefault();
     const form_data = new FormData();
-    form_data.append('title', gestorSeleccionado.Titulo);
-    form_data.append('description', gestorSeleccionado.Testimonio);
-    form_data.append('image', gestorSeleccionado.Imagen);
+    form_data.append('name', product.name);
+    form_data.append('description', product.description);
+    form_data.append('picture', product.picture);
+    form_data.append('status', product.status);
 
-    //const res = await axios.post(config.baseURL + '/api/products', form_data, {
-    //  headers: {
-    //    'Content-Type': 'multipart/form-data',
-    //  },
-    //});
-
-    //const data = res.data;
+    try {
+      const response = await client.post('/api/products', form_data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      setProduct({});
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const handleChange = (e) => {
@@ -43,8 +48,8 @@ const AddProduct = () => {
     if (type === 'file') {
       value = e.target.files[0];
     }
-    setGestorSeleccionado((gestorSeleccionado) => {
-      const gestor = { ...gestorSeleccionado, [name]: value };
+    setProduct((product) => {
+      const gestor = { ...product, [name]: value };
       return gestor;
     });
   };
@@ -62,20 +67,25 @@ const AddProduct = () => {
             <Label for="title">Título</Label>
             <Input
               type="text"
-              name="Titulo"
               placeholder="Título del producto"
+              name="name"
+              required
               onChange={handleChange}
+              value={product?.name ?? ''}
             />
           </FormGroup>
           <FormGroup className="flex flex-col gap-y-2">
             <Label for="testimonio">Producto</Label>
             <Input
               type="textarea"
-              name="Testimonio"
               placeholder="Escriba el detalle del producto"
+              className=" resize-none"
               rows="8"
               cols="50"
+              name="description"
+              required
               onChange={handleChange}
+              value={product?.description ?? ''}
             />
           </FormGroup>
           <Row>
@@ -98,8 +108,8 @@ const AddProduct = () => {
                     >
                       <Input
                         type="file"
-                        id="ControlFile"
-                        name="Imagen"
+                        name="picture"
+                        required
                         onChange={handleChange}
                         accept="image/x-png,image/gif,image/jpeg"
                       />

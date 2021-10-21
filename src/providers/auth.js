@@ -1,34 +1,23 @@
+import axios from 'axios';
 import { createContext, useContext, useEffect, useState } from 'react';
-import client from './api';
+import config from '../config';
+
+axios.defaults.baseURL = config.apiUrl;
 
 const Context = createContext({
   accessToken: '',
   refreshToken: '',
-  user: null,
   login: (data) => {},
   logout: () => {},
 });
 
 export const useAuth = () => useContext(Context);
+
 const AuthProvider = ({ children }) => {
   const [accessToken, setAccessToken] = useState(localStorage.getItem('token'));
   const [refreshToken, setRefreshToken] = useState(
     localStorage.getItem('refreshToken'),
   );
-
-  const refreshUser = async () => {
-    try {
-      const response = await client.post('/api/refresh-token', {
-        headers: { Authorization: `Bearer ${refreshToken}` },
-      });
-      localStorage.setItem(
-        'refreshToken',
-        response.data.newTokens.refreshToken,
-      );
-    } catch (error) {
-      logout();
-    }
-  };
 
   const login = async (token) => {
     try {
@@ -36,6 +25,19 @@ const AuthProvider = ({ children }) => {
       setRefreshToken(token.refreshToken);
       localStorage.setItem('token', token.accessToken);
       localStorage.setItem('refreshToken', token.refreshToken);
+    } catch (error) {
+      logout();
+    }
+  };
+
+  const refreshUser = async () => {
+    try {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${refreshToken}`;
+      const response = await axios.post('/api/refresh-token');
+      localStorage.setItem(
+        'refreshToken',
+        response.data.newTokens.refreshToken,
+      );
     } catch (error) {
       logout();
     }
@@ -49,7 +51,7 @@ const AuthProvider = ({ children }) => {
     if (accessToken) {
       refreshUser();
     }
-  });
+  }, [refreshToken]);
 
   return (
     <Context.Provider value={{ accessToken, refreshToken, login, logout }}>

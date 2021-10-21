@@ -81,8 +81,6 @@ const SideBar = ({ isOpen, toggle }) => {
           width="120px"
           className="mb-3"
         />
-        <p style={{ marginBottom: '5px' }}>Lorem ipsum</p>
-        <p style={{ fontStyle: 'italic', fontSize: '15px' }}>Lorem@Ipsum.com</p>
       </div>
       <div className="side-menu">
         <Nav vertical className="list-unstyled pb-4 pt-4">

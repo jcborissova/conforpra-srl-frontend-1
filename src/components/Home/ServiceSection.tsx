@@ -23,7 +23,7 @@ const ServiceCardInformation = [
   },
   {
     id: 4,
-    text: 'Emplomado de la instalación',
+    text: 'Calculo del Blindaje para la Optimización de la sala de rayos x',
     img: img2,
   },
 ];

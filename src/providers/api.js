@@ -4,7 +4,7 @@ const client = axios.create({
   baseURL: config.apiUrl,
 });
 client.interceptors.request.use(function (config) {
-  const token = localStorage.getItem('refreshToken');
+  const token = localStorage.getItem('token');
   config.headers.Authorization = `Bearer ${token}`;
 
   return config;

@@ -6,10 +6,10 @@ import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import '../styles.css';
 import { useState } from 'react';
-import config from '../config';
 import MainLayout from '../components/MainLayout';
 import { useFormik } from 'formik';
 import client from '../providers/api';
+import done from '../img/icons/done.png';
 
 const pageInformation = {
   id: 1,
@@ -62,6 +62,7 @@ const networkInformation = [
 function convertToList(text: string, link: string) {
   const splitTextList = text.split(',');
   const splitLinkList = link.split(',');
+
   return splitTextList.map((item: any, index: number) => (
     <a
       href={splitLinkList[index]}
@@ -75,6 +76,7 @@ function convertToList(text: string, link: string) {
 }
 
 const Contactanos = () => {
+  const [successful, setSuccessful] = useState(false);
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -88,7 +90,7 @@ const Contactanos = () => {
           '/api/mailservice/send-contact-email',
           values,
         );
-        console.log(response);
+        setSuccessful(true);
         resetForm({});
       } catch (error) {
         console.error('Error while sending contact form', error);
@@ -106,49 +108,68 @@ const Contactanos = () => {
           dividerColor={pageInformation.dividerColor}
         />
         <div className="flex lg:flex-row flex-col justify-center items-center md:gap-24 gap-10 w-full md:pt-16 pt-7 pb-6">
-          <div className="flex flex-col gap-y-5 lg:w-80 w-10/12">
-            <div className="pb-5">
-              <p className="text-lg font-semibold">Envíanos un mensaje</p>
+          {successful ? (
+            <div className="flex flex-col gap-y-5 lg:w-80 w-full">
+              <div className="flex flex-col  py-10 items-center  shadow-lg rounded-lg">
+                <img src={done} className="w-20" alt="done" />
+                <div className="font-bold text-xl pt-3">¡Mensaje enviado!</div>
+                <div className=" text-center pt-3 w-10/12">
+                  Su mensaje ha sido enviado con éxito. Pronto estaremos en
+                  contacto
+                </div>
+                <button
+                  className="h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
+                  onClick={() => setSuccessful(false)}
+                >
+                  Continuar
+                </button>
+              </div>
             </div>
-            <form onSubmit={formik.handleSubmit}>
-              <div className="flex flex-col gap-y-4">
-                <input
-                  type="text"
-                  placeholder="Nombre"
-                  {...formik.getFieldProps('name')}
-                  required
-                  className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-                />
-                <input
-                  type="email"
-                  placeholder="Correo electronico"
-                  {...formik.getFieldProps('email')}
-                  required
-                  className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-                />
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  {...formik.getFieldProps('subject')}
-                  required
-                  className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-                />
-                <textarea
-                  placeholder="Mensaje"
-                  {...formik.getFieldProps('message')}
-                  required
-                  className="px-5 py-3 h-28 placeholder resize-none  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
-                />
+          ) : (
+            <div className="flex flex-col gap-y-5 lg:w-80 w-10/12">
+              <div className="pb-5">
+                <p className="text-lg font-semibold">Envíanos un mensaje</p>
               </div>
-              <div className="pt-5">
-                <input
-                  className="rounded-full bg-custom w-32 h-8 text-white  text-normal px-6 outline-none focus:outline-none ease-linear transition-all duration-150"
-                  type="submit"
-                  value="Enviar"
-                />
-              </div>
-            </form>
-          </div>
+              <form onSubmit={formik.handleSubmit}>
+                <div className="flex flex-col gap-y-4">
+                  <input
+                    type="text"
+                    placeholder="Nombre"
+                    {...formik.getFieldProps('name')}
+                    required
+                    className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Correo electronico"
+                    {...formik.getFieldProps('email')}
+                    required
+                    className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    {...formik.getFieldProps('subject')}
+                    required
+                    className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  />
+                  <textarea
+                    placeholder="Mensaje"
+                    {...formik.getFieldProps('message')}
+                    required
+                    className="px-5 py-3 h-28 placeholder resize-none  placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
+                  />
+                </div>
+                <div className="pt-5">
+                  <input
+                    className="rounded-full bg-custom w-32 h-8 text-white  text-normal px-6 outline-none focus:outline-none ease-linear transition-all duration-150"
+                    type="submit"
+                    value="Enviar"
+                  />
+                </div>
+              </form>
+            </div>
+          )}
           <div className="flex flex-col gap-y-5 lg:w-96 w-11/12 md:pt-0 pt-10 lg:items-start items-center ">
             <div className="flex flex-col w-full lg:px-0 px-10 md:pb-5 pb-12 items-start">
               <p className="text-lg font-semibold">Contáctanos</p>

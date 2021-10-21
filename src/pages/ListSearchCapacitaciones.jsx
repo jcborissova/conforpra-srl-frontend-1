@@ -1,66 +1,56 @@
-import {
-  Button,
-  ButtonGroup,
-  Col,
-  Container,
-  Form,
-  Input,
-  Row,
-} from 'reactstrap';
 import PaginatedView from '../components/PaginatedView';
-import ProductSection from '../components/ProductSection';
-import SearchIcon from '@material-ui/icons/Search';
-import ClearAllIcon from '@material-ui/icons/ClearAll';
-
-const products = require('../data/capacitaciones.json');
-var filterObj = products.filter(function (e) {
-  return e.status === true;
-});
+import CapacitacionSection from '../components/CapacitacionSection';
+import { useEffect, useState } from 'react';
+import client from '../providers/api';
 
 const ListSearchCapacitaciones = () => {
+  const [filterObj, setFilterObj] = useState([]);
+  const [update, setUpdate] = useState(false);
+
+  function updateTrainings() {
+    setUpdate(true);
+  }
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.get(`/api/trainings`);
+        trainings(response.data.trainings);
+        setUpdate(false);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [update]);
+
+  function trainings(allTrainings) {
+    setFilterObj(
+      allTrainings.filter(function (e) {
+        return e.status === 'visible';
+      }),
+    );
+  }
+
   return (
     <div>
-      <div className="my-5 paginationTop">
-        <Container>
-          <Form>
-            <Row>
-              <Col xs={12} md={4} lg={3} className="py-2">
-                <Input
-                  type="search"
-                  name="Titulo"
-                  id="Search"
-                  placeholder="Titulo de capacitación"
-                />
-              </Col>
-              <Col xs={12} md={4} lg={2} className="py-2">
-                <Row>
-                  <Col xs={6} sm={6} md={12}>
-                    <ButtonGroup>
-                      <Button type="button" color="success">
-                        <span>
-                          <SearchIcon />
-                        </span>
-                      </Button>
-                      <Button type="reset" outline color="success">
-                        <span>
-                          <ClearAllIcon />
-                        </span>
-                      </Button>
-                    </ButtonGroup>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
-      </div>
       <div className="py-5">
-        <PaginatedView
-          items={filterObj}
-          renderItem={(product) => (
-            <ProductSection product={product} controls archived />
-          )}
-        />
+        {filterObj.length ? (
+          <PaginatedView
+            items={filterObj}
+            renderItem={(capacitacion) => (
+              <CapacitacionSection
+                render={updateTrainings}
+                capacitacion={capacitacion}
+                controls
+                archived
+              />
+            )}
+          />
+        ) : (
+          <div className="flex items-center justify-center">
+            <h2>No hay capacitaciones activas</h2>
+          </div>
+        )}
       </div>
     </div>
   );

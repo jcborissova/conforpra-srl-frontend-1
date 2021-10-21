@@ -2,13 +2,38 @@ import React, { useState } from 'react';
 import SuscribeteWallpaper from '../img/Suscribete.png';
 import { ClickAwayListener } from '@material-ui/core';
 import config from '../config';
+import { useFormik } from 'formik';
+import done from '../img/icons/done.png';
+import axios from 'axios';
+import FormData from 'form-data';
 
 export default function Modal(props: any) {
-  const { className } = props;
+  const [successful, setSuccessful] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
+  const { className } = props;
+
+  const formik = useFormik({
+    initialValues: {
+      NOMBRE: '',
+      APELLIDOS: '',
+      EMAIL: '',
+    },
+    onSubmit: async (values, { resetForm }) => {
+      var form_data = new FormData();
+      form_data.append('NOMBRE', values['NOMBRE']);
+      form_data.append('APELLIDOS', values['APELLIDOS']);
+      form_data.append('EMAIL', values['EMAIL']);
+
+      try {
+        const response = await axios.post(config.suscribeteUrl, form_data);
+        console.log(response);
+        setSuccessful(true);
+        resetForm({});
+      } catch (error) {
+        console.error('Error while sending contact form', error);
+      }
+    },
+  });
 
   return (
     <>
@@ -26,79 +51,98 @@ export default function Modal(props: any) {
               {/*content*/}
               <div className="border-0 rounded-xl shadow-lg relative flex flex-col md:w-full w-11/12 bg-white outline-none focus:outline-none">
                 {/*header*/}
-                <ClickAwayListener onClickAway={() => setShowModal(false)}>
-                  <div className="flex items-start w-full">
-                    <div className="flex lg:flex-row h-96">
-                      <div className="sm:block hidden">
-                        <img
-                          src={SuscribeteWallpaper}
-                          alt="Sucribete Wallpaper"
-                          className="h-96 rounded-l-xl"
-                        />
-                      </div>
-                      <div className="flex flex-col sm:w-7/12 w-full py-5 px-10">
-                        <form
-                          target="_blank"
-                          action={config.suscribeteUrl}
-                          method="post"
+                <ClickAwayListener
+                  onClickAway={() => {
+                    setShowModal(false);
+                    setSuccessful(false);
+                  }}
+                >
+                  {successful ? (
+                    <div className="flex flex-col gap-y-5 lg:w-80 w-full">
+                      <div className="flex flex-col  py-10 items-center  shadow-lg rounded-lg">
+                        <img src={done} className="w-20" alt="done" />
+                        <div className="font-bold text-xl pt-3">
+                          ¡Suscripción exitosa!
+                        </div>
+                        <div className=" text-center pt-3 w-10/12">
+                          Se ha suscrito con éxito a Conforpra. Recibirá
+                          promociones, noticias, capacitaciones y más.
+                        </div>
+                        <button
+                          className="h-8 bg-custom-suscribete mt-5 text-white hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150 rounded"
+                          onClick={() => {
+                            setSuccessful(false);
+                            setShowModal(false);
+                          }}
                         >
-                          <div className="text-2xl font-bold pb-3">
-                            <p>¡Suscríbete!</p>
-                          </div>
-                          <div className=" text-gray-500 font-normal text-xs text-left">
-                            <p>
-                              Recibe notificaciones acerca de cursos, descuentos
-                              en servicios, avances en materia de protección y
-                              serguridad radiológica, tecnología de diagnóstico
-                              por imágenes, medicina nuclear, radioterapia,
-                              entre otros.
-                            </p>
-                          </div>
-                          <div className="pt-4 text-gray-500  flex flex-col items-start ">
-                            <p className="pb-1 font-normal text-xs">Nombre</p>
-                            <input
-                              type="text"
-                              name="NOMBRE"
-                              value={firstName}
-                              onChange={(e) => setFirstName(e.target.value)}
-                              required
-                              className="px-2 py-1  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg text-sm border border-gray-400 outline-none focus:outline-none focus:ring w-full"
-                            />
-                            <p className="pb-1 pt-3 font-normal text-xs">
-                              Apellido
-                            </p>
-                            <input
-                              type="text"
-                              name="APELLIDOS"
-                              value={lastName}
-                              onChange={(e) => setLastName(e.target.value)}
-                              required
-                              className="px-2 py-1  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg text-sm border border-gray-400 outline-none focus:outline-none focus:ring w-full"
-                            />
-                            <p className="pb-1 pt-3 font-normal text-xs">
-                              Correo electrónico
-                            </p>
-                            <input
-                              type="text"
-                              name="EMAIL"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                              required
-                              placeholder="example@email.com"
-                              className="px-2 py-1 md:mt-0 font-normal text  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg border border-gray-400 outline-none focus:outline-none focus:ring sm:w-auto w-full"
-                            />
-                            <div className="flex pt-5 w-full items-center sm:justify-start justify-center ">
-                              <input
-                                className="bg-custom-suscribete rounded-xl text-xs font-semibold text-white h-6 hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
-                                type="submit"
-                                value="ENVIAR"
-                              />
-                            </div>
-                          </div>
-                        </form>
+                          Continuar
+                        </button>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="flex items-start w-full">
+                      <div className="flex lg:flex-row h-96">
+                        <div className="sm:block hidden">
+                          <img
+                            src={SuscribeteWallpaper}
+                            alt="Sucribete Wallpaper"
+                            className="h-96 rounded-l-xl"
+                          />
+                        </div>
+                        <div className="flex flex-col sm:w-7/12 w-full py-5 px-10">
+                          <form onSubmit={formik.handleSubmit}>
+                            <div className="text-2xl font-bold pb-3">
+                              <p>¡Suscríbete!</p>
+                            </div>
+                            <div className=" text-gray-500 font-normal text-xs text-left">
+                              <p>
+                                Recibe notificaciones acerca de cursos,
+                                descuentos en servicios, avances en materia de
+                                protección y serguridad radiológica, tecnología
+                                de diagnóstico por imágenes, medicina nuclear,
+                                radioterapia, entre otros.
+                              </p>
+                            </div>
+                            <div className="pt-4 text-gray-500  flex flex-col items-start ">
+                              <p className="pb-1 font-normal text-xs">Nombre</p>
+                              <input
+                                type="text"
+                                {...formik.getFieldProps('NOMBRE')}
+                                required
+                                className="px-2 py-1  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg text-sm border border-gray-400 outline-none focus:outline-none focus:ring w-full"
+                              />
+                              <p className="pb-1 pt-3 font-normal text-xs">
+                                Apellido
+                              </p>
+                              <input
+                                type="text"
+                                {...formik.getFieldProps('APELLIDOS')}
+                                required
+                                className="px-2 py-1  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg text-sm border border-gray-400 outline-none focus:outline-none focus:ring w-full"
+                              />
+                              <p className="pb-1 pt-3 font-normal text-xs">
+                                Correo electrónico
+                              </p>
+                              <input
+                                type="text"
+                                {...formik.getFieldProps('EMAIL')}
+                                required
+                                placeholder="example@email.com"
+                                className="px-2 py-1 md:mt-0 font-normal text  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg border border-gray-400 outline-none focus:outline-none focus:ring sm:w-auto w-full"
+                              />
+                              <div className="flex pt-5 w-full items-center sm:justify-start justify-center ">
+                                <input
+                                  className="bg-custom-suscribete rounded-xl text-xs font-semibold text-white h-6 hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+                                  type="submit"
+                                  value="ENVIAR"
+                                />
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </ClickAwayListener>
               </div>
             </div>

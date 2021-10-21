@@ -1,66 +1,55 @@
-import {
-  Button,
-  ButtonGroup,
-  Col,
-  Container,
-  Form,
-  Input,
-  Row,
-} from 'reactstrap';
 import PaginatedView from '../components/PaginatedView';
 import ProductSection from '../components/ProductSection';
-import SearchIcon from '@material-ui/icons/Search';
-import ClearAllIcon from '@material-ui/icons/ClearAll';
-
-const products = require('../data/products.json');
-var filterObj = products.filter(function (e) {
-  return e.status === false;
-});
+import { useEffect, useState } from 'react';
+import client from '../providers/api';
 
 const Archivedproducts = () => {
+  const [filterObj, setFilterObj] = useState([]);
+  const [update, setUpdate] = useState(false);
+
+  function updateProducts() {
+    setUpdate(true);
+  }
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.get(`/api/products?status=hidden`);
+        Products(response.data.products);
+        setUpdate(false);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [update]);
+
+  function Products(allProducts) {
+    setFilterObj(
+      allProducts.filter(function (e) {
+        return e.status === 'hidden';
+      }),
+    );
+  }
+
   return (
     <div>
-      <div className="my-5 paginationTop">
-        <Container>
-          <Form>
-            <Row>
-              <Col xs={12} md={4} lg={3} className="py-2">
-                <Input
-                  type="search"
-                  name="Titulo"
-                  id="Search"
-                  placeholder="Titulo de producto"
-                />
-              </Col>
-              <Col xs={12} md={4} lg={2} className="py-2">
-                <Row>
-                  <Col xs={6} sm={6} md={12}>
-                    <ButtonGroup>
-                      <Button type="button" color="success">
-                        <span>
-                          <SearchIcon />
-                        </span>
-                      </Button>
-                      <Button type="reset" outline color="success">
-                        <span>
-                          <ClearAllIcon />
-                        </span>
-                      </Button>
-                    </ButtonGroup>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
-      </div>
       <div className="py-5">
-        <PaginatedView
-          items={filterObj}
-          renderItem={(product) => (
-            <ProductSection product={product} controls />
-          )}
-        />
+        {filterObj.length ? (
+          <PaginatedView
+            items={filterObj}
+            renderItem={(product) => (
+              <ProductSection
+                render={updateProducts}
+                product={product}
+                controls
+              />
+            )}
+          />
+        ) : (
+          <div className="flex items-center justify-center">
+            <h2>No hay productos activos</h2>
+          </div>
+        )}
       </div>
     </div>
   );
