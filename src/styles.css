@@ -7,6 +7,16 @@
   line-height: 0;
 }
 
+.img-custom {
+  height: 80px;
+  width: 80px;
+}
+
+.content-custom {
+  height: 90px;
+  width: 90px;
+}
+
 .custom-shape-divider-bottom-1628384777 svg {
   position: relative;
   display: block;

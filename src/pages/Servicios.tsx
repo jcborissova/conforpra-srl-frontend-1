@@ -43,7 +43,7 @@ const Servicios = () => {
     },
     {
       id: 3,
-      text: 'Emplomado de la instalación',
+      text: 'Calculo del Blindaje para la Optimización de la sala de rayos x',
       img: img3,
     },
     {

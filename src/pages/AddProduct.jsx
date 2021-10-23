@@ -108,6 +108,7 @@ const AddProduct = () => {
                       <Input
                         type="file"
                         name="picture"
+                        key={product.picture}
                         required
                         onChange={handleChange}
                         accept="image/x-png,image/gif,image/jpeg"

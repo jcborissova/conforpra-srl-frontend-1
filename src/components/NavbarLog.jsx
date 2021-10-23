@@ -6,8 +6,10 @@ import {
   NavItem,
   Container,
 } from 'reactstrap';
+import { useAuth } from '../providers/auth';
 
 const NavbarLog = ({ children }) => {
+  const auth = useAuth();
   return (
     <div>
       <BNavbar color="dark" dark light expand="md">
@@ -16,9 +18,15 @@ const NavbarLog = ({ children }) => {
 
           <Nav className="ml-auto" navbar>
             <NavItem className="btn-log bg-custom-suscribete rounded">
-              <Link className="btn  text-white" to="/" aria-current="page">
+              <a
+                href="/"
+                onClick={auth.logout}
+                className="btn  text-white"
+                to="/"
+                aria-current="page"
+              >
                 Ir a conforpra
-              </Link>
+              </a>
             </NavItem>
           </Nav>
         </Container>

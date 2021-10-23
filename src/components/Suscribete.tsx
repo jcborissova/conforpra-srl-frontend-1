@@ -11,6 +11,7 @@ export default function Modal(props: any) {
   const [successful, setSuccessful] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { className } = props;
+  const suscribeteFields = config.suscribeteFields.split(',');
 
   const formik = useFormik({
     initialValues: {
@@ -20,18 +21,40 @@ export default function Modal(props: any) {
     },
     onSubmit: async (values, { resetForm }) => {
       var form_data = new FormData();
-      form_data.append('NOMBRE', values['NOMBRE']);
-      form_data.append('APELLIDOS', values['APELLIDOS']);
-      form_data.append('EMAIL', values['EMAIL']);
+      form_data.append(suscribeteFields[0], values['NOMBRE']);
+      form_data.append(suscribeteFields[1], values['APELLIDOS']);
 
-      try {
-        const response = await axios.post(config.suscribeteUrl, form_data);
-        console.log(response);
-        setSuccessful(true);
-        resetForm({});
-      } catch (error) {
-        console.error('Error while sending contact form', error);
-      }
+      const options = {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'api-key': config.suscribeteAPIKEY,
+        },
+        body: JSON.stringify({
+          email: values['EMAIL'],
+          attributes: {
+            [suscribeteFields[0]]: values['NOMBRE'],
+            [suscribeteFields[1]]: values['APELLIDOS'],
+          },
+          emailBlacklisted: false,
+          smsBlacklisted: false,
+          listIds: [36],
+          updateEnabled: false,
+          smtpBlacklistSender: ['user@example.com'],
+        }),
+      };
+
+      fetch(config.suscribeteAPI, options)
+        .then((response) => {
+          setSuccessful(true);
+          resetForm({});
+        })
+        .then((response) => {
+          setSuccessful(true);
+          resetForm({});
+        })
+        .catch((err) => console.error(err));
     },
   });
 

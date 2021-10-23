@@ -34,16 +34,20 @@ const AuthProvider = ({ children }) => {
     try {
       axios.defaults.headers.common['Authorization'] = `Bearer ${refreshToken}`;
       const response = await axios.post('/api/refresh-token');
+      setAccessToken(response.data.newTokens.accessToken);
+      setRefreshToken(response.data.newTokens.refreshToken);
       localStorage.setItem(
         'refreshToken',
         response.data.newTokens.refreshToken,
       );
+      localStorage.setItem('token', response.data.newTokens.accessToken);
     } catch (error) {
       logout();
     }
   };
 
   const logout = () => {
+    localStorage.clear();
     setAccessToken('');
   };
 
@@ -51,7 +55,7 @@ const AuthProvider = ({ children }) => {
     if (accessToken) {
       refreshUser();
     }
-  }, [refreshToken]);
+  }, [refreshToken, accessToken]);
 
   return (
     <Context.Provider value={{ accessToken, refreshToken, login, logout }}>

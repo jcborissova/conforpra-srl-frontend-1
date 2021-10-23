@@ -6,6 +6,8 @@ import img3 from '../../img/Products/3.png';
 import img4 from '../../img/Products/4.png';
 import '../../styles.css';
 import LineDivider from '../LineDivider';
+import { useEffect, useState } from 'react';
+import client from '../../providers/api';
 
 const productsCardInformation = [
   {
@@ -42,7 +44,27 @@ const productsCardInformation = [
   },
 ];
 
+const productCardsColors = [
+  'custom-color-4',
+  'custom-color-2',
+  'custom-color-1 ',
+  'custom-color-3',
+];
+
 const ProductSection = () => {
+  const [productsApi, setProductsApi] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.get(`/api/products`);
+        setProductsApi(response.data.products);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, []);
+
   return (
     <div className="w-screen z-30">
       <div className="custom-shape-divider-bottom-1628384777">
@@ -60,13 +82,13 @@ const ProductSection = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1 lg:pt-16 pt-10 gap-6 pl-0">
-            {productsCardInformation.map((item) => (
+            {productsApi.slice(0, 4).map((item, index) => (
               <ProductCard
-                key={item.id}
-                img={item.img}
-                title={item.title}
-                description={item.description}
-                color={item.color}
+                key={item['_id']}
+                img={item['picture']}
+                title={item['name']}
+                description={item['description']}
+                color={productCardsColors[index]}
               />
             ))}
           </div>

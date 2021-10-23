@@ -9,12 +9,40 @@ import c3 from '../img/Cursos y talleres/c3.png';
 import c4 from '../img/Cursos y talleres/c4.png';
 import c5 from '../img/Cursos y talleres/c5.png';
 import c6 from '../img/Cursos y talleres/c6.png';
+import { useEffect, useState } from 'react';
+import client from '../providers/api';
 
 const CardCarousel = (props: any) => {
+  const [trainingsApi, setTraininsgApi] = useState([]);
+  const [sliderApiCounter, setSliderApiCounter] = useState(0);
+  const [sliderSize, setSliderSize] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await client.get(`/api/trainings`);
+        setTraininsgApi(response.data.trainings);
+        setSliderCards(response.data.trainings);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [sliderApiCounter]);
+
+  function setSliderCards(data: any) {
+    if (data.length > 2) {
+      setSliderApiCounter(3);
+    } else {
+      setSliderSize(true);
+      setSliderApiCounter(data.length);
+    }
+    console.log(sliderApiCounter);
+  }
+
   const settings = {
     dots: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: sliderApiCounter,
     slidesToScroll: 1,
     autoplay: true,
     infinite: true,
@@ -91,13 +119,17 @@ const CardCarousel = (props: any) => {
       <div className="w-11/12 flex flex-col items-center">
         <Slider
           {...settings}
-          className="2xl:w-6/12 xl:w-8/12 lg:w-9/12 md:w-8/12 sm:w-10/12 w-8/12"
+          className={`${
+            sliderSize
+              ? `2xl:w-4/12 xl:w-5/12 lg:w-6/12 md:w-7/12 sm:w-10/12 w-8/12`
+              : `2xl:w-6/12 xl:w-8/12 lg:w-9/12 md:w-8/12 sm:w-10/12 w-8/12`
+          }`}
         >
-          {CursosTalleresCardInformation.map((item) => (
+          {trainingsApi.slice(0, 6).map((item) => (
             <CursosTalleresCard
-              key={item.id}
-              img={item.img}
-              text={item.title}
+              key={item['_id']}
+              img={item['picture']}
+              text={item['name']}
             />
           ))}
         </Slider>

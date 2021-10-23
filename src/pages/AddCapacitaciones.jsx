@@ -108,6 +108,7 @@ const AddCapacitaciones = () => {
                       <Input
                         type="file"
                         name="picture"
+                        key={training.picture}
                         required
                         onChange={handleChange}
                         accept="image/x-png,image/gif,image/jpeg"

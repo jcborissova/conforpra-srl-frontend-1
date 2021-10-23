@@ -74,9 +74,13 @@ jobs:
           cat .env
         env:
           REACT_APP_API_URL: https://${{ steps.details.outputs.environmentPrefix }}api.${{ steps.details.outputs.project }}.projects.helx.dev
-          __DEV__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__DEV__REACT_APP_SUSCRIBETE_URL }}
-          __STAGE__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__STAGE__REACT_APP_SUSCRIBETE_URL }}
-          __PROD__REACT_APP_SUSCRIBETE_URL: ${{ secrets.__PROD__REACT_APP_SUSCRIBETE_URL }}
+          REACT_APP_SUSCRIBETE_API: https://api.sendinblue.com/v3/contacts
+          __DEV__REACT_APP_SUSCRIBETE_APIKEY: ${{ secrets.__DEV__REACT_APP_SUSCRIBETE_APIKEY }}
+          __DEV__REACT_APP_SUSCRIBETE_FIELDS: ${{ secrets.__DEV__REACT_APP_SUSCRIBETE_FIELDS }}
+          __STAGE__REACT_APP_SUSCRIBETE_APIKEY: ${{ secrets.__STAGE__REACT_APP_SUSCRIBETE_APIKEY }}
+          __STAGE__REACT_APP_SUSCRIBETE_FIELDS: ${{ secrets.__STAGE__REACT_APP_SUSCRIBETE_FIELDS }}
+          __PROD__REACT_APP_SUSCRIBETE_APIKEY: ${{ secrets.__PROD__REACT_APP_SUSCRIBETE_APIKEY }}
+          __PROD__REACT_APP_SUSCRIBETE_FIELDS: ${{ secrets.__PROD__REACT_APP_SUSCRIBETE_FIELDS }}
 
       - uses: docker/build-push-action@v2
         with:
