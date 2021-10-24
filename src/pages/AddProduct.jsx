@@ -16,6 +16,7 @@ import client from '../providers/api';
 import FormData from 'form-data';
 
 const AddProduct = () => {
+  const [pictureValue, setPictureValue] = useState();
   const [product, setProduct] = useState({
     name: '',
     description: '',
@@ -36,6 +37,7 @@ const AddProduct = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
+      setPictureValue();
       setProduct({});
     } catch (error) {
       console.log(error);
@@ -45,6 +47,7 @@ const AddProduct = () => {
   const handleChange = (e) => {
     let { name, value, type } = e.target;
     if (type === 'file') {
+      setPictureValue(e.target.files[0].name);
       value = e.target.files[0];
     }
     setProduct((product) => {
@@ -105,16 +108,25 @@ const AddProduct = () => {
                       sm={8}
                       className="d-flex align-items-center p-4"
                     >
-                      <Input
-                        type="file"
-                        name="picture"
-                        key={product.picture}
-                        required
-                        onChange={handleChange}
-                        accept="image/x-png,image/gif,image/jpeg"
-                      />
+                      <label>
+                        {' '}
+                        Seleccionar imagen{' '}
+                        <Input
+                          className="hidden"
+                          type="file"
+                          name="picture"
+                          required
+                          onChange={handleChange}
+                          accept="image/x-png,image/gif,image/jpeg"
+                        />
+                      </label>
                     </Col>
                   </Row>
+                  <Col className="flex d-flex align-items-center pb-4 justify-center font-bold text-xl">
+                    <Row>
+                      <label>{pictureValue}</label>
+                    </Row>
+                  </Col>
                 </Container>
               </FormGroup>
             </Col>

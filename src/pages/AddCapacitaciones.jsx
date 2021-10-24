@@ -15,6 +15,7 @@ import {
 import client from '../providers/api';
 
 const AddCapacitaciones = () => {
+  const [pictureValue, setPictureValue] = useState();
   const [training, setTraining] = useState({
     name: '',
     description: '',
@@ -37,6 +38,7 @@ const AddCapacitaciones = () => {
       });
 
       setTraining({});
+      setPictureValue();
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +47,7 @@ const AddCapacitaciones = () => {
   const handleChange = (e) => {
     let { name, value, type } = e.target;
     if (type === 'file') {
+      setPictureValue(e.target.files[0].name);
       value = e.target.files[0];
     }
     setTraining((product) => {
@@ -105,16 +108,25 @@ const AddCapacitaciones = () => {
                       sm={8}
                       className="d-flex align-items-center p-4"
                     >
-                      <Input
-                        type="file"
-                        name="picture"
-                        key={training.picture}
-                        required
-                        onChange={handleChange}
-                        accept="image/x-png,image/gif,image/jpeg"
-                      />
+                      <label>
+                        {' '}
+                        Seleccionar imagen{' '}
+                        <Input
+                          className="hidden"
+                          type="file"
+                          name="picture"
+                          required
+                          onChange={handleChange}
+                          accept="image/x-png,image/gif,image/jpeg"
+                        />
+                      </label>
                     </Col>
                   </Row>
+                  <Col className="flex d-flex align-items-center pb-4 justify-center font-bold text-xl">
+                    <Row>
+                      <label>{pictureValue}</label>
+                    </Row>
+                  </Col>
                 </Container>
               </FormGroup>
             </Col>
