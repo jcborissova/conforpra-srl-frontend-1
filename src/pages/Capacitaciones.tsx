@@ -105,7 +105,7 @@ const Capacitaciones = () => {
           <div className="text-base pt-6 lg:w-8/12 w-11/12 text-center text-gray-500">
             <p>
               En Conforpra contamos con las siguientes capacitaciones que
-              ofrecen multiples beneficios, así como la oportunidad de ampliar
+              ofrecen múltiples beneficios, así como la oportunidad de ampliar
               los conocimientos que integran la organización
             </p>
           </div>

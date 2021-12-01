@@ -22,7 +22,7 @@ const LineDivider = (props: any) => {
         </svg>
       </div>
       <div
-        className={`custom-shape-divider-bottom-1630601091 lg:hidden block ${
+        className={`custom-shape-divider-bottom-1630601091 bottom-custom  lg:hidden block ${
           dividerbgColor || ''
         } `}
       >

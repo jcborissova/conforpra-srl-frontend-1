@@ -28,7 +28,7 @@ const HeaderPage = (props: any) => {
         <LineDivider
           dividerColor={dividerColor}
           dividerbgColor=""
-          className=" w-screen bg"
+          className=" w-screen bottom-custom "
         />
       </div>
       <div className="flex flex-col text-left text-white lg:h-96 md:h-64 h-60 z-50 w-full absolute ">

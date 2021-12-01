@@ -48,7 +48,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex flex-col text-white w-full">
-              <span className="font-semibold mt-4 md:mt-0 mb-2">Compañia</span>
+              <span className="font-semibold mt-4 md:mt-0 mb-2">Compañía</span>
               <div className="flex flex-col pt-2 font-light">
                 <span className="my-1">
                   <Link
@@ -60,7 +60,7 @@ const Footer = () => {
                 </span>
                 <span className="my-1">
                   <Link to="/contactanos" className="text-md text-custom-white">
-                    Contactanos
+                    Contáctanos
                   </Link>
                 </span>
                 <span className="my-1">
@@ -85,7 +85,7 @@ const Footer = () => {
                   rel="noreferrer noopener"
                   className="text-custom-white"
                 >
-                  Website designed by Helx
+                  Website develop by Helx
                 </a>
               </p>
             </div>

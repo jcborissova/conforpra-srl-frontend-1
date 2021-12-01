@@ -23,7 +23,7 @@ const ServiceCardInformation = [
   },
   {
     id: 4,
-    text: 'Calculo del Blindaje para la Optimización de la sala de rayos x',
+    text: 'Cálculo del Blindaje para la Optimización de la sala de rayos x',
     img: img2,
   },
 ];
@@ -50,7 +50,7 @@ const ServiceSection = () => {
             className="rounded-full bg-custom h-10 text-white uppercase text-normal px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
-            <Link to="/servicios">Ver mas servicios</Link>
+            <Link to="/servicios">Ver más servicios</Link>
           </button>
         </div>
       </div>
@@ -76,7 +76,7 @@ const ServiceSection = () => {
             className="rounded-full bg-custom w-56 h-10 text-white uppercase text-normal outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
             type="button"
           >
-            <Link to="/servicios">Ver mas servicios</Link>
+            <Link to="/servicios">Ver más servicios</Link>
           </button>
         </div>
       </div>

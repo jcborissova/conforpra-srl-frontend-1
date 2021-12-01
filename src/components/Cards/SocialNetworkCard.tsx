@@ -13,9 +13,7 @@ const SocialNetworkCard = (props: any) => {
           <div className="flex flex-col md:text-xl text-lg font-semibold">
             <p>{text}</p>
           </div>
-          <div className="flex flex-col text-xs font-semibold">
-            <p>{subtext}</p>
-          </div>
+          <div className="flex flex-col text-xs font-semibold">{subtext}</div>
         </div>
       </div>
     </a>

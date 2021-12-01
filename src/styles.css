@@ -12,6 +12,10 @@
   width: 80px;
 }
 
+.bottom-custom {
+  bottom: 10;
+}
+
 .content-custom {
   height: 90px;
   width: 90px;

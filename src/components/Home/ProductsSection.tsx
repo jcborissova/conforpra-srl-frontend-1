@@ -78,7 +78,7 @@ const ProductSection = () => {
           <div className="pt-5 md:text-base text-sm">
             <p>
               Buscamos garantizar la seguridad radiológica del trabajador
-              ocupacionalmente expuesto
+              ocupacionalmente expuesto.
             </p>
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1 lg:pt-16 pt-10 gap-6 pl-0">

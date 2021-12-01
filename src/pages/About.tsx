@@ -82,7 +82,7 @@ const About = () => {
                 llega hasta ti, para brindarte la mejor asesoría y programa de
                 capacitación en temas relacionados con la protección y seguridad
                 radiológica de tu empresa. Contamos con expertos nacionales e
-                internacionales dispuestos ayudarte con la materialización de tú
+                internacionales dispuestos ayudarte con la materialización de tu
                 proyecto y que el mismo cumpla con las normativas nacionales
                 vigentes.
               </p>
@@ -99,7 +99,7 @@ const About = () => {
         <LineDivider dividerColor="-gray" dividerbgColor="" />
         <div className="flex lg:flex-row flex-col lg:items-start items-center justify-center bg-custom-color pb-28 w-full ">
           <div className="flex flex-col pt-16 w-auto">
-            <div className="lg:text-2xl md:text-xl sm:text-lg">
+            <div className="lg:text-2xl md:text-xl sm:text-lg md:text-left text-center">
               <p>Principios de la empresa</p>
             </div>
             <div className="pt-8 flex md:flex-row flex-col lg:gap-20 gap-5 self-center ">

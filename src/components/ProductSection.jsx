@@ -87,7 +87,7 @@ const ProductSection = ({
     <Container className="wow fadeIn">
       {edit ? (
         <Row className="mb-5">
-          <Form className="flex flex-row">
+          <Form className="flex sm:flex-row flex-col">
             <Col md="4" className="flex flex-col items-center ">
               <Row className="h-full ">
                 <Col
@@ -194,8 +194,8 @@ const ProductSection = ({
               md="2"
               className="d-flex justify-content-center align-items-center"
             >
-              <Row>
-                <Col xs="6" className="p-0">
+              <Row class="flex flex-row items-center ">
+                <Col className="flex flex-row gap-2 p-0">
                   <IconButton aria-label="edit" size="medium" color="inherit">
                     {archived ? (
                       <Edit fontSize="large" onClick={() => setEdit(true)} />
@@ -203,9 +203,11 @@ const ProductSection = ({
                       <div />
                     )}
                   </IconButton>
-                </Col>
-                <Col xs="6" className="p-0">
-                  <IconButton aria-label="edit" size="medium" color="inherit">
+                  <IconButton
+                    aria-label="archive"
+                    size="medium"
+                    color="inherit"
+                  >
                     {archived ? (
                       <CreateNewFolder
                         onClick={() => archiveProduct('hidden')}
@@ -218,16 +220,14 @@ const ProductSection = ({
                       />
                     )}
                   </IconButton>
+                  <IconButton aria-label="felete" size="medium" color="inherit">
+                    <DeleteIcon
+                      onClick={() => deleteProduct()}
+                      fontSize="large"
+                    />
+                  </IconButton>
                 </Col>
               </Row>
-              <Col xs="6" className="p-2">
-                <IconButton aria-label="delete" size="medium" color="inherit">
-                  <DeleteIcon
-                    onClick={() => deleteProduct()}
-                    fontSize="large"
-                  />
-                </IconButton>
-              </Col>
             </Col>
           ) : (
             ''

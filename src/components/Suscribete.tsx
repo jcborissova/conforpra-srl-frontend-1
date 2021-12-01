@@ -104,7 +104,7 @@ export default function Modal(props: any) {
                     </div>
                   ) : (
                     <div className="flex items-start w-full">
-                      <div className="flex lg:flex-row h-96">
+                      <div className="flex lg:flex-row md:h-96 h-auto">
                         <div className="sm:block hidden">
                           <img
                             src={SuscribeteWallpaper}
@@ -112,21 +112,21 @@ export default function Modal(props: any) {
                             className="h-96 rounded-l-xl"
                           />
                         </div>
-                        <div className="flex flex-col sm:w-7/12 w-full py-5 px-10">
+                        <div className="flex flex-col sm:w-7/12 w-full py-5 sm:px-10 px-5">
                           <form onSubmit={formik.handleSubmit}>
                             <div className="text-2xl font-bold pb-3">
                               <p>¡Suscríbete!</p>
                             </div>
-                            <div className=" text-gray-500 font-normal text-xs text-left">
+                            <div className=" text-gray-500 font-normal text-xs md:text-left text-center">
                               <p>
                                 Recibe notificaciones acerca de cursos,
                                 descuentos en servicios, avances en materia de
-                                protección y serguridad radiológica, tecnología
+                                protección y seguridad radiológica, tecnología
                                 de diagnóstico por imágenes, medicina nuclear,
                                 radioterapia, entre otros.
                               </p>
                             </div>
-                            <div className="pt-4 text-gray-500  flex flex-col items-start ">
+                            <div className="py-4 text-gray-500  flex flex-col items-start ">
                               <p className="pb-1 font-normal text-xs">Nombre</p>
                               <input
                                 type="text"
@@ -150,12 +150,12 @@ export default function Modal(props: any) {
                                 type="text"
                                 {...formik.getFieldProps('EMAIL')}
                                 required
-                                placeholder="example@email.com"
+                                placeholder="ejemplo@email.com"
                                 className="px-2 py-1 md:mt-0 font-normal text  placeholder-gray-400 text-gray-600 relative bg-white rounded-lg border border-gray-400 outline-none focus:outline-none focus:ring sm:w-auto w-full"
                               />
                               <div className="flex pt-5 w-full items-center sm:justify-start justify-center ">
                                 <input
-                                  className="bg-custom-suscribete rounded-xl text-xs font-semibold text-white h-6 hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
+                                  className="bg-custom-suscribete rounded-xl text-xs font-semibold text-white h-6 hover:text-white active:bg-purple-700 text-normal align-text-middle px-6 outline-none focus:outline-none  ease-linear transition-all duration-150"
                                   type="submit"
                                   value="ENVIAR"
                                 />

@@ -51,7 +51,7 @@ const socialNetworkCardInformation = [
   {
     id: 6,
     text: 'Email',
-    subText: 'conforpra.servicios@ gmail.com',
+    subText: 'conforpra.servicios@gmail.com',
     img: MailOutlineIcon,
     link: 'mailto:conforpra.servicios@gmail.com',
   },
@@ -179,10 +179,10 @@ const Contactanos = (props: any) => {
         <div className="flex flex-col w-full gap-x-6 items-center ">
           <div className="flex justify-center w-screen pt-10">
             <p className="font-semibold md:w-auto w-11/12">
-              O escribenos por cualquiera de estas redes sociales
+              O escríbenos por cualquiera de estas redes sociales
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 grid-cols-2 py-14 lg:gap-x-30 md:gap-x-10 gap-x-3 md:gap-y-28 gap-y-12  ">
+          <div className="grid lg:grid-cols-3 grid-cols-2 py-14 lg:gap-x-30 md:gap-x-10 gap-x-10 md:gap-y-28 gap-y-12 p-2 ">
             {socialNetworkCardInformation.map((item) => (
               <SocialNetworkCard
                 key={item.id}
