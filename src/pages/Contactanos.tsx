@@ -148,7 +148,7 @@ const Contactanos = () => {
                   />
                   <input
                     type="text"
-                    placeholder="Subject"
+                    placeholder="Asunto"
                     {...formik.getFieldProps('subject')}
                     required
                     className="px-5 py-1 placeholder-gray-400 text-gray-600 relative bg-white rounded-2xl text-sm border border-gray-400 outline-none focus:outline-none focus:ring"
